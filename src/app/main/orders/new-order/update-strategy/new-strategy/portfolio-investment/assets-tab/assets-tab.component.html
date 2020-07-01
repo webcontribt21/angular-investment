@@ -1,0 +1,10 @@
+<div class="asset-tab">
+  <div class="asset-tab__chart">
+    <app-pie-chart [allocation$]="allocation$" class="chart-wrapper"></app-pie-chart>
+  </div>
+  <div class="tab-bottom">
+    <a class="tab-bottom__link" (click)="openTableModal()">
+      {{'UPDATE_STRATEGY_PAGE.PORTFOLIO_INVESTMENT.VIEW_FULL_LIST' | translate}}
+    </a>
+  </div>
+</div>

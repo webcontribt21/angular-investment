@@ -1,0 +1,416 @@
+@import '../../../../../styles/media.scss';
+@import '../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .orders-list {
+    margin-bottom: 16px;
+    @include tablets {
+      margin-bottom: 24px;
+    }
+
+    .list-header {
+      .type {
+        width: 35%;
+      }
+
+      .amount {
+        width: 25%;
+      }
+
+      .status {
+        width: 20%;
+      }
+
+      .date {
+        width: 20%;
+        text-align: right;
+      }
+    }
+
+    .list-body {
+      flex-direction: column;
+
+      .list-item {
+        flex-direction: column;
+        padding: 8px 32px 8px 44px;
+        @include tablets {
+          padding: 16px 60px 16px 24px;
+        }
+        .list-content {
+          flex-wrap: wrap;
+          @include tablets {
+            flex-direction: row;
+            justify-content: space-between;
+          }
+          .list-more-btn {
+            position: absolute;
+            right: 8px;
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            transition: transform .3s ease;
+            @include tablets {
+              right: 16px;
+              i {
+                line-height: 22px;
+              }
+            }
+            i {
+              font-size: 12px;
+              line-height: 20px;
+              color: $blue50;
+            }
+          }
+
+          .list-type {
+            width: 60%;
+            padding-right: 10px;
+            @include tablets {
+              width: 35%;
+              padding-right: 20px;
+            }
+            @include desktop {
+              padding-right: 30px;
+            }
+          }
+
+          .list-amount {
+            width: 40%;
+            text-align: right;
+            @include tablets {
+              width: 25%;
+              line-height: 24px;
+              text-align: left;
+            }
+          }
+
+          .list-status {
+            display: flex;
+            position: absolute;
+            top: 14px;
+            left: 10px;
+            @include tablets {
+              width: 20%;
+              position: static;
+              transform: translateY(0);
+            }
+
+            &-content {
+              border-radius: 50px;
+              display: flex;
+              align-self: flex-start;
+              @include tablets {
+                border-radius: 24px;
+                padding-right: 12px;
+              }
+
+              .status-icon {
+                width: 24px;
+                height: 24px;
+                background-size: auto 10px;
+                background-repeat: no-repeat;
+                background-position: center;
+              }
+
+              .status-text {
+                display: none;
+                font-size: 12px;
+                line-height: 24px;
+                font-weight: 600;
+                @include tablets {
+                  display: block;
+                }
+              }
+            }
+          }
+
+          .list-date {
+            width: 100%;
+            @include tablets {
+              width: 20%;
+            }
+          }
+        }
+
+        .progress {
+          display: flex;
+          flex-direction: column;
+          color: $gray90;
+          font-weight: 600;
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: all .3s ease;
+          @include tablets {
+            padding-left: 32px;
+          }
+
+          .additional-info {
+            font-size: 12px;
+            color: $gray70;
+            font-weight: 300;
+            @include tablets {
+              font-size: 14px;
+            }
+          }
+
+          .step {
+            &-result {
+              .step-info {
+                margin-bottom: 3px;
+              }
+            }
+
+            &-info {
+              display: flex;
+              position: relative;
+              @include tablets {
+                &-indicator {
+                  left: -32px;
+                }
+              }
+
+              &-indicator {
+                position: absolute;
+                width: 17px;
+                height: 17px;
+                border-radius: 50px;
+                left: -30px;
+                top: 2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &-inner {
+                  width: 7px;
+                  height: 7px;
+                  border-radius: 50px;
+                  background-color: $gray50;
+                }
+              }
+
+              &-name {
+                margin-right: 8px;
+                font-size: 14px;
+                @include tablets {
+                  font-size: 16px;
+                }
+              }
+            }
+
+            &-grouped-info {
+              position: relative;
+              font-size: 12px;
+              line-height: 20px;
+              @include tablets {
+                font-size: 14px;
+              }
+
+              > div {
+                margin-bottom: 4px;
+                &:last-child {
+                  margin-bottom: 0;
+                }
+              }
+
+              &-title {
+                font-weight: 300;
+              }
+            }
+
+            &-order-info {
+              padding-top: 32px;
+              padding-bottom: 32px;
+              position: relative;
+              @include tablets {
+                padding-top: 16px;
+                padding-bottom: 40px;
+              }
+              &:before {
+                content: '';
+                position: absolute;
+                display: block;
+                top: 0;
+                left: -22px;
+                height: 100%;
+                width: 1px;
+                background-color: rgba(217, 220, 225, 0.5);
+              }
+              &.no-info {
+                padding-top: 16px;
+                padding-bottom: 16px;
+                position: relative;
+                @include tablets {
+                  padding-top: 16px;
+                  padding-bottom: 20px;
+                }
+              }
+
+              &-item {
+                margin-bottom: 8px;
+                &:last-child {
+                  margin-bottom: 0;
+                }
+                .info-item-title, .info-item-value {
+                  font-size: 12px;
+                  line-height: 20px;
+                  @include tablets {
+                    font-size: 14px;
+                  }
+                }
+                .info-item-title {
+                  font-weight: 300;
+                  margin-right: 3px;
+                }
+                .info-item-value {
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+          .cancel-btn {
+            margin-top: 10px;
+            @include tablets {
+              margin-top: 12px;
+            }
+
+            .button-transparent {
+              .ui-button {
+                min-width: 100px;
+                @include tablets {
+                  min-width: 120px;
+                }
+                @include desktop {
+                  min-width: 145px;
+                }
+
+                .ui-button-text {
+                  padding: 6px 16px;
+                  @include tablets {
+                    padding: 8px 20px;
+                  }
+                  @include desktop {
+                    padding: 10px 24px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.extended {
+          .list-more-btn {
+            transform: rotateX(180deg);
+          }
+          .progress {
+            max-height: 500px;
+            overflow: visible;
+            padding-top: 24px;
+            padding-bottom: 14px;
+            opacity: 1;
+            @include tablets {
+              padding-top: 40px;
+              padding-bottom: 26px;
+            }
+          }
+        }
+
+        //order status styles
+
+        &.completed {
+          .list-status-content {
+            background-color: $green10;
+            .status-icon {
+              background-image: url(/assets/img/status-icon-completed.svg);
+            }
+            .status-text {
+              color: $green;
+            }
+          }
+
+          .progress {
+            .step-result {
+              .step-info-indicator {
+                background-color: $green10;
+                .step-info-indicator-inner {
+                  background-color: $green;
+                }
+              }
+              .step-result-reason {
+                display: none;
+              }
+            }
+          }
+        }
+        &.rejected {
+          .list-status-content {
+            background-color: $red10;
+            .status-icon {
+              background-image: url(/assets/img/status-icon-rejected.svg);
+            }
+            .status-text {
+              color: $red;
+            }
+          }
+
+          .progress {
+            .step-result {
+              .step-info-indicator {
+                background-color: $red10;
+                .step-info-indicator-inner {
+                  background-color: $red;
+                }
+              }
+              .step-result-reason {
+                display: none;
+              }
+            }
+          }
+        }
+
+        &.canceled {
+          .list-status-content {
+            .status-icon {
+              background-size: auto 14px;
+              background-image: url(/assets/img/status-icon-cancelled.svg);
+            }
+            .status-text {
+              color: $gray70;
+            }
+          }
+
+          .progress {
+            .step-result {
+              .step-info-indicator {
+                background-color: rgba(217, 220, 225, 0.5);
+              }
+              .step-result-reason {
+                display: none;
+              }
+            }
+          }
+        }
+
+        &.submitted, &.created {
+          .list-status-content {
+            .status-icon {
+              background-size: auto 14px;
+              background-image: url(/assets/img/status-icon-in-progress.svg);
+            }
+            .status-text {
+              color: $gray90;
+            }
+          }
+
+          .progress {
+            .step-result {
+              .step-info-indicator {
+                background-color: rgba(217, 220, 225, 0.5);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

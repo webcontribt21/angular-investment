@@ -1,0 +1,95 @@
+<div class="table-wrapper">
+  <div class="table-title">
+    <span class="prefix">{{'COMMON.APEIRON' | translate | lowercase}}</span>
+    <span class="suffix">{{strategyToDisplay$ | async}}</span>
+    {{'UPDATE_STRATEGY_PAGE.PORTFOLIO_INVESTMENT.ALL_STOCK_IN_YOUR_SAMPLE_PORTFOLIO' | translate}}
+  </div>
+
+  <p-table class="table" [value]="tableData$ | async" dataKey="assetLabel">
+    <ng-template pTemplate="header">
+      <tr class="table-header">
+        <th class="header-category">
+          <div class="header-category__padding">
+            {{'OVERVIEW_PAGE.INVESTMENT.ASSET_CATEGORY' | translate}}
+          </div>
+        </th>
+        <th class="header-risk">
+          <div class="header-risk__padding">
+            {{'UPDATE_STRATEGY_PAGE.PORTFOLIO_INVESTMENT.RISK' | translate}}
+          </div>
+        </th>
+        <th *ngIf="!(isMobile$ | async)" class="header-label">
+          <div class="header-label__padding">
+            {{'UPDATE_STRATEGY_PAGE.PORTFOLIO_INVESTMENT.ASSET_LABEL' | translate}}
+          </div>
+        </th>
+        <th class="header-percentage">
+          <div class="header-percentage__padding">
+            %
+          </div>
+        </th>
+        <th class="toggler"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-asset let-expanded="expanded" let-columns="columns">
+      <tr [class.expanded]="expanded" [pRowToggler]="asset" class="pointer">
+        <td>
+          <div class="asset body-item">
+            <span class="asset__text">
+              {{asset.assetCategory}}
+            </span>
+          </div>
+        </td>
+        <td>
+          <div class="risk body-item">
+            <span class="asset__symbol" [ngStyle]="{'background-color': asset.color}"></span>
+            {{asset.assetClass}}
+          </div>
+        </td>
+        <td *ngIf="!(isMobile$ | async)">
+          <div class="label body-item">
+            <span class="asset__text">
+              {{asset.assetLabel}}
+            </span>
+          </div>
+        </td>
+        <td>
+          <div class="ratio body-item">
+            {{asset.ratio | percent: '1.2-2'}}
+          </div>
+        </td>
+        <td>
+          <div class="toggler">
+            <span class="asset__toggle">
+              <i class="toggle-symbol pi"
+                [ngClass]="{'pi-caret-up': expanded, 'pi-caret-down': !expanded}">
+              </i>
+            </span>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="rowexpansion" let-asset let-columns="columns">
+      <tr class="expansion" @rowExpansionTrigger>
+        <td [attr.colspan]="4">
+          {{asset.description}}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<div class="table-description">
+  <img class="table-description__icon" src="/assets/img/info-icon-circle-blue.svg" alt="notification icon">
+  <div class="table-description__text">
+    <span>
+      {{'UPDATE_STRATEGY_PAGE.PORTFOLIO_INVESTMENT.TABLE_DESCRIPTION_PART1' | translate}}
+    </span>
+    <span class="prefix">{{'COMMON.APEIRON' | translate | lowercase}}</span>
+    <span class="suffix">{{strategyToDisplay$ | async}}</span>
+    <span>
+      {{'UPDATE_STRATEGY_PAGE.PORTFOLIO_INVESTMENT.TABLE_DESCRIPTION_PART2' | translate}}
+    </span>
+  </div>
+</div>

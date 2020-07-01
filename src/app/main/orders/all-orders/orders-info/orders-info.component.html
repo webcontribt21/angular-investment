@@ -1,0 +1,65 @@
+<div class="orders-info" *ngIf="(portfolio$ | async) as portfolio">
+  <div class="orders-info-balance">
+    <div class="orders-info-balance__title title">
+      {{'OVERVIEW_PAGE.TOTAL.TOTAL_BALANCE' | translate }}
+    </div>
+    <div class="orders-info-balance__amount">
+      {{portfolio.currentBalance | currencySignPipe | async}}
+    </div>
+  </div>
+
+  <div class="orders-info-deposit">
+    <div class="orders-info-deposit__content title">
+      <div class="title">{{'OVERVIEW_PAGE.TOTAL.TOTAL_DEPOSIT' | translate }}</div>
+      <div class="orders-info-deposit__btn">
+        <a [routerLink]="['/orders/new/deposit']">
+          <img class="orders-info-deposit__icon" src="/assets/img/plus.svg" alt="plus icon" />
+          <span class="orders-info-deposit__text">
+          {{'OVERVIEW_PAGE.TOTAL.ADD' | translate }}
+        </span>
+        </a>
+      </div>
+    </div>
+    <div class="orders-info-deposit__amount">
+      {{portfolio.effectiveContribution | currencySignPipe | async}}
+    </div>
+  </div>
+
+  <div class="orders-info-monthly">
+    <div class="orders-info-monthly__title title">
+      <div class="title">{{'OVERVIEW_PAGE.TOTAL.MONTHLY_DEPOSIT' | translate }}</div>
+      <div class="orders-info-monthly__btn">
+        <a [routerLink]="['/orders/new/monthly']">
+          <img class="orders-info-monthly__icon" src="/assets/img/pencil.svg" alt="edit icon" />
+          <span class="orders-info-monthly__text">
+            {{'OVERVIEW_PAGE.COMMON.CHANGE' | translate }}
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="orders-info-monthly__amount">
+      {{(selectedCustomer$ | async).currentRecurringDeposit.amount | currencySignPipe | async}}
+    </div>
+  </div>
+
+  <div class="orders-info-strategy">
+    <div class="orders-info-strategy__title title">
+      <div class="title">
+        {{'OVERVIEW_PAGE.INVESTMENT.INVESTMENT_STRATEGY' | translate | uppercase}}
+      </div>
+      <div class="orders-info-strategy__btn">
+        <a [routerLink]="['/orders/new/update-strategy']">
+          <img class="orders-info-strategy__icon" src="/assets/img/pencil.svg" alt="edit icon" />
+          <span class="orders-info-strategy__text">
+            {{'OVERVIEW_PAGE.COMMON.CHANGE' | translate }}
+          </span>
+        </a>
+      </div>
+    </div>
+    <a href="{{(strategyToDisplay$ | async)?.link}}" target="_blank" class="orders-info-strategy__value">
+      <span class="prefix">{{'COMMON.APEIRON' | translate | lowercase}}</span>
+      <span class="suffix">{{(strategyToDisplay$ | async)?.labelSuffix}}</span>
+      <i class="pi pi-external-link"></i>
+    </a>
+  </div>
+</div>

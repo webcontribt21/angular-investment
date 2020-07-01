@@ -1,0 +1,51 @@
+<div class="question">
+  <div class="title">{{currentQuestion$ | customTranslate | async}}</div>
+  <div class="options">
+    <div *ngIf="(isTabletsHorizontal$ | async)" class="options-heading ordered-options">
+      <div
+          *ngFor="let answer of questionsData[0].answers; index as i"
+          [ngClass]="[(answer.label.en | lowercase), 'ordered-options__title']">
+        {{answer | customTranslate | async | titlecase}}
+      </div>
+    </div>
+    <div class="options-list">
+      <div class="options-item item" *ngFor="let question of questionsData; index as i">
+        <div class="item-value item-title">
+          <div class="item-explain">{{question | customTranslate | async}}</div>
+        </div>
+
+        <div class="item-answers">
+          <div *ngIf="!(isTabletsHorizontal$ | async)" class="options-heading ordered-options">
+            <div
+              *ngFor="let answer of questionsData[0].answers; index as i"
+              [ngClass]="[(answer.label.en | lowercase), 'ordered-options__title']">
+              {{answer | customTranslate | async | titlecase}}
+            </div>
+          </div>
+
+          <div class="ordered-answers">
+            <div *ngFor="let answer of question.answers">
+              <p-radioButton
+                class="item-radio item-radio_no_margin"
+                [name]="'answer' + i"
+                [value]="answer.code"
+                [formControl]="question.answerControl">
+              </p-radioButton>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit-btn">
+      <p-button
+        class="button-blue"
+        (onClick)="submitAnswer()"
+        [disabled]="isButtonDisabled()"
+        [label]="'UPDATE_STRATEGY_PAGE.INTERVIEW.CONTINUE'| translate"
+      ></p-button>
+    </div>
+  </div>
+</div>
+
+

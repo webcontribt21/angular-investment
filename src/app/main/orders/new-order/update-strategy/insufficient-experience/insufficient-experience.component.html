@@ -1,0 +1,66 @@
+<div class="question">
+  <div class="insufficient__title">
+    {{'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.TITLE' | translate}}
+  </div>
+  <div class="insufficient__description options">
+    <div class="insufficient__text">
+      {{'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.TEXT_PARAGRAPH_1' | translate}}
+    </div>
+    <div class="insufficient__text">
+      {{'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.TEXT_PARAGRAPH_2' | translate}}
+    </div>
+    <div class="insufficient__text">
+      <div class="heading">{{'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.TEXT_PARAGRAPH_3_1' | translate}}</div>
+      <div>{{'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.TEXT_PARAGRAPH_3_2' | translate}}</div>
+    </div>
+    <div class="insufficient__text">
+      <div class="heading">{{'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.TEXT_PARAGRAPH_4_1' | translate}}</div>
+      <div>{{'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.TEXT_PARAGRAPH_4_2' | translate}}</div>
+    </div>
+    <div class="insufficient__text">
+      <div class="heading">{{'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.TEXT_PARAGRAPH_5_1' | translate}}</div>
+      <div>{{'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.TEXT_PARAGRAPH_5_2' | translate}}</div>
+    </div>
+    <div class="insufficient__text">
+      {{'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.TEXT_PARAGRAPH_6' | translate}}
+    </div>
+    <div class="insufficient__text">
+      <a target="_blank" href="{{'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.DOCUMENT_LINK' | translate}}">{{'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.DOCUMENT_TITLE' | translate}}</a>
+    </div>
+    <div class="options-list">
+      <div class="form-row__input form-row__radio insufficient__text options-item">
+        <p-radioButton
+          class="item-radio form-row__radio-container"
+          name="acquire"
+          [value]="InterviewExperienceStatus.WillAcquire"
+          [label]="'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.CONFIRMATION_MESSAGE' | translate"
+          [formControl]="acquireControl"
+        ></p-radioButton>
+      </div>
+      <div class="form-row__input form-row__radio insufficient__text options-item">
+        <p-radioButton
+          class="item-radio form-row__radio-container"
+          name="acquire"
+          [value]="InterviewExperienceStatus.WontAcquire"
+          [label]="'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.CANCEL_MESSAGE' | translate"
+          [formControl]="acquireControl"
+        ></p-radioButton>
+      </div>
+      <ng-container *ngIf="acquireControl as control">
+        <div class="errors" *ngIf="control.dirty && control.invalid">
+          <div class="errors-item" *ngIf="control.errors.required">
+            {{'MESSAGES.REQUIRED' | translate}}
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="submit-btn">
+      <p-button
+        class="button-blue"
+        (onClick)="submitAnswer()"
+        [disabled]="isButtonDisabled()"
+        [label]="'UPDATE_STRATEGY_PAGE.INSUFFICIENT_EXPERIENCE.BUTTON'| translate">
+      </p-button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<section class="orders-list-section">
+  <div class="orders-list-container">
+    <div class="data-list orders-list">
+      <div class="list-header">
+        <div class="title type">
+          {{'ORDERS_PAGE.TYPE' | translate}}
+        </div>
+        <div class="title amount">
+          {{'COMMON.AMOUNT' | translate}}
+        </div>
+        <div class="title status">
+          {{'ORDERS_PAGE.STATUS' | translate}}
+        </div>
+        <div class="title date">
+          {{'ORDERS_PAGE.CREATED_ON' | translate}}
+        </div>
+      </div>
+      <ul class="list-body">
+        <app-order
+          *ngFor="let order of (orders$ | async); trackBy: trackByFn;"
+          [order]="order">
+        </app-order>
+      </ul>
+    </div>
+  </div>
+  <app-pagination
+    [pagination]="ordersPagination$ | async"
+    (pageChanged)="onPageChanged($event)">
+  </app-pagination>
+</section>

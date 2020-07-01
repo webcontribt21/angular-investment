@@ -1,0 +1,47 @@
+@import '../../../../../../styles/media';
+@import '../../../../../../styles/variables';
+
+:host ::ng-deep {
+  .insufficient {
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px 0 rgba(189, 193, 199, 0.5);
+    border-radius: 2px;
+    @include tablets {
+      flex-grow: 1;
+      padding: 24px;
+    }
+    @include tabletsHoriz {
+      padding: 32px;
+    }
+    &__title {
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 600;
+      color: $navy;
+      margin-bottom: 16px;
+      @include tablets {
+        font-size: 22px;
+        line-height: 32px;
+      }
+    }
+    &__text {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 300;
+      color: $gray90;
+      margin-bottom: 16px;
+      @include tablets {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .heading {
+        font-weight: 700;
+      }
+    }
+  }
+}

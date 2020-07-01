@@ -1,0 +1,39 @@
+@import '../../../../../../../styles/media.scss';
+@import '../../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .question {
+    &-item {
+      margin-bottom: 24px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &__content {
+        margin-bottom: 12px;
+      }
+      &__title {
+        margin-bottom: 5px;
+        font-size: 18px;
+      }
+      &__description {
+        color: $gray70;
+        line-height: 18px;
+        font-size: 12px;
+        font-weight: 300;
+        @include tablets {
+          line-height: 24px;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .submit-btn {
+      margin-top: 40px;
+    }
+  }
+}
+
+.errors {
+  overflow: initial;
+  height: auto;
+}

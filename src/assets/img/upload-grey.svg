@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/file/upload_24px</title>
+    <defs>
+        <path d="M3.5,11.75 L8.5,11.75 L8.5,6.75 L11.8333333,6.75 L6,0.916666667 L0.166666667,6.75 L3.5,6.75 L3.5,11.75 Z M6,3.275 L7.80833333,5.08333333 L6.83333333,5.08333333 L6.83333333,10.0833333 L5.16666667,10.0833333 L5.16666667,5.08333333 L4.19166667,5.08333333 L6,3.275 Z M0.166666667,13.4166667 L11.8333333,13.4166667 L11.8333333,15.0833333 L0.166666667,15.0833333 L0.166666667,13.4166667 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="My-****---Tax-exemption-order-Download---Mobile" transform="translate(-45.000000, -392.000000)">
+            <g id="icon/file/upload_24px" transform="translate(45.000000, 391.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g fill-rule="nonzero"></g>
+                <g id="↳-Color" mask="url(#mask-2)">
+                    <g transform="translate(-4.000000, -2.000000)" id="↳-Tonal-Palette">
+                        <g>
+                            <g fill="#BDC1C7" id="Rectangle-13">
+                                <rect x="0" y="0" width="20" height="20"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,62 @@
+<div class="investment">
+  <div class="strategy" *ngIf="(strategyToDisplay$ | async) as investmentStrategy">
+    <div class="strategy-container">
+      <div class="strategy-content">
+        <div class="strategy-title">
+          <div class="strategy-title__label">
+            {{'OVERVIEW_PAGE.INVESTMENT.INVESTMENT_STRATEGY' | translate}}:
+          </div>
+          <a href="{{investmentStrategy?.link}}" target="_blank" class="strategy-title__value">
+            <span class="strategy-title__prefix">{{'COMMON.APEIRON' | translate | lowercase}}</span>
+            <span class="strategy-title__suffix">{{investmentStrategy?.labelSuffix}}</span>
+            <i class="pi pi-external-link"></i>
+          </a>
+        </div>
+        <div routerLink="/orders/new/update-strategy" class="strategy-change">
+          <img class="strategy-change__icon" src="/assets/img/pencil.svg" alt="edit icon"/>
+          <span class="strategy-change__text">
+            {{'OVERVIEW_PAGE.COMMON.CHANGE' | translate }}
+          </span>
+        </div>
+      </div>
+      <div class="strategy-description">
+        {{investmentStrategy.description}}
+      </div>
+    </div>
+  </div>
+
+  <p-tabView class="products">
+    <p-tabPanel [header]="'OVERVIEW_PAGE.INVESTMENT.ASSETS' | translate">
+      <div class="products-content">
+        <div class="products-chart">
+          <app-pie-chart [allocation$]="portfolioAllocation$"></app-pie-chart>
+          <div class="total-value" *ngIf="totalAmount">{{totalAmount | currencySignPipe | async}}</div>
+        </div>
+        <div class="products-table">
+          <app-products-table [portfolio$]="portfolio$"></app-products-table>
+        </div>
+      </div>
+    </p-tabPanel>
+    <p-tabPanel [header]="'OVERVIEW_PAGE.INVESTMENT.INDUSTRIES' | translate">
+      <div class="products-content">
+        <div class="products-chart">
+          <app-pie-chart [allocation$]="portfolioAllocation$" type="industries"></app-pie-chart>
+          <div class="total-value" *ngIf="totalAmount">{{totalAmount | currencySignPipe | async}}</div>
+        </div>
+        <div class="products-table">
+          <app-industries-table [portfolio$]="portfolio$"></app-industries-table>
+        </div>
+      </div>
+    </p-tabPanel>
+    <p-tabPanel [header]="'OVERVIEW_PAGE.INVESTMENT.LOCATION' | translate">
+      <div class="products-content">
+        <div class="products-chart products-map">
+          <app-asset-map [allocation$]="portfolioAllocation$"></app-asset-map>
+        </div>
+        <div class="products-table">
+          <app-regions-table [portfolio$]="portfolio$"></app-regions-table>
+        </div>
+      </div>
+    </p-tabPanel>
+  </p-tabView>
+</div>

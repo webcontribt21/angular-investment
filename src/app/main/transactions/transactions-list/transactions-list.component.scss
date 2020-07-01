@@ -1,0 +1,119 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+:host ::ng-deep {
+  .transactions {
+    display: flex;
+    justify-content: center;
+
+    &-filter {
+      margin-bottom: 24px;
+      font-size: 12px;
+      line-height: 16px;
+      padding-left: 8px;
+      @include tablets {
+        padding-left: 0;
+      }
+    }
+
+    &-content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      @include tablets {
+        align-items: flex-start;
+      }
+
+      .transactions-list {
+        margin-bottom: 16px;
+        @include tablets {
+          margin-bottom: 24px;
+        }
+
+        .list-header {
+          @include tablets {
+            .type {
+              width: 65%;
+            }
+
+            .amount {
+              width: 15%;
+              @include tablets {
+                text-align: right;
+              }
+              @include desktop {
+                text-align: left;
+              }
+            }
+
+            .date {
+              width: 20%;
+              text-align: right;
+            }
+          }
+        }
+        .list-body {
+          flex-direction: column;
+          .list-item {
+            flex-direction: column;
+            padding: 8px;
+            @include tablets {
+              padding: 16px 60px 16px 24px;
+            }
+            &.disabled {
+              opacity: .5;
+            }
+            .list-content {
+              flex-wrap: wrap;
+              @include tablets {
+                flex-direction: row;
+                justify-content: space-between;
+              }
+              .list-type {
+                width: 70%;
+                @include tablets {
+                  width: 65%;
+                  padding-right: 0;
+                }
+                @include desktop {
+                  padding-right: 30px;
+                }
+              }
+              .list-amount {
+                width: 30%;
+                @include tablets {
+                  width: 15%;
+                }
+              }
+              .list-date {
+                width: 100%;
+                @include tablets {
+                  width: 20%;
+                }
+              }
+            }
+            .reference {
+              font-size: 11px;
+              line-height: 16px;
+              margin-top: 4px;
+              @include tablets {
+                font-size: 14px;
+                line-height: 20px;
+                width: 65%;
+              }
+              @include desktop {
+                padding-right: 30px;
+              }
+              &-head {
+                color: $gray50;
+              }
+              &-body {
+                color: $gray70;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

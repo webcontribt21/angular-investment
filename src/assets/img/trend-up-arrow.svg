@@ -1,0 +1,21 @@
+<svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/action/trending_up_24px</title>
+    <defs>
+        <polygon id="path-1" points="11.2 0 13.032 1.90833333 9.128 5.975 5.928 2.64166667 0 8.825 1.128 10 5.928 5 9.128 8.33333333 14.168 3.09166667 16 5 16 0"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="My-****---Overview---Mobile" transform="translate(-24.000000, -279.000000)">
+            <g id="icon/action/trending_up_24px" transform="translate(24.000000, 279.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g fill-rule="nonzero"></g>
+                <g id="↳-Color" mask="url(#mask-2)" fill="#1DA379">
+                    <g transform="translate(-1.600000, -5.000000)" id="Rectangle">
+                        <rect x="0" y="0" width="19.2" height="20"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

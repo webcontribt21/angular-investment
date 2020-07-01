@@ -1,0 +1,94 @@
+<div class="account-tab" *ngIf="(selectedCustomer$ | async) as customer">
+  <div class="account-tab__content reference-block">
+    <div class="account-tab__subtitle">
+      {{'ACCOUNT_DETAILS_PAGE.BANK.REFERENCE_ACCOUNT' | translate}}
+    </div>
+    <ul class="account-list">
+      <li class="account-list__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.BANK.ACCOUNT_OWNER' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{customer.bankAccount?.holderFullName}}
+        </div>
+      </li>
+      <li class="account-list__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.BANK.IBAN' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{customer.bankAccount?.iban}}
+        </div>
+      </li>
+      <li class="account-list__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.BANK.BIC' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{customer.bankAccount?.bic}}
+        </div>
+      </li>
+      <li class="account-list__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.BANK.BANK_NAME' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{customer.bankAccount?.bank}}
+        </div>
+      </li>
+      <li class="account-list__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.BANK.MANDATE_REFERENCE' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{customer.customerNumber}}
+        </div>
+      </li>
+    </ul>
+    <div class="account-link">
+      <a class="request-order change" [routerLink]="['/', 'orders', 'new', 'reference-account']">
+        {{'ACCOUNT_DETAILS_PAGE.BANK.REQUEST_ACCOUNT_CHANGE' | translate }}
+      </a>
+    </div>
+  </div>
+
+  <div class="account-tab__content">
+    <div class="account-tab__subtitle">
+      {{'ACCOUNT_DETAILS_PAGE.BANK.CLEARING_ACCOUNT' | translate}}
+    </div>
+    <ul class="account-list">
+      <li class="account-list__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.BANK.ACCOUNT_OWNER' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{customer.clearingAccount?.holderFullName}}
+        </div>
+      </li>
+      <li class="account-list__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.BANK.IBAN' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{customer.clearingAccount?.iban}}
+        </div>
+      </li>
+      <li class="account-list__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.BANK.BIC' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{customer.clearingAccount?.bic}}
+        </div>
+      </li>
+      <li class="account-list__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.BANK.BANK_NAME' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{customer.clearingAccount?.bank}}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

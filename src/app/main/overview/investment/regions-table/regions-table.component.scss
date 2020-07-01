@@ -1,0 +1,75 @@
+@import '../../../../../styles/media.scss';
+@import '../../../../../styles/variables.scss';
+
+:host{
+  .header-category {
+    flex-grow: 1;
+  }
+  .header-percentage {
+    width: 55px;
+    @include tablets {
+      width: 75px;
+    }
+  }
+  .header-amount {
+    width: 75px;
+    @include tablets {
+      width: 85px;
+    }
+    @include tabletsHoriz {
+      width: 120px;
+    }
+  }
+
+  .expansion {
+    &__title {
+      margin-bottom: 0.4em;
+    }
+  }
+
+  .table-total {
+    border-top: 1px solid $gray30;
+
+    &__inner {
+      display: flex;
+
+      &_margin {
+        margin-top: -10px;
+        @include tablets {
+          margin-top: -15px;
+        }
+        @include tabletsHoriz {
+          margin-top: -20px;
+        }
+      }
+    }
+  }
+
+  .total-amount {
+    border-top: 1px solid $gray30;
+    padding: 8px 0px 8px 12px;
+
+    @include tablets {
+      padding: 16px 10px 8px;
+    }
+    @include desktop {
+      padding: 16px 10px;
+    }
+
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__title, &__value {
+      color: $gray90;
+      line-height: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      @include tablets {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}

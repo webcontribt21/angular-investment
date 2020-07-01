@@ -1,0 +1,172 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .table-wrapper {
+    margin-bottom: 16px;
+    @include tabletsHoriz {
+      margin-bottom: 24px;
+    }
+  }
+
+  .table-title {
+    font-size: 14px;
+    line-height: 20px;
+    color: $navy;
+    margin-bottom: 20px;
+    @include tabletsHoriz {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 32px;
+      letter-spacing: .12px;
+      margin-bottom: 28px;
+    }
+    .prefix, .suffix {
+      font-size: 18px;
+      color: $navy;
+    }
+    .prefix {
+      font-weight: 700;
+      margin-right: 2px;
+    }
+    .suffix {
+      font-weight: 300;
+    }
+  }
+
+  .table {
+    .header-percentage {
+      width: 55px;
+      text-align: right;
+      @include tablets {
+        width: 60px;
+      }
+
+      &__padding {
+        padding: 0.571em 10px 0.571em 0;
+      }
+    }
+
+    .header-risk {
+      width: 95px;
+      text-align: left;
+      @include tabletsHoriz {
+        width: 110px;
+      }
+
+      &__padding {
+        padding: 0.571em 10px 0.571em 0;
+      }
+    }
+
+    .header-category {
+      text-align: left;
+      width: 100%;
+      @include tablets {
+        width: 164px;
+      }
+      @include tabletsHoriz {
+        width: 190px;
+      }
+
+      &__padding {
+        padding: 0.571em 0;
+        @include tablets {
+          padding-right: 20px;
+        }
+      }
+    }
+
+    .header-label {
+      @include tablets {
+        width: 100%;
+        display: table-cell;
+        text-align: left;
+      }
+
+      &__padding {
+        @include tablets {
+          padding: 0.571em 0.857em 0.571em 0;
+        }
+      }
+    }
+
+    .ratio {
+      padding-left: 0;
+      padding-right: 10px;
+      text-align: right;
+      @include tablets {
+      }
+    }
+
+    .risk {
+      padding-right: 10px;
+      padding-left: 15px;
+      position: relative;
+      @include tablets {
+      }
+
+      & .asset__symbol {
+        left: 0;
+        top: 12px;
+        @include tablets {
+          top: 20px;
+        }
+      }
+    }
+
+    .asset {
+      padding-right: 0;
+      padding-left: 0;
+      text-align: left;
+      @include tablets {
+        padding-right: 20px;
+      }
+    }
+
+    .label {
+      @include tablets {
+        display: table-cell;
+        padding-left: 0;
+      }
+    }
+
+    .ui-table .ui-table-tbody > tr {
+      @include tablets {
+        border-bottom: 1px solid $gray30;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $gray30;
+      }
+
+      &.expansion {
+        & > td {
+          @include tablets {
+            padding: 0 0 1.35em 0;
+          }
+        }
+      }
+    }
+  }
+
+  .table-description {
+    display: flex;
+    &__icon {
+      margin-right: 8px;
+      align-self: flex-start;
+    }
+    &__text {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 16px;
+      letter-spacing: 0.14px;
+      color: $gray70;
+      @include tabletsHoriz {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.17px;
+      }
+    }
+  }
+}

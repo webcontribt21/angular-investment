@@ -1,0 +1,7 @@
+<div class="asset-map-wrapper">
+  <div class="asset-map">
+    <img src="./assets/img/world-map.svg" alt="portfolio allocation locations" />
+    <div *ngFor="let region of (regions$ | async)" class="asset-map__circle"
+      [attr.style]="sanitizer.bypassSecurityTrustStyle(get(region).untrusted)"></div>
+  </div>
+</div>

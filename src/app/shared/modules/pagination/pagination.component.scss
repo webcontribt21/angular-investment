@@ -1,0 +1,56 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  @include tablets {
+    align-self: flex-end;
+  }
+
+  .data-pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include tablets {
+      justify-content: flex-end;
+    }
+    &-container {
+      display: flex;
+    }
+    &-btn {
+      &-next,  &-prev {
+        border: none;
+        color: $gray90;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        font-size: 8px;
+        line-height: 27px;
+        border-radius: 2px;
+        background-color: #fff;
+        box-shadow: 0 2px 6px 0 rgba(170,170,170,0.16);
+        @include tablets {
+          font-size: 12px;
+          background-color: transparent;
+          box-shadow: none;
+        }
+        &.disabled {
+          color: $gray70;
+          opacity: .5;
+          cursor: default;
+        }
+      }
+    }
+    &-text {
+      font-size: 12px;
+      line-height: 23px;
+      color: $gray90;
+      font-weight: 600;
+      min-width: 103px;
+      text-align: center;
+      @include tablets {
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@import '../../../../../../styles/media.scss';
+@import '../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .reference-account-form {
+    &__note {
+      margin-bottom: 25px;
+      @include tabletsHoriz {
+        margin-bottom: 32px;
+      }
+    }
+    &__title {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      color: $navy;
+      margin-bottom: 4px;
+      @include tabletsHoriz {
+        font-size: 18px;
+        line-height: 32px;
+        letter-spacing: 0.12px;
+      }
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+
+      .form {
+        @include desktop {
+          max-width: 514px;
+        }
+        &-wrapper {
+          display: flex;
+          flex-direction: column;
+          @include tabletsHoriz {
+            flex-direction: row;
+          }
+        }
+        &-row {
+          display: flex;
+          flex-wrap: wrap;
+          margin-bottom: 12px;
+
+          &__col {
+            flex: 7;
+            margin-left: 8px;
+            &:first-child {
+              margin-left: 0;
+            }
+            @include tabletsHoriz {
+              margin-left: 16px;
+            }
+            &_name {
+              min-width: 64px;
+              flex: 1;
+            }
+            &_iban {
+              min-width: 150px;
+            }
+            &_bic {
+              min-width: 150px;
+            }
+            &_bank {
+              min-width: 150px;
+            }
+          }
+          &__label {
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.18px;
+            color: $gray90;
+            margin-bottom: 4px;
+            @include tabletsHoriz {
+              font-size: 13px;
+              line-height: 20px;
+              letter-spacing: 0;
+            }
+          }
+          &__input {
+            width: 100%;
+            .input {
+              width: 100%;
+              padding: 12px;
+            }
+          }
+        }
+      }
+    }
+    &__submit {
+      margin-top: 32px;
+    }
+  }
+}

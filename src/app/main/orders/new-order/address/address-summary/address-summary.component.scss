@@ -1,0 +1,22 @@
+@import '../../../../../../styles/media.scss';
+@import '../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .order-summary {
+    width: 100%;
+    border-radius: 2px 2px 0 0;
+    background: #FFFFFF;
+    @include tablets {
+      min-width: 309px;
+      max-width: 309px;
+    }
+    @include desktop {
+      min-width: 396px;
+      max-width: 396px;
+    }
+
+    .summary-amount {
+
+    }
+  }
+}

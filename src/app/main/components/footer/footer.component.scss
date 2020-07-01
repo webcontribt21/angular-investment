@@ -1,0 +1,66 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+
+  .footer{
+    display: flex;
+    justify-content: center;
+    color: $gray90;
+
+    &-container {
+      font-weight: 300;
+      line-height: 16px;
+      letter-spacing: .14px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-between;
+      padding-top: 56px;
+      padding-bottom: 18px;
+      @include desktop {
+        max-width: $desktopContainer;
+        flex-direction: row;
+        padding: 80px 0 32px;
+      }
+
+      .contact {
+        margin-bottom:16px;
+        @include tablets {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 24px;
+        }
+        @include desktop {
+          font-size: 14px;
+          margin-bottom: 0;
+        }
+        .contact-text {
+          @include tablets {
+            margin-right: 5px;
+          }
+        }
+
+        .need-help{
+          font-weight:400;
+        }
+
+        a{
+          text-decoration: underline;
+        }
+      }
+
+      .links{
+        color: $gray70;
+
+        a{
+          color: $gray70;
+        }
+
+        span{
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}

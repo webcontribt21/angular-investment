@@ -1,0 +1,251 @@
+{
+  "COMMON": {
+    "MONTH_NAMES": "January, February, March, April, May, June, July, August, September, October, November, December",
+    "SHORT_MONTH_NAMES": "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Aug, Oct, Nov, Dec",
+    "APEIRON": "Apeiron",
+    "DESCRIPTION": "DESCRIPTION",
+    "DATE": "DATE",
+    "AMOUNT": "AMOUNT",
+    "TYPE": "TYPE",
+    "SOURCE": "SOURCE",
+    "PAGINATION": {
+      "OF": "of"
+    },
+    "REPORT": "Report",
+    "TOTAL_BALANCE": "TOTAL BALANCE",
+    "MAKE_A_REQUEST": "Make a request",
+    "ORDER_SUMMARY": "Order summary"
+  },
+  "HEADER": {
+    "MAIN_MENU": {
+      "OVERVIEW": "Overview",
+      "TRANSACTIONS": "Transactions",
+      "ORDERS": "Orders",
+      "DOCUMENTS": "Documents"
+    },
+    "USER_MENU": {
+      "SIGNED_IN_AS": "Signed in as",
+      "ACCOUNT": "ACCOUNT",
+      "ACCOUNT_DETAILS": "Account details",
+      "ACCOUNT_HOLDER": "Account holder",
+      "SWITCH_ACCOUNT": "Switch account",
+      "LIVE_HELP": "Live help",
+      "USER_SETTINGS": "User settings",
+      "INVITE_FRIENDS": "Invite friends",
+      "LOG_OUT": "Log out"
+    }
+  },
+  "FOOTER": {
+    "NEED_HELP": "Need help?",
+    "CONTACT_US": "Contact us at",
+    "PRIVACY": "Privacy",
+    "LEGAL_INFORMATION": "Legal information"
+  },
+  "ACCOUNT_SWITCHER": {
+    "CHOOSE_AN_ACCOUNT": "Choose an account",
+    "CHILD_ACCOUNT": "Child account",
+    "SINGLE_ACCOUNT": "Single account"
+  },
+  "OVERVIEW_PAGE": {
+    "CHANGE_MONTHLY_DEPOSIT": "Change monthly deposit",
+    "ONE_TIME_DEPOSIT": "One-time deposit",
+    "COMMON": {
+      "CHANGE": "Change"
+    },
+    "ACCOUNT_ACTIVITY": {
+      "ACCOUNT_ACTIVITY": "Account activity"
+    },
+    "TOTAL": {
+      "TOTAL_BALANCE": "TOTAL BALANCE",
+      "TOTAL_PORTFOLIO": "Total Portfolio",
+      "LIQUIDITY": "Liquidity",
+      "REVENUE_SINCE_BEGINNING": "REVENUE SINCE BEGINNING",
+      "TOTAL_DEPOSIT": "TOTAL DEPOSIT",
+      "MONTHLY_DEPOSIT": "MONTHLY DEPOSIT",
+      "ADD": "Add"
+    },
+    "PORTFOLIO_HISTORY": {
+      "PORTFOLIO_HISTORY": "PORTFOLIO HISTORY",
+      "BALANCE": "Balance",
+      "PERFORMANCE": "Performance"
+    },
+    "INVESTMENT": {
+      "INVESTMENT_STRATEGY": "Investment strategy",
+      "INVEST": "Invest",
+      "ASSET_CATEGORY": "Asset category",
+      "PERCENTAGE": "Percentage",
+      "AMOUNT": "Amount",
+      "TOTAL": "Total"
+    }
+  },
+  "TRANSACTIONS_PAGE": {
+    "TRANSACTIONS": "Transactions",
+    "YOU_DO_NOT_HAVE_TRANSACTIONS_YET": "You don't have transactions yet",
+    "REFERENCE": "Reference",
+    "SUM_OF_DIVIDENDS_RECEIVED": "SUM OF DIVIDENDS RECEIVED",
+    "SUM_OF_TAX_OPTIMISATIONS": "SUM OF TAX OPTIMISATIONS",
+    "TOTAL_DEPOSITED_AMOUNT": "TOTAL DEPOSITED AMOUNT"
+  },
+  "DOCUMENTS_PAGE": {
+    "DOCUMENTS": "Documents",
+    "LAST_QUARTERLY_REPORT_PUBLISHED": "LAST QUARTERLY REPORT PUBLISHED",
+    "LAST_TAX_STATEMENT_PUBLISHED": "LAST TAX STATEMENT PUBLISHED",
+    "YOU_DO_NOT_HAVE_DOCUMENTS_YET": "You don't have documents yet"
+  },
+  "ORDERS_PAGE": {
+    "ORDERS": "Orders",
+    "STATUS": "STATUS",
+    "CREATED_ON": "CREATED ON",
+    "YOU_DO_NOT_HAVE_ORDERS_YET": "You don't have orders yet",
+    "CANCEL":"Cancel",
+    "REFERENCE_ACCOUNT": "Reference account",
+    "ORDER_CREATED": "Order created",
+    "YOUR_ORDER_IS_SUBMITTED_SUCCESSFULLY": "Your order is submitted successfully",
+    "NEW_STRATEGY": "New strategy:",
+    "TAX_ID": "Tax ID:",
+    "START_DATE": "Start date:",
+    "END_DATE": "End Date:",
+    "NEW_ADDRESS": "New address:",
+    "CATEGORIES": {
+      "ADDRESS_CHANGE": "Address Change",
+      "TAX_EXEMPTION": "Tax Exemption",
+      "DEPOSIT": "Deposit",
+      "WITHDRAWAL": "Withdrawal",
+      "RECURRING_DEPOSIT_CHANGE": "Recurring Deposit Change",
+      "FULL_WITHDRAWAL": "Full withdrawal",
+      "KWG_MIGRATION": "KWG Migration",
+      "STRATEGY_CHANGE": "Strategy change"
+    },
+    "ORDER_STATUS": {
+      "COMPLETED": "Completed",
+      "SUBMITTED": "In progress",
+      "CANCELED": "Canceled",
+      "REJECTED": "Rejected",
+      "CREATED": "In progress"
+    },
+    "MENU": {
+      "MAKE_A_NEW_ORDER": "Make a new order",
+      "ONE_TIME_DEPOSIT": "One-time deposit",
+      "WITHDRAWAL": "Withdrawal",
+      "CHANGE_MONTHLY_DEPOSIT": "Change monthly deposit",
+      "CHANGE_INVESTMENT_STRATEGY": "Change investment strategy",
+      "CREATE_TAX_EXEMPTION": "Create Tax Exemption",
+      "CHANGE_ADDRESS": "Change Address"
+    }
+  },
+  "WITHDRAWAL_PAGE": {
+    "WITHDRAWAL": "Withdrawal order",
+    "ADVICE": {
+      "TITLE": "Investment advice",
+      "TEXT_PART_1": "In order to achieve the average expected yield of",
+      "TEXT_PART_2": ", the advised minimal investment period is",
+      "TEXT_PART_3": ". If volatile market conditions are the reason for your premature withdrawal, selling at a lower market price only leads to a realization of losses. From a strategic point of view it would be smarter to even reinvest further into your portfolio. This countercyclical investment approach allows you to profit from lower market prices.",
+      "TEXT_PART_4": "In order to achieve the average expected yield of",
+      "P_A": "p.a.",
+      "YEARS": "years",
+      "HAVE_QUESTIONS": "Have questions?",
+      "DISCUSS_THEM_WITH_AN_ADVISOR_WITH_OUR_TEAM": "Discuss them with an advisor with our team"
+    },
+    "FORM": {
+      "TITLE": "How much do you want to withdraw?",
+      "TEXT_PART_1": "The minimum withdrawal is",
+      "TEXT_PART_2": "After your withdrawal, your account balance must be at least",
+      "TEXT_PART_3": "including a savings plan or",
+      "TEXT_PART_4": "without a savings plan.",
+      "FULL_ACCOUNT_WITHDRAWAL": "Full account withdrawal"
+    },
+    "ORDER_SUMMARY": {
+      "TITLE": "Order summary",
+      "ACCOUNT_BALANCE": "Current account balance:",
+      "WITHDRAWAL_AMOUNT": "Withdrawal amount:",
+      "NEW_ACCOUNT_BALANCE": "New account balance:",
+      "ORDER_TAKES": "Requires 2-3 business days for money to appear in your bank account.",
+      "REFERENCE_ACCOUNT_FOR_WITHDRAWAL": "Reference account for withdrawal:"
+    },
+    "FULL_WITHDRAW": {
+      "WE_ARE_SAD_TO_SEE_YOU_LEAVE_****": "We are sad to see you leave ****.",
+      "FULL_WITHDRAW_MESSAGE": "To continuously improve our service offering, we would be happy if you provided us with some feedback on why you want to withdraw your entire account balance.",
+      "PLEASE_SELECT_A_REASON": "Please select a reason",
+      "CONFIRM_MESSAGE": "I confirm that the key investor information, sales prospectuses as well as the latest annual report or the subsequent semi-annual report were provided on time before purchasing the financial products. Here you will find the documents.",
+      "AMOUNT_ADDITIONAL_MESSAGE": "This amount is subject to change and will depend on the market value of portfolio"
+    },
+    "FULL_WITHDRAW_REASONS": {
+      "I_HAVE_SHORT_TERM_EXPENSES": "I have short-term expenses.",
+      "I_AM_CONCERNED_BY_THE_CURRENT_CAPITAL_MARKET_DEVELOPMENTS": "I am concerned by the current capital market developments.",
+      "THE_FEES_ARE_TOO_HIGH": "The fees are too high.",
+      "I_AM_NOT_HAPPY_WITH_PERFORMANCE": "I am not happy with performance.",
+      "I_AM_NOT_HAPPY_WITH_THE_PRODUCT_FEATURES": "I am not happy with the product features.",
+      "THE_CUSTOMER_SERVICE_IS_POOR": "The customer service is poor.",
+      "I_AM_SWITCHING_TO_A_DIFFERENT_SERVICE_PROVIDER": "I am switching to a different service provider.",
+      "I_DO_NOT_WANT_TO_PROVIDE_A_REASON": "I do not want to provide a reason.",
+      "OTHER": "Other."
+    }
+  },
+  "ONE_TIME_DEPOSIT_PAGE": {
+    "ONE_TIME_DEPOSIT_ORDER": "One-time deposit order",
+    "REQUEST": {
+      "TITLE": "How much would you like to deposit?",
+      "NOTIFICATION_PART_1": "The minimum for a one-time deposit is",
+      "NOTIFICATION_PART_2": "For a smaller deposit, you can",
+      "NOTIFICATION_PART_3": "increasing your monthly savings rate",
+      "NOTIFICATION_PART_4": "instead."
+    },
+    "ORDER_SUMMARY": {
+      "DEPOSIT_AMOUNT": "Deposit amount:",
+      "REFERENCE_ACCOUNT_FOR_DIRECT_DEBIT": "Reference account for direct debit:",
+      "ORDER_TAKES": "Order takes 2-3 business days"
+    }
+  },
+  "MONTHLY_PAGE": {
+    "MONTHLY_CONTRIBUTION_ORDER": "Monthly contribution order",
+    "REQUEST": {
+      "TITLE": "New monthly contribution amount"
+    },
+    "ORDER_SUMMARY": {
+      "CURRENT_MONTHLY_CONTRIBUTION": "Current monthly contribution:",
+      "NEW_MONTHLY_CONTRIBUTION": "New monthly contribution:",
+      "REFERENCE_ACCOUNT_FOR_DIRECT_DEBIT": "Reference account for direct debit:",
+      "ORDER_TAKES": "Requires 2-3 business days for processing. Collected on 01 Apr 2019"
+    }
+  },
+  "UPDATE_STRATEGY_PAGE": {
+    "UPDATE_YOUR_STRATEGY": "Update your strategy",
+    "WE_WILL_ASK_YOU_A_FEW_QUESTIONS": "We’ll ask you a few questions about your new investment goals and recommend you a new strategy based on that.",
+    "NEW_SAMPLE_INVESTMENT_PORTFOLIO": "New sample investment portfolio",
+    "CONFIRM_STRATEGY_UPDATE": "Confirm strategy update",
+    "SUMMARY": {
+      "CURRENT_STRATEGY": "Current strategy:",
+      "NEW_CHOSEN_STRATEGY": "New chosen strategy:",
+      "N_A": "N/A"
+    },
+    "INTERVIEW": {
+      "PREVIOUS_QUESTION": "Previous question",
+      "CONTINUE": "Continue",
+      "ERRORS": {
+        "MIN_AND_MAX": "Amount must be from {{min}} to {{max}}",
+        "MONTHLY_SAVINGS_MUST_BE": "Monthly savings must be less or equal to monthly income",
+        "REQUIRED": "Oops. We still need your answer."
+      }
+    },
+    "NEW_STRATEGY": {
+      "RISK_PROFILE": "Risk profile:",
+      "PLEASE_SELECT_AN_INVESTMENT_STRATEGY": "Please select an investment strategy",
+      "STRATEGY_RECOMMENDATION_MESSAGE": "We recommend the best strategy based on your investment goals but you can still choose a less risky one.",
+      "LESS_RISKY": "Less risky",
+      "RISKY": "Risky"
+    },
+    "PORTFOLIO_INVESTMENT": {
+      "TAB_HEADERS": {
+        "ASSETS": "Assets",
+        "INDUSTRIES": "Industries",
+        "LOCATION": "Location"
+      }
+    },
+    "PORTFOLIO_PERFORMANCE": {
+      "TAB_HEADERS": {
+        "EXPECTED_PERFORMANCE": "Expected performance",
+        "HISTORIC_PERFORMANCE": "Historic performance"
+      }
+    }
+  }
+}

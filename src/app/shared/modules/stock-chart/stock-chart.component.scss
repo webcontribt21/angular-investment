@@ -1,0 +1,96 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host::ng-deep {
+  .chart  {
+    & .highcharts-root .highcharts-range-selector-group {
+      & .highcharts-range-selector-buttons > text {
+        display: none!important;
+      }
+      & .highcharts-button {
+        & > rect {
+          fill: transparent;
+        }
+        & > text {
+          font-family: 'Nunito Sans';
+          font-size: 12px;
+          line-height: 16px;
+          color: $navy!important;
+          fill: $navy!important;
+          @include desktop {
+            font-size: 14px;
+            line-height: 24px;
+          }
+        }
+      }
+      & .highcharts-button-pressed, & .highcharts-button-hover {
+        & > rect {
+          fill: $blue0;
+        }
+        & > text {
+          font-family: 'Nunito Sans';
+          font-size: 12px;
+          line-height: 16px;
+          color: $navy;
+          fill: $navy;
+          font-weight: 600;
+          @include desktop {
+            font-size: 14px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+    &-legend {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      & .legend-element {
+        padding: 5px;
+        flex-basis:50%;
+        white-space: nowrap;
+        @include tablets {
+          flex-basis: auto;
+          margin-right: 10px;
+        }
+
+        & .dot {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          margin-right: 5px;
+        }
+        & .label {
+          font-size: 12px;
+          line-height: 20px;
+          font-weight: 300;
+          color: $gray90;
+          @include tablets {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  input.highcharts-range-selector:focus {
+    width: 95px !important;
+    height: 22px !important;
+    border: 1px solid silver !important;
+  }
+
+  input.highcharts-range-selector:not(:focus) {
+    opacity: 0;
+  }
+
+  .highcharts-range-selector {
+    -webkit-appearance: none;
+  }
+  .highcharts-range-selector::-webkit-inner-spin-button,
+  .highcharts-range-selector::-webkit-clear-button {
+      display: none;
+      -webkit-appearance: none;
+  }
+}

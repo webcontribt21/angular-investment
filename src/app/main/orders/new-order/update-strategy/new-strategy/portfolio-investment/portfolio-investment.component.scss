@@ -1,0 +1,21 @@
+@import '../../../../../../../styles/media.scss';
+@import '../../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .ui-tabview-nav {
+    li {
+      max-width: 33%;
+    }
+  }
+
+  .tab-bottom {
+    text-align: center;
+    @include tabletsHoriz {
+      text-align: left;
+    }
+
+    &__link {
+      text-decoration: underline;
+    }
+  }
+}

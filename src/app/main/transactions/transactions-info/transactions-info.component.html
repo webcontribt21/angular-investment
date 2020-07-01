@@ -1,0 +1,37 @@
+<div class="total" *ngIf="(portfolio$ | async) as portfolio">
+  <div class="total-balance">
+    <div class="total-balance__title title">
+      {{'COMMON.TOTAL_BALANCE' | translate }}
+    </div>
+    <div class="total-balance__amount">
+      {{portfolio.currentBalance | currencySignPipe | async}}
+    </div>
+  </div>
+
+  <div class="total-category" *ngIf="(dividendCategory$ | async) as dividendAmount">
+    <div class="total-category__title title">
+      {{'TRANSACTIONS_PAGE.SUM_OF_DIVIDENDS_RECEIVED' | translate }}
+    </div>
+    <div class="total-category__amount amount">
+      {{dividendAmount | currencySignPipe | async}}
+    </div>
+  </div>
+
+  <div class="total-category" *ngIf="(taxOptimizationCategory$ | async) as taxOptimizationAmount">
+    <div class="total-category__title title">
+      {{'TRANSACTIONS_PAGE.SUM_OF_TAX_OPTIMISATIONS' | translate }}
+    </div>
+    <div class="total-category__amount amount">
+      {{taxOptimizationAmount | currencySignPipe | async}}
+    </div>
+  </div>
+
+  <div class="total-deposit">
+    <div class="total-deposit__title title">
+      {{'TRANSACTIONS_PAGE.TOTAL_DEPOSITED_AMOUNT' | translate}}
+    </div>
+    <div class="total-deposit__amount amount">
+      {{portfolio.effectiveContribution | currencySignPipe | async}}
+    </div>
+  </div>
+</div>

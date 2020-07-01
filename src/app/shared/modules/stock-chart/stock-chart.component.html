@@ -1,0 +1,9 @@
+<div class="chart">
+  <div [chart]="chart$ | async"></div>
+  <div class="chart-legend">
+    <div class="legend-element" *ngFor="let elem of legendData">
+      <span class="dot" [ngStyle]="{'background': elem.color}"></span>
+      <span class="label">{{elem.title}}</span>
+    </div>
+  </div>
+</div>

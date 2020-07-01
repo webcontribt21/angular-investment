@@ -1,0 +1,80 @@
+@import '../../../styles/media.scss';
+@import '../../../styles/variables.scss';
+
+:host ::ng-deep {
+
+  .ui-tabview-nav {
+    li {
+      width: 32.5%;
+
+      &:last-of-type {
+        width: 35%;
+      }
+    }
+  }
+
+  .user {
+    &-tab__content {
+      display: inline-flex;
+      flex-direction: column;
+      .form {
+        display: inline-flex;
+        flex-direction: column;
+      }
+    }
+    &-control {
+      display: inline-flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+      &__container {
+        margin-bottom: 12px;
+      }
+      &__label {
+        font-size: 13px;
+        font-weight: 400;
+        color: $gray90;
+        letter-spacing: 0.2px;
+        margin-bottom: 4px;
+      }
+      &__email {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: #192F57;
+      }
+      &__input {
+        position: relative;
+        max-width: 266px;
+        min-width: 266px;
+        & .password-img {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          right: 12px;
+          transform: translateY(-50%);
+          width: 16px;
+          height: 11px;
+          cursor: pointer;
+          @include tablets {
+            right: 16px;
+          }
+          + input {
+            padding-right: 40px;
+          }
+        }
+      }
+      &__notification {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 300;
+        color: $gray70;
+        @include tablets {
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: .17px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<div class="new-strategy">
+  <section class="new-strategy__content">
+    <div class="new-strategy__select">
+      <app-select-strategy></app-select-strategy>
+    </div>
+    <div class="new-strategy__investment-portfolio">
+      <div class="title">{{'UPDATE_STRATEGY_PAGE.NEW_SAMPLE_INVESTMENT_PORTFOLIO' | translate}}</div>
+      <div class="investment">
+        <app-portfolio-investment></app-portfolio-investment>
+      </div>
+      <div class="performance">
+        <app-portfolio-performance></app-portfolio-performance>
+      </div>
+    </div>
+  </section>
+  <aside class="new-strategy__summary">
+    <app-order-summary></app-order-summary>
+  </aside>
+</div>
+<div class="confirm-update">
+  <p-button
+    class="confirm-update__button button-blue"
+    [disabled]="!(isStrategyChanged$ | async)"
+    (onClick)="updateStrategy()"
+    [label]="'UPDATE_STRATEGY_PAGE.CONFIRM_STRATEGY_UPDATE' | translate">
+  </p-button>
+</div>

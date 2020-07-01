@@ -1,0 +1,40 @@
+@import '../../../../../../../../styles/media.scss';
+@import '../../../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .list{
+    display: flex;
+    flex-wrap: wrap;
+    color: $gray90;
+    margin-bottom:20px;
+
+    .item{
+      flex-basis: 100%;
+      margin-bottom: 22px;
+
+      @include tablets {
+        flex-basis: 50%;
+        margin-bottom: 14px;
+      }
+
+      .label{
+        margin-bottom: 6px;
+      }
+
+      .view{
+        display: flex;
+        align-items: center;
+
+        .line{
+          height: 4px;
+          border-radius: 4px;
+          margin-right: 8px;
+        }
+
+        .value {
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}

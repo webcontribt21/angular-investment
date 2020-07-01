@@ -1,0 +1,34 @@
+<div class="invite">
+  <div class="invite-container container">
+    <app-back-button></app-back-button>
+    <div class="invite-title h1">{{'INVITE_FRIENDS_PAGE.TITLE' | translate}}</div>
+
+    <div class="invite-content">
+      <div class="invite-request">
+        <div class="invite-request__title">
+          {{'INVITE_FRIENDS_PAGE.FOR_EACH_SUCCESSFUL_RECOMMENDATION' | translate}}
+        </div>
+        <p class="invite-request__text">
+          {{'INVITE_FRIENDS_PAGE.IF_YOU_WANT_TO_REFER' | translate}}
+        </p>
+        <div class="referral referral_code">
+          <div class="referral-label">{{'INVITE_FRIENDS_PAGE.REFERRAL_CODE' | translate}}</div>
+          <div class="referral-input referral-input_code">
+            <p-toast key="refCodeCopied" class="copied-code-toast"></p-toast>
+            <input class="input plain-266" type="text" #refCode [ngModel]="code$ | async" readonly />
+            <button class="referral-copy" type="button" (cbOnSuccess)="onCodeCopied()" [ngxClipboard]="refCode">
+              <img src="/assets/img/copy-icon.svg" />
+            </button>
+          </div>
+        </div>
+        <div class="invite-request__tip">
+          {{'INVITE_FRIENDS_PAGE.THE_TRANSFER_OF_BONUS' | translate}}
+        </div>
+      </div>
+
+<!--      TODO: uncomment and use when referal-revenue block would be ready-->
+<!--      <div class="invite-summary"></div>-->
+
+    </div>
+  </div>
+</div>

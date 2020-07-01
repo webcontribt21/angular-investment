@@ -1,0 +1,144 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  @include tablets {
+    order: 2;
+  }
+  @include desktop {
+    order: 1;
+  }
+  .account-activity {
+    width: 100%;
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px 0 rgba(170, 170, 170, 0.16);
+    display: none;
+    @include tablets {
+      padding: 24px 16px 8px 24px;
+      display: block;
+    }
+    @include desktop {
+      min-width: 288px;
+      max-width: 288px;
+      padding: 24px;
+      margin-right: 32px;
+    }
+    .activity-title {
+      margin-bottom: 24px;
+    }
+    .activity-loading {
+      color: $gray70;
+    }
+    .activity-history {
+      &:before {
+        opacity: 0;
+      }
+      overflow: hidden;
+      position: relative;
+      transition: max-height .8s cubic-bezier(0, 1, 0, 1);
+      .item {
+        display: flex;
+        margin-bottom: 3px;
+        .indicator {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-right: 12px;
+          padding-top: 5px;
+          .circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border-width: 1px;
+            border-style: solid;
+            border-color: $gray70;
+            margin-bottom: 8px;
+          }
+          .line {
+            display: flex;
+            width: 1px;
+            flex: 1;
+            background-color: $gray30;
+          }
+        }
+        &.positive {
+          .indicator {
+            .circle {
+              border-color: $green;
+            }
+          }
+        }
+        &.negative {
+          .indicator {
+            .circle {
+              border-color: $red;
+            }
+          }
+        }
+        .text {
+          padding-bottom: 10px;
+          line-height: 20px;
+          font-size: 12px;
+          display: flex;
+          flex-direction: column;
+          .message {
+            color: $navy;
+            margin-bottom: 4px;
+          }
+          .date {
+            color: $gray70;
+          }
+          @include tablets {
+            flex-direction: row;
+            padding-bottom: 34px;
+            margin-bottom: 0;
+            .message {
+              margin-right: 8px;
+              margin-bottom: 0;
+            }
+          }
+          @include desktop {
+            flex-direction: column;
+            padding-bottom: 10px;
+            .message {
+              margin-right: 0;
+              margin-bottom: 4px;
+            }
+          }
+        }
+        &:last-child {
+          .indicator {
+            .line {
+              display: none;
+            }
+          }
+          .text {
+            padding-bottom: 0;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  .pagination {
+    display: none;
+
+    @include tablets {
+      display: block;
+    }
+
+    &.centered {
+      .data-pagination {
+        margin-top: 0.5em;
+
+        @include tablets {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

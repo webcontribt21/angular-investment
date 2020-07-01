@@ -1,0 +1,28 @@
+<div class="make-order">
+  <div class="make-order__note">
+    <app-upload-note altNoteKey='REFERENCE_ACCOUNT_ORDER_PAGE.NOTE_2'></app-upload-note>
+  </div>
+
+  <div class="make-order__change">
+    <a class="request-order change" (click)="changeDetails()">
+      {{'REFERENCE_ACCOUNT_ORDER_PAGE.CHANGE_REFERENCE_ACCOUNT_DETAILS' | translate}}
+    </a>
+  </div>
+
+  <div class="make-order__upload">
+    <app-upload-form
+      titleText="REFERENCE_ACCOUNT_ORDER_PAGE.PLEASE_DOWNLOAD"
+      [downloadTexts]="['REFERENCE_ACCOUNT_ORDER_PAGE.PLEASE_DOWNLOAD_1', 'REFERENCE_ACCOUNT_ORDER_PAGE.PLEASE_DOWNLOAD_2', 'REFERENCE_ACCOUNT_ORDER_PAGE.PLEASE_DOWNLOAD_3', 'REFERENCE_ACCOUNT_ORDER_PAGE.PLEASE_DOWNLOAD_4', 'REFERENCE_ACCOUNT_ORDER_PAGE.PLEASE_DOWNLOAD_5']"
+      [noUpload]="true"
+      (downloaded)="isDownloaded$.next(true)">
+    </app-upload-form>
+  </div>
+
+  <div class="form-submit">
+    <p-button class="button-blue"
+      [disabled]="!(isDownloaded$ | async)"
+      [label]="'ORDERS_PAGE.COMMON.MAKE_ORDER' | translate"
+      (onClick)="makeOrder()">
+    </p-button>
+  </div>
+</div>

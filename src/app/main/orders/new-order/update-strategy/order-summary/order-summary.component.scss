@@ -1,0 +1,57 @@
+@import '../../../../../../styles/media.scss';
+@import '../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .order-summary {
+    width: 100%;
+    border-radius: 2px 2px 0 0;
+    background: #FFFFFF;
+    @include tablets {
+      min-width: 309px;
+      max-width: 309px;
+    }
+    @include desktop {
+      min-width: 396px;
+      max-width: 396px;
+    }
+
+    .summary-amount {
+      &__strategy {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+        color: $navy;
+        @include tablets {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+
+      &__strategy-new {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 300;
+        color: $orange50;
+        @include tablets {
+          font-size: 28px;
+          line-height: 32px;
+        }
+
+        .not-chosen {
+          font-weight: 600;
+          color: $gray30;
+        }
+      }
+
+      .strategy-prefix {
+        font-weight: 700;
+        margin-right: 2px;
+      }
+
+      .strategy-suffix {
+        font-weight: 300;
+      }
+
+    }
+  }
+}

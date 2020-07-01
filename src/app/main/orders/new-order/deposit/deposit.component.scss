@@ -1,0 +1,67 @@
+@import '../../../../../styles/media.scss';
+@import '../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .deposit {
+    &-title {
+      margin-bottom: 16px;
+      @include tablets {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-request {
+      &__title {
+        margin-bottom: 8px;
+        @include tablets {
+        }
+      }
+      & .form {
+        &-amount {
+          margin-bottom: 16px;
+          @include tablets {
+            margin-bottom: 12px;
+          }
+        }
+        &-notification {
+          font-size: 12px;
+          line-height: 16px;
+          font-weight: 300;
+          color: $gray70;
+          margin-bottom: 32px;
+          @include tablets {
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: .17px;
+          }
+          @include desktop {
+            padding-right: 10%;
+          }
+          &__amount {
+            font-weight: 400;
+            color: $gray90;
+          }
+          &__link {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    &-summary {
+      width: 100%;
+      border-radius: 2px 2px 0 0;
+      background: #FFFFFF;
+      @include tablets {
+        min-width: 309px;
+        max-width: 309px;
+        margin-left: 25px;
+      }
+      @include desktop {
+        min-width: 396px;
+        max-width: 396px;
+        margin-left: 32px;
+      }
+    }
+  }
+}

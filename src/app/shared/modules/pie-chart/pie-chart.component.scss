@@ -1,0 +1,51 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .pie-chart__legend {
+    width: 100%;
+    max-width: 170px;
+    margin: 0 auto;
+
+    & .legend {
+      &-label {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        &__main {
+          display: flex;
+          padding-right: 20px;
+        }
+
+        &__symbol {
+          width: 8px;
+          height: 8px;
+          display: inline-block;
+          border-radius: 50%;
+          margin-right: 8px;
+        }
+
+        &__name {
+          font-size: 12px;
+          line-height: 20px;
+          font-weight: 300;
+          color: $gray90;
+          @include tablets {
+            font-size: 14px;
+          }
+        }
+
+        &__ratio {
+          font-size: 12px;
+          line-height: 20px;
+          font-weight: 700;
+          color: $gray90;
+          @include tablets {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

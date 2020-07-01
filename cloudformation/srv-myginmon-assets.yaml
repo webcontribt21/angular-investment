@@ -1,0 +1,61 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Bucket and other assets for my-**** UI
+
+Parameters:
+  DomainName:
+    Type: String
+    Description: Domain name to be used for UI
+  CloudFrontDns:
+    Type: String
+    Description: CloudFront Distribution DNS
+    Default: "dyc8hzocf12iq.cloudfront.net"
+
+Resources:
+  Bucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: !Ref DomainName
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+      LoggingConfiguration:
+        DestinationBucketName:
+          Fn::ImportValue:
+            Fn::Sub: ops-common-assets-S3AccessLogsBucket
+        LogFilePrefix: !Join [ "", [ !Ref DomainName, "/" ] ]
+      VersioningConfiguration:
+        Status: "Enabled"
+
+  DnsRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId:
+        Fn::ImportValue:
+          Fn::Sub: "infra-route53-DefaultDePublicZone"
+      GeoLocation:
+          CountryCode: "*"
+      SetIdentifier: "International Geo Record"    
+      Name: !Ref DomainName
+      Type: "A"
+      AliasTarget:
+        DNSName: !Ref CloudFrontDns
+        HostedZoneId: "Z2FDTNDATAQYW2" # Constant zone for CloudFront http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html
+
+  PrivateDnsRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId:
+        Fn::ImportValue:
+          Fn::Sub: "infra-route53-DefaultDePrivateZone"
+      Name: !Ref DomainName
+      Type: "A"
+      AliasTarget:
+        DNSName: !Ref CloudFrontDns
+        HostedZoneId: "Z2FDTNDATAQYW2" # Constant zone for CloudFront http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html
+
+Outputs:
+  Bucket:
+    Value: !Ref Bucket
+    Description: Deployment Bucket
+    Export:
+      Name: !Join [ "-", [ !Ref "AWS::StackName", Bucket ] ]

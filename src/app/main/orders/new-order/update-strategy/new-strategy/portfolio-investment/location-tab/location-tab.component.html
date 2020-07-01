@@ -1,0 +1,40 @@
+<div class="locations-container">
+  <div class="locations" *ngIf="(regions$ | async) as regions">
+    <ng-template #regionList let-forMap="forMap">
+      <div
+        class="item"
+        *ngFor="let region of regions"
+        [ngStyle]="{'top.%': region.position.top, 'right.%': region.position.right}"
+      >
+        <div
+          class="circle"
+          [title]="forMap ? (region.value | percent: '1.2-2') : null"
+          [ngStyle]="{
+            'background-color': region.color,
+            'border-color': region.color,
+            'width.px': forMap ? (region.value * 80 + 15) : null,
+            'height.px': forMap ? (region.value * 80 + 15) : null
+           }"
+        >
+          <span class="inner" [ngStyle]="{'background-color': region.color}"></span>
+        </div>
+        <div class="label" *ngIf="!forMap">{{region.assetRegion | customTranslate | async}}</div>
+        <div class="value" *ngIf="!forMap">{{region.value | percent: '1.2-2'}}</div>
+      </div>
+    </ng-template>
+    <div class="map">
+      <div class="img">
+        <img src="/assets/img/world-map.svg" />
+      </div>
+      <ng-container *ngTemplateOutlet="regionList; context: {forMap: true}"></ng-container>
+    </div>
+    <div class="list">
+      <ng-container *ngTemplateOutlet="regionList; context: {forMap: false}"></ng-container>
+    </div>
+  </div>
+  <div class="tab-bottom">
+    <a class="tab-bottom__link" (click)="openTableModal()">
+      {{'UPDATE_STRATEGY_PAGE.PORTFOLIO_INVESTMENT.VIEW_FULL_LIST' | translate}}
+    </a>
+  </div>
+</div>

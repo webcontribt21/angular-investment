@@ -1,0 +1,33 @@
+@import './variables.scss';
+
+// resolutions
+$desktop: 1440px;
+$tabletsHorizontal: 1024px;
+$tablets: 768px;
+
+@mixin desktop {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin tabletsHoriz {
+  @media screen and (min-width: $tabletsHorizontal) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media screen and (min-width: $tablets) {
+    @content;
+  }
+}
+
+@mixin saw-tooth-vertical($width: 14px, $bg: $gray10) {
+  background:
+    linear-gradient( 45deg, $bg 50%, rgba(170,170,170,0.6) 50%, transparent 50%),
+    linear-gradient(-45deg, $bg 50%, rgba(170,170,170,0.6) 52%, transparent 50%);
+  background-position: bottom left, bottom left;
+  background-size: $width $width;
+  background-repeat: repeat-x;
+}

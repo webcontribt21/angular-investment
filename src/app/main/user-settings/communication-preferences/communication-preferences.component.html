@@ -1,0 +1,64 @@
+<div class="user-tab">
+  <div class="user-tab__content">
+    <form class="form" [formGroup]="communicationForm" (ngSubmit)="submit()">
+      <div class="user-control">
+        <div class="user-control__label">
+          {{'USER_SETTINGS_PAGE.COMMUNICATION.PHONE_NUMBER' | translate}}
+        </div>
+        <div class="user-control__input">
+          <input
+            *ngIf="isPhoneInputDisplayed"
+            type="text"
+            class="input plain-266 phone-input"
+            telInput
+            [formControl]="fakePhoneNumber"
+            (hasError)="hasError($event)"
+            (telOutput)="getNumber($event)"
+            (intlTelInputObject)="telInputObject($event)"
+            [class.input-invalid]="(phoneNumberControl.invalid && phoneNumberControl.dirty) || (fakePhoneNumber.invalid && fakePhoneNumber.dirty)"
+          />
+          <ng-container *ngIf="phoneNumberControl as control">
+            <div class="errors" *ngIf="(control.dirty && control.invalid) || (fakePhoneNumber.invalid && fakePhoneNumber.dirty)">
+              <div class="errors-item" *ngIf="control.errors?.isInvalid || fakePhoneNumber.errors?.isInvalid">
+                {{'USER_SETTINGS_PAGE.COMMUNICATION.MESSAGES.INVALID_PHONE' | translate}}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="preferred-lang">
+        <div class="user-control">
+          <div class="user-control__label">
+            {{'USER_SETTINGS_PAGE.COMMUNICATION.PREFERRED_COMMUNICATION_LANGUAGE' | translate}}
+          </div>
+          <div class="user-control__input">
+            <p-dropdown
+              class="dropdown-list"
+              dropdownIcon="pi pi-caret-down"
+              [options]="languages$ | async"
+              [formControl]="preferredLanguageControl">
+            </p-dropdown>
+          </div>
+        </div>
+
+        <div class="preferred-lang__description">
+          <div class="preferred-lang__title">
+            <img class="preferred-lang__icon" src="/assets/img/info-icon-circle-blue.svg" alt="info icon" />
+            <div class="preferred-lang__question">
+              {{'USER_SETTINGS_PAGE.COMMUNICATION.WHY_DO_WE_NEED_THIS' | translate}}
+            </div>
+          </div>
+          <div class="preferred-lang__answer">
+            {{'USER_SETTINGS_PAGE.COMMUNICATION.WE_WILL_USE_THIS_LANGUAGE' | translate}}
+          </div>
+        </div>
+      </div>
+
+      <p-button class="button-blue"
+        [disabled]="phoneNumberControl.invalid || preferredLanguageControl.invalid"
+        [label]="'COMMON.CHANGE' | translate">
+      </p-button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="industries" *ngIf="(industries$ | async) as industries">
+  <div class="list">
+    <div class="item" *ngFor="let industry of industries; index as i">
+      <div class="label">{{industry.assetIndustry | customTranslate | async}}</div>
+      <div class="view">
+        <div class="line" [ngStyle]="{'background-color': industry.color, 'width.%': industry.value * 100 + 2}"></div>
+        <div class="value">{{industry.value | percent: '1.2-2'}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-bottom">
+    <a class="tab-bottom__link" (click)="openTableModal()">
+      {{'UPDATE_STRATEGY_PAGE.PORTFOLIO_INVESTMENT.VIEW_FULL_LIST' | translate}}
+    </a>
+  </div>
+</div>

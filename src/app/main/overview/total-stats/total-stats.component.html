@@ -1,0 +1,145 @@
+<div class="total" *ngIf="portfolioPerformance && (portfolio$ | async) as portfolio">
+  <div class="total-balance">
+    <div class="total-balance__title title">
+      {{'OVERVIEW_PAGE.TOTAL.TOTAL_BALANCE' | translate }}
+    </div>
+    <div class="total-balance__amount">
+      {{portfolio.currentBalance | currencySignPipe | async}}
+    </div>
+  </div>
+
+  <div class="total-revenue">
+    <div class="total-revenue__content">
+      <div class="total-revenue__title title">
+        {{'OVERVIEW_PAGE.TOTAL.PERFORMANCE_PERCENT' | translate }}</div>
+      <div class="total-revenue__btn">
+        <div (click)="this.isItemExtended = !this.isItemExtended">
+          <img
+            src="/assets/img/arrow-down-blue-icon.svg"
+            alt="arrow-down-blue-icon icon"
+            class="total-revenue__icon"
+            [class.extended]="isItemExtended"
+          />
+        </div>
+      </div>
+    </div>
+    <ng-container *ngIf="!isItemExtended">
+      <div class="total-revenue__amount" [class.total-revenue__amount_color]="isPerformanceNegative$ | async">
+        <ng-container *ngIf="isPerformanceNegative$ | async; else positive">
+          <img class="total-revenue__img" src="/assets/img/trend-down-arrow.svg" alt="trend down icon" />
+          <span class="total-revenue__number">
+           {{portfolioPerformance.rateOfReturn.moneyWeighted['overall'] | percentPipe:'1.2-2' | async}}
+          </span>
+        </ng-container>
+        <ng-template #positive>
+          <img  src="/assets/img/trend-up-arrow.svg" alt="trend up icon" />
+          <span class="total-revenue__number">
+            +{{portfolioPerformance.rateOfReturn.moneyWeighted['overall'] | percentPipe:'1.2-2' | async}}
+          </span>
+        </ng-template>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="isItemExtended">
+      <div class="total-revenue__container">
+        <div class="total-revenue__info">
+          <div class="total-revenue__content">
+            <div class="total-revenue__description">{{'OVERVIEW_PAGE.TOTAL.MONEY_WEIGHTED_PERFORMANCE' | translate }}</div>
+            <img class="total-revenue__img" src="/assets/img/info-icon-circle.svg" alt="trend up icon" />
+          </div>
+        </div>
+        <div class="total-revenue__content">
+          <span class="total-revenue__label total-revenue__label-overall">{{'OVERVIEW_PAGE.TOTAL.ALL_TIME' | translate
+            }}:
+          </span>
+          <span class="total-revenue__label total-revenue__label-overall">
+            {{portfolioPerformance.rateOfReturn.moneyWeighted['overall'] | percentPipe:'1.2-2' | async}}
+          </span>
+        </div>
+          <div *ngFor="let item of portfolioPerformance.rateOfReturn.moneyWeighted | keyvalue | keyfilter:unusedKeys;">
+            <div class="total-revenue__content" *ngIf="item.value">
+              <span class="total-revenue__label">
+                {{item.key}}:
+              </span>
+              <span class="total-revenue__label total-revenue__green">
+                {{item.value | percentPipe:'1.2-2' | async}}
+              </span>
+            </div>
+          </div>
+        <div class="total-revenue__info">
+          <div class="total-revenue__content" >
+            <div class="total-revenue__description">
+              {{'OVERVIEW_PAGE.TOTAL.SIMPLIFIED_PERFORMANCE' | translate}}
+            </div>
+            <img class="total-revenue__img" src="/assets/img/info-icon-circle.svg" alt="trend up icon" />
+          </div>
+        </div>
+        <div class="total-revenue__content">
+          <span class="total-revenue__label">
+            {{'OVERVIEW_PAGE.TOTAL.ALL_TIME' | translate }}:
+          </span>
+          <span class="total-revenue__label">
+            {{portfolioPerformance.rateOfReturn.moneyWeighted['overall'] | percentPipe:'1.2-2' | async}}
+          </span>
+        </div>
+        <div class="total-revenue__link">
+          <a href="{{currentDomain}}//{{'OVERVIEW_PAGE.TOTAL.LINK' | translate }}">
+            <span class="total-revenue__text">
+              {{'OVERVIEW_PAGE.TOTAL.HOW_WE_CALCULATE_PERFORMANCE' | translate }}
+            </span>
+            <img src="/assets/img/launch.svg" alt="open-in-new icon" width="16px" />
+          </a>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="total-performance-revenue">
+    <div class="total-performance-revenue__title title">
+      {{'OVERVIEW_PAGE.TOTAL.PERFORMANCE_EURO' | translate | uppercase }}
+    </div>
+    <div class="total-performance-revenue__amount" [class.total-revenue__amount_color]="isPerformanceNegative$ | async">
+      <ng-container *ngIf="isPerformanceNegative$ | async; else positive">
+        <img class="total-performance-revenue__img" src="/assets/img/trend-down-arrow.svg" alt="trend down icon" />
+        <span class="total-performance-revenue__number total-revenue__number_no_wrap">
+          {{portfolioPerformance.absoluteReturn | currencySignPipe | async}}
+        </span>
+      </ng-container>
+      <ng-template #positive>
+        <img class="total-performance-revenue__img" src="/assets/img/trend-up-arrow.svg" alt="trend up icon" />
+        <span class="total-performance-revenue__number">
+          +{{portfolio.totalReturn |  percentPipe:'1.2-2' | async}}
+        </span>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="total-deposit">
+    <div class="total-deposit__content">
+      <div class="title">{{'OVERVIEW_PAGE.TOTAL.TOTAL_DEPOSIT' | translate }}</div>
+      <div class="total-deposit__btn">
+        <a [routerLink]="['/', 'orders', 'new', 'deposit']">
+          <img class="total-deposit__icon" src="/assets/img/plus.svg" alt="plus icon" />
+          <span class="total-deposit__text">{{'OVERVIEW_PAGE.TOTAL.ADD' | translate }}</span>
+        </a>
+      </div>
+    </div>
+    <div class="total-deposit__amount">
+      {{portfolioPerformance.netInflow | currencySignPipe | async}}
+    </div>
+  </div>
+
+  <div class="total-monthly">
+    <div class="total-monthly__title title">
+      <div class="title">{{'OVERVIEW_PAGE.TOTAL.MONTHLY_DEPOSIT' | translate }}</div>
+      <div class="total-monthly__btn">
+        <a [routerLink]="['/', 'orders', 'new', 'monthly']">
+          <img class="total-monthly__icon" src="/assets/img/pencil.svg" alt="edit icon" />
+          <span class="total-monthly__text">{{'OVERVIEW_PAGE.COMMON.CHANGE' | translate }}</span>
+        </a>
+      </div>
+    </div>
+    <div class="total-monthly__amount">
+      {{(selectedCustomer$ | async).currentRecurringDeposit.amount | currencySignPipe | async}}
+    </div>
+  </div>
+</div>

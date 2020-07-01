@@ -1,0 +1,17 @@
+@import '../../../../../styles/media.scss';
+@import '../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .strategy {
+    &-title {
+      margin-bottom: 8px;
+    }
+    &-subtitle {
+      font-size: 16px;
+      line-height: 24px;
+      color: $gray90;
+      font-weight: 300;
+      margin-bottom: 40px;
+    }
+  }
+}

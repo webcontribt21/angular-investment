@@ -1,0 +1,19 @@
+<div class="investment-tabs">
+  <p-tabView>
+    <p-tabPanel [header]="'UPDATE_STRATEGY_PAGE.PORTFOLIO_INVESTMENT.TAB_HEADERS.ASSETS' | translate">
+      <div class="tab-content">
+        <app-assets-tab></app-assets-tab>
+      </div>
+    </p-tabPanel>
+    <p-tabPanel [header]="'UPDATE_STRATEGY_PAGE.PORTFOLIO_INVESTMENT.TAB_HEADERS.INDUSTRIES' | translate">
+      <div class="tab-content">
+        <app-industries-tab></app-industries-tab>
+      </div>
+    </p-tabPanel>
+    <p-tabPanel [header]="'UPDATE_STRATEGY_PAGE.PORTFOLIO_INVESTMENT.TAB_HEADERS.LOCATION' | translate">
+      <div class="tab-content">
+        <app-location-tab></app-location-tab>
+      </div>
+    </p-tabPanel>
+  </p-tabView>
+</div>

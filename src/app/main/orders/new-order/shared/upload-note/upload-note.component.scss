@@ -1,0 +1,46 @@
+@import '../../../../../../styles/media.scss';
+@import '../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .upload-note {
+    background: $blue0;
+    color: $gray90;
+    padding: 12px 8px;
+    border-radius: 2px;
+
+    @include tabletsHoriz {
+      padding: 20px 16px;
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+    }
+    &__img {
+      display: inline-flex;
+      margin-right: 8px;
+      @include tabletsHoriz {
+        margin-right: 15px;
+      }
+    }
+    &__icon {
+      width: 39px;
+      height: 40px;
+      @include tabletsHoriz {
+        width: 54px;
+        height: 56px;
+      }
+    }
+    &__text {
+      font-weight: 300;
+      line-height: 16px;
+      @include tabletsHoriz {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      &_bold {
+        font-weight: 600;
+      }
+    }
+  }
+}

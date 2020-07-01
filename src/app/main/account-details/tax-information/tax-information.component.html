@@ -1,0 +1,85 @@
+<div class="account-tab" *ngIf="(selectedCustomer$ | async) as customer">
+  <div class="account-tab__content tax-block">
+    <div class="account-tab__subtitle">
+      {{'ACCOUNT_DETAILS_PAGE.TAX.YOUR_TAX_ID' | translate}}
+    </div>
+    <ul class="account-list">
+      <li class="account-list__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.TAX.GERMAN_TAX_ID' | translate}}
+        </div>
+        <div class="account-list__value" [ngLet]="germanTaxId$ | async" #taxId="let">
+          <ng-container [ngSwitch]="true">
+            <ng-container *ngSwitchCase="!taxId.value && !isShownAddTaxIdForm">
+              <button class="request-order add tax-id__action" (click)="addTaxId()">
+                {{'COMMON.ADD' | translate }}
+              </button>
+            </ng-container>
+            <ng-container *ngSwitchCase="isShownAddTaxIdForm">
+              <form class="form" [formGroup]="taxIdForm" (ngSubmit)="onTaxIdSave()" novalidate>
+                <div class="input-wrapper">
+                  <input class="input plain-164" type="number" formControlName="tin" />
+                </div>
+                <div class="buttons">
+                  <p-button
+                    class="button-blue short"
+                    [type]="'submit'"
+                    [disabled]="taxIdForm.invalid"
+                    [label]="'ACCOUNT_DETAILS_PAGE.TAX.SAVE' | translate"
+                  ></p-button>
+                  <button class="cancel-btn" type="button" (click)="cancelTaxIdSetting()">
+                    {{'COMMON.CANCEL' | translate}}
+                  </button>
+                </div>
+              </form>
+            </ng-container>
+            <ng-container *ngSwitchCase="taxId.value && !isShownAddTaxIdForm">
+              <span class="tax-id">
+                {{taxId.value}}
+              </span>
+              <button class="request-order change tax-id__action" (click)="addTaxId()">
+                {{'COMMON.CHANGE' | translate }}
+              </button>
+            </ng-container>
+          </ng-container>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="account-tab__subtitle">
+    {{'ACCOUNT_DETAILS_PAGE.TAX.TAX_EXEMPTION_STATUS' | translate}}
+  </div>
+  <div class="account-tab__content">
+    <ul class="account-list">
+      <li class="account-list__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.TAX.TAX_TYPE' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{'ACCOUNT_DETAILS_PAGE.TAX.TAX_TYPES.' + customer.taxExemptionStatus.category | translate}}
+        </div>
+      </li>
+      <li class="account-list__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.TAX.TOTAL_AMOUNT' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{customer.taxExemptionStatus?.totalAmount | currencySignPipe | async}}
+        </div>
+      </li>
+      <li class="account-list__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.TAX.USED_AMOUNT' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{customer.taxExemptionStatus?.usedAmount | currencySignPipe | async}}
+        </div>
+      </li>
+    </ul>
+    <div class="account-link">
+      <a class="request-order change" [routerLink]="['/', 'orders', 'new', 'tax-exemption']">
+        {{'ACCOUNT_DETAILS_PAGE.TAX.MAKE_TAX_EXEMPTION_ORDER' | translate }}
+      </a>
+    </div>
+  </div>
+</div>

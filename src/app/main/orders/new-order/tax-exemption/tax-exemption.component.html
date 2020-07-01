@@ -1,0 +1,20 @@
+<section class="exemption">
+  <div class="exemption-title h1">
+    {{'TAX_EXEMPTION_PAGE.TAX_EXEMPTION_ORDER' | translate}}
+  </div>
+  <div class="exemption-content order-content">
+    <div class="exemption-request order-request">
+      <div class="exemption-request__form" *ngIf="!(isMakeOrder$ | async); else makeOrder">
+        <app-tax-exemption-form></app-tax-exemption-form>
+      </div>
+      <ng-template #makeOrder>
+        <div class="exemption-request__make-order">
+          <app-make-order></app-make-order>
+        </div>
+      </ng-template>
+    </div>
+    <div class="exemption-summary">
+      <app-tax-exemption-summary></app-tax-exemption-summary>
+    </div>
+  </div>
+</section>

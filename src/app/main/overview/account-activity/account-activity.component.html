@@ -1,0 +1,23 @@
+<ng-container *ngIf="(activityFeed$ | async).length > 0">
+  <div class="account-activity">
+    <div class="activity-title title">{{'OVERVIEW_PAGE.ACCOUNT_ACTIVITY.ACCOUNT_ACTIVITY' | translate | uppercase}}</div>
+    <div class="activity-history">
+      <ng-container *ngFor="let item of activityFeed$ | async; index as i">
+        <div class="item" [class.positive]="item.isPositive" [class.negative]="item.isNegative">
+          <div class="indicator">
+            <div class="circle"></div>
+            <div class="line"></div>
+          </div>
+          <div class="text">
+            <div class="message">{{ item.message }}</div>
+            <div class="date">{{ item.createdAt | gmDate: 'dd MMM yyyy' }}</div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <app-pagination class="pagination centered"
+    [pagination]="activityFeedPagination$ | async"
+    (pageChanged)="onPageChanged($event)">
+  </app-pagination>
+</ng-container>

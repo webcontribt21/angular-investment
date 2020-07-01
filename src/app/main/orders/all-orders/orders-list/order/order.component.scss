@@ -1,0 +1,17 @@
+@import '../../../../../../styles/media.scss';
+@import '../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  margin-bottom: 10px;
+
+  .download-link {
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 14px;
+      margin-right: 7px;
+      background: center no-repeat url('../../../../../../assets/img/download.svg');
+    }
+  }
+}

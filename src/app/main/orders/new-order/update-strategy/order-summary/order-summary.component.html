@@ -1,0 +1,39 @@
+<div class="order-summary">
+  <div class="summary">
+    <div class="summary-title">
+      {{'COMMON.ORDER_SUMMARY' | translate}}
+    </div>
+    <div class="summary-content">
+      <div class="summary-amount">
+        <div class="summary-amount__title">
+          {{'UPDATE_STRATEGY_PAGE.SUMMARY.CURRENT_STRATEGY' | translate}}
+        </div>
+        <a href="{{(strategyToDisplay$ | async)?.link}}" target="_blank" class="summary-amount__strategy">
+          <span class="strategy-prefix">{{'COMMON.APEIRON' | translate | lowercase}}</span>
+          <span class="strategy-suffix">{{(strategyToDisplay$ | async)?.labelSuffix}}</span>
+          <i class="pi pi-external-link"></i>
+        </a>
+      </div>
+      <div class="summary-amount">
+        <div class="summary-amount__title">
+          {{'UPDATE_STRATEGY_PAGE.SUMMARY.NEW_CHOSEN_STRATEGY' | translate}}
+        </div>
+        <div class="summary-amount__strategy-new">
+          <a href="{{strategy?.link}}" target="_blank" class="chosen" *ngIf="(selectedStrategyToDisplay$ | async) as strategy; else noStrategy">
+            <span class="strategy-prefix">{{'COMMON.APEIRON' | translate | lowercase}}</span>
+            <span class="strategy-suffix">{{strategy?.labelSuffix}}</span>
+            <i class="pi pi-external-link"></i>
+          </a>
+          <ng-template #noStrategy>
+            <div class="not-chosen">
+              {{'UPDATE_STRATEGY_PAGE.SUMMARY.N_A' | translate}}
+            </div>
+          </ng-template>
+        </div>
+      </div>
+      <div class="summary-processing">
+        {{'UPDATE_STRATEGY_PAGE.SUMMARY.ORDER_TAKES' | translate}}
+      </div>
+    </div>
+  </div>
+</div>

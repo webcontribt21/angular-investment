@@ -1,0 +1,23 @@
+<section class="documents">
+  <div class="documents-container container">
+    <div class="documents-title h1">
+      {{'DOCUMENTS_PAGE.DOCUMENTS' | translate}}
+    </div>
+    <div *ngIf="(isDocumentsEmpty$ | async); else documents" class="no-items">
+        <img class="no-items__icon" src="/assets/img/icon-empty.svg" />
+        <div class="no-items__text">
+        {{'DOCUMENTS_PAGE.YOU_DO_NOT_HAVE_DOCUMENTS_YET' | translate}}
+      </div>
+    </div>
+    <ng-template #documents>
+      <div class="content">
+        <div class="content-list">
+          <app-documents-list></app-documents-list>
+        </div>
+        <div class="content-info" *ngIf="isTabletsHorizontal$ | async">
+          <app-documents-info></app-documents-info>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</section>

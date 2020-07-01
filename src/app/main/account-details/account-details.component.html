@@ -1,0 +1,29 @@
+<div class="account">
+  <div class="account-container container">
+    <app-back-button></app-back-button>
+
+    <div class="account-title h1">
+      {{'ACCOUNT_DETAILS_PAGE.ACCOUNT_DETAILS' | translate}}
+    </div>
+
+    <div class="account-tabs">
+      <p-tabView>
+        <p-tabPanel [header]="'ACCOUNT_DETAILS_PAGE.TAB_HEADERS.PERSONAL_INFORMATION' | translate">
+          <div class="tab-content">
+            <app-personal-information></app-personal-information>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel [header]="'ACCOUNT_DETAILS_PAGE.TAB_HEADERS.BANK_INFORMATION' | translate">
+          <div class="tab-content">
+            <app-bank-information></app-bank-information>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel [header]="'ACCOUNT_DETAILS_PAGE.TAB_HEADERS.TAX_INFORMATION' | translate">
+          <div class="tab-content">
+            <app-tax-information></app-tax-information>
+          </div>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+  </div>
+</div>

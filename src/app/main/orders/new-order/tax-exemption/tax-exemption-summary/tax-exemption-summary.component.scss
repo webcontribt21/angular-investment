@@ -1,0 +1,35 @@
+@import '../../../../../../styles/media.scss';
+@import '../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .summary-spouse {
+    &__item {
+      display: flex;
+      margin-bottom: 8px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__label {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 16px;
+      color: $gray90;
+      margin-right: 5px;
+      @include tabletsHoriz {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    &__value {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 16px;
+      color: #192F57;
+      @include tabletsHoriz {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}

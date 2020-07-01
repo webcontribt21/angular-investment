@@ -1,0 +1,231 @@
+@import '../../../../../styles/media.scss';
+@import '../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .withdrawal {
+    &-title {
+      margin-bottom: 16px;
+      @include tablets {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-request {
+      &__advice {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        background-color: $gray10;
+        @include desktop {
+          flex-direction: row;
+        }
+        margin-bottom: 40px;
+        &-image-wrap {
+          max-width: 46px;
+          @include desktop {
+            margin-right: 17px;
+          }
+          .advice-image {
+          }
+        }
+        &-content {
+          .advice-title {
+            font-size: 16px;
+            line-height: 24px;
+            color: $gray90;
+            font-weight: 600;
+            margin-bottom: 4px;
+          }
+          .advice-text {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 300;
+            color: $gray90;
+            margin-bottom: 16px;
+            &__accent {
+              font-weight: 600;
+            }
+          }
+          .advice-additional {
+            font-size: 14px;
+            line-height: 19px;
+            &-text {
+              color: $gray90;
+              font-weight: 600;
+              margin-right: 5px;
+            }
+            &-link {
+              font-weight: 400;
+              text-decoration: underline;
+              color: $blue50
+            }
+          }
+        }
+      }
+      &__title {
+        margin-bottom: 8px;
+        @include tablets {
+        }
+      }
+      & .form {
+        &-amount {
+          margin-bottom: 16px;
+          @include tablets {
+            margin-bottom: 12px;
+          }
+        }
+        &-notification {
+          font-size: 12px;
+          line-height: 16px;
+          font-weight: 300;
+          color: $gray70;
+          margin-bottom: 16px;
+          @include tablets {
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: .17px;
+            margin-bottom: 24px;
+          }
+          &__amount {
+            font-weight: 400;
+            color: $gray90;
+          }
+          &__link {
+            text-decoration: underline;
+          }
+        }
+        .withdrawal-toggle {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 24px;
+
+          //@include tablets {
+          //  margin-bottom: 24px;
+          //}
+          //&_margin {
+          //  margin-bottom: 24px;
+          //}
+          &-btn {
+            display: block;
+            margin-right: 8px;
+          }
+          &-text {
+            color: $gray90;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 24px;
+            cursor: pointer;
+          }
+        }
+
+        .full-withdraw {
+          margin-bottom: 40px;
+          &__title {
+            color: $navy;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            @include tablets {
+              font-size: 22px;
+              line-height: 32px;
+            }
+          }
+          &__message {
+            font-size: 14px;
+            line-height: 20px;
+            color: $gray90;
+            font-weight: 300;
+            margin-bottom: 16px;
+            @include tablets {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+          &__dropdown {
+            max-width: 270px;
+            @include tablets {
+              max-width: 320px;
+            }
+            @include desktop {
+              max-width: 373px;
+            }
+            .dropdown-title {
+              font-size: 13px;
+              line-height: 20px;
+              color: $gray90;
+              margin-bottom: 4px;
+            }
+          }
+
+          .other-reason {
+            max-width: 270px;
+            @include tablets {
+              max-width: 320px;
+            }
+            @include desktop {
+              max-width: 373px;
+            }
+            position: relative;
+            width: 100%;
+            margin-top: 7px;
+            &__input {
+              width: 100%;
+              padding: 8px 15px;
+              background: #FFFFFF;
+              font-size: 14px;
+              line-height: 20px;
+              font-weight: 300;
+              color: $gray90;
+              border: 1px solid $gray30;
+              border-radius: 2px;
+              @include desktop {
+                padding: 14px 20px;
+              }
+            }
+          }
+        }
+        .request-confirmation {
+          margin-bottom: 32px;
+        }
+      }
+    }
+
+    &-summary {
+      width: 100%;
+      border-radius: 2px 2px 0 0;
+      background: #FFFFFF;
+      @include tablets {
+        min-width: 309px;
+        max-width: 309px;
+        margin-left: 25px;
+      }
+      @include desktop {
+        min-width: 396px;
+        max-width: 396px;
+        margin-left: 32px;
+      }
+      .has-additional-info {
+        margin-bottom: 5px;
+      }
+      .additional-info {
+        margin-bottom: 15px;
+        @include tablets {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // prime switch
+
+  .ui-inputswitch.ui-inputswitch-checked .ui-inputswitch-slider {
+    background-color: #EF9200;
+  }
+  .ui-inputswitch.ui-inputswitch-checked:not(.ui-state-disabled):hover .ui-inputswitch-slider {
+    background-color: #EF9200;
+  }
+  .ui-inputswitch.ui-inputswitch-checked.ui-inputswitch-focus .ui-inputswitch-slider {
+    background-color: #EF9200;
+  }
+}

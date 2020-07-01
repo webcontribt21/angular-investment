@@ -1,0 +1,29 @@
+@import '../../../../../../../../styles/media.scss';
+@import '../../../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .asset-tab {
+    &__chart {
+      min-width: 235px;
+      max-width: 235px;
+      margin: 0 auto;
+      margin-bottom: 32px;
+      @include tabletsHoriz {
+        min-width: 550px;
+        max-width: 550px;
+        margin: 0;
+      }
+    }
+  }
+
+  .chart-wrapper {
+    @include tabletsHoriz {
+      display: flex;
+      align-items: center;
+    }
+    & .pie-chart__graph {
+      min-width: 235px;
+      max-width: 235px;
+    }
+  }
+}

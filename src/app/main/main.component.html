@@ -1,0 +1,16 @@
+<p-toast position="bottom-center" styleClass="toast" [preventOpenDuplicates]="true">
+  <ng-template let-message pTemplate="message">
+    <div class="ui-toast-text-wrapper">
+      <span>{{message.detail}}</span>
+    </div>
+  </ng-template>
+</p-toast>
+<div class="wrapper">
+  <app-header></app-header>
+
+  <main class="main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <app-footer></app-footer>
+</div>

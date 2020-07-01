@@ -1,0 +1,79 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .upload-btn {
+    display: flex;
+    flex-direction: column;
+    &__btn {
+      height: 24px;
+      @include tabletsHoriz {
+        min-width: 169px;
+        margin-right: 10px;
+      }
+    }
+    &__file {
+      display: flex;
+      margin-top: 10px;
+
+      padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+      border-radius: 2px;
+      background-color: $gray20;
+
+      &-label {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+        color: $gray90;
+        margin-right: 10px;
+      }
+      &-delete {
+        width: 12px;
+        cursor: pointer;
+      }
+    }
+    .ui-button {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      display: flex;
+      justify-content: flex-start;
+      .ui-button-icon-left {
+        position: relative;
+        top: unset;
+        margin-top: 0;
+        height: unset;
+        left: 0;
+        padding-top: 3px;
+        margin-right: 7px;
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 12px;
+          height: 15px;
+          background-image: url("/assets/img/upload-grey.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+      .ui-button-text {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+        color: $blue50;
+        padding: 0;
+      }
+      &.ui-fileupload-choose:not(.ui-state-disabled):hover {
+        background-color: transparent;
+        border: none;
+      }
+    }
+
+    &.uploaded {
+      .ui-button-icon-left:before {
+        background-image: url("/assets/img/upload-blue.svg");
+      }
+
+    }
+  }
+}

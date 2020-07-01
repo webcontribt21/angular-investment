@@ -1,0 +1,26 @@
+<div class="switch-account">
+  <div class="h4 switch-account__title">
+    {{'ACCOUNT_SWITCHER.CHOOSE_AN_ACCOUNT' | translate}}
+    <i class="pi pi-times" (click)="onClose()"></i>
+  </div>
+  <ul class="list">
+    <li
+        class="item"
+        *ngFor="let account of (accounts$ | async)"
+        [class.child-account]="account.relation === 'GUARDIAN'"
+        [class.single-account]="account.relation === 'OWNER'"
+        [class.active]="account.active">
+      <button class="customer" (click)="selectCustomer(account.customerId)">
+        <span class="name">{{account.firstName + ' ' + account.lastName}}</span>
+        <span class="acc-type" [ngSwitch]="account.relation">
+          <ng-container *ngSwitchCase="'GUARDIAN'">
+            {{'ACCOUNT_SWITCHER.CHILD_ACCOUNT' | translate}}
+          </ng-container>
+          <ng-container *ngSwitchCase="'OWNER'">
+            {{'ACCOUNT_SWITCHER.SINGLE_ACCOUNT' | translate}}
+          </ng-container>
+        </span>
+      </button>
+    </li>
+  </ul>
+</div>

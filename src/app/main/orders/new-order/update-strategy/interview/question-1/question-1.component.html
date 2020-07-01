@@ -1,0 +1,31 @@
+<div class="question">
+  <div class="title">{{question | customTranslate | async}}</div>
+  <div class="options">
+    <ul class="options-list">
+      <li
+        *ngFor="let answer of question.answers"
+        class="options-item">
+        <label class="options-label">
+          <p-radioButton
+            class="item-radio"
+            name="question"
+            [value]="answer.code"
+            [formControl]="question.answerControl">
+          </p-radioButton>
+          <div class="item-value">
+            <div class="item-text">{{answer | customTranslate | async}}</div>
+            <div class="item-explain">{{answer.description | customTranslate | async}}</div>
+          </div>
+        </label>
+      </li>
+    </ul>
+  </div>
+  <div class="submit-btn">
+    <p-button
+      class="button-blue"
+      (onClick)="submitAnswer()"
+      [disabled]="question.answerControl.invalid"
+      [label]="'UPDATE_STRATEGY_PAGE.INTERVIEW.CONTINUE'| translate"
+    ></p-button>
+  </div>
+</div>

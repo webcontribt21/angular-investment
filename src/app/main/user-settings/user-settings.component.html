@@ -1,0 +1,29 @@
+<div class="user">
+  <div class="user-container container">
+    <app-back-button class="user-goback"></app-back-button>
+
+    <div class="user-title h1">
+      {{'USER_SETTINGS_PAGE.ACCOUNT_SETTINGS' | translate}}
+    </div>
+
+    <div class="user-tabs">
+      <p-tabView>
+        <p-tabPanel [header]="'USER_SETTINGS_PAGE.TAB_HEADERS.EMAIL' | translate">
+          <div class="tab-content">
+            <app-user-email></app-user-email>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel [header]="'USER_SETTINGS_PAGE.TAB_HEADERS.PASSWORD' | translate">
+          <div class="tab-content">
+            <app-user-password></app-user-password>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel [header]="'USER_SETTINGS_PAGE.TAB_HEADERS.COMMUNICATION_PREFERENCES' | translate">
+          <div class="tab-content">
+            <app-communication-preferences></app-communication-preferences>
+          </div>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+  </div>
+</div>

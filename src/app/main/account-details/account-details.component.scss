@@ -1,0 +1,68 @@
+@import '../../../styles/media.scss';
+@import '../../../styles/variables.scss';
+
+:host ::ng-deep {
+
+  .ui-tabview-nav {
+    li {
+      width: 33%;
+    }
+  }
+
+  .account-tab {
+    &__subtitle {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      letter-spacing: .12px;
+      color: #192F57;
+      margin-bottom: 16px;
+      @include tabletsHoriz {
+        font-size: 18px;
+        line-height: 32px;
+      }
+    }
+    &__content {
+      .account-list {
+        display: flex;
+        flex-direction: column;
+        &__item {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 12px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          @include tablets {
+            flex-direction: row;
+            align-items: center;
+          }
+        }
+        &__key {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 300;
+          color: $gray90;
+          @include tablets {
+            min-width: 140px;
+            margin-right: 17px;
+          }
+        }
+        &__wrapper {
+          display: flex;
+          flex-direction: column;
+        }
+        &__value {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 600;
+          color: #192F57;
+        }
+      }
+    }
+
+    .account-link {
+      margin-top: 24px;
+    }
+  }
+}

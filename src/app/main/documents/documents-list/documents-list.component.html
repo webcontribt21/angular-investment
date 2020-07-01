@@ -1,0 +1,32 @@
+<div class="documents-filter" *ngIf="false">
+  Show all
+</div>
+<div class="data-list documents-list">
+  <div class="list-header">
+    <div class="title type">
+      {{'COMMON.DESCRIPTION' | translate}}
+    </div>
+    <div class="title source">
+      {{'COMMON.SOURCE' | translate}}
+    </div>
+    <div class="title date">
+      {{'COMMON.DATE' | translate}}
+    </div>
+  </div>
+  <ul class="list-body">
+    <li class="list-item list-item_no_hover" *ngFor="let document of (documents$ | async)">
+      <a class="list-content pointer" target="_blank" [href]="document.link">
+        <div class="list-type">{{document.category}}</div>
+        <div class="list-source">{{document.source}}</div>
+        <div class="list-date">{{document.publishDate | gmDate: 'dd MMM yyyy'}}</div>
+      </a>
+      <a class="list-download pointer" target="_blank" [href]="document.link">
+      </a>
+    </li>
+  </ul>
+  <app-pagination
+    [pagination]="documentsPagination$ | async"
+    (pageChanged)="onPageChanged($event)">
+  </app-pagination>
+</div>
+

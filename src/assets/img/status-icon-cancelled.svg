@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>icon/content/block_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M7,0.333333333 C3.32,0.333333333 0.333333333,3.32 0.333333333,7 C0.333333333,10.68 3.32,13.6666667 7,13.6666667 C10.68,13.6666667 13.6666667,10.68 13.6666667,7 C13.6666667,3.32 10.68,0.333333333 7,0.333333333 Z M1.66666667,7 C1.66666667,4.05333333 4.05333333,1.66666667 7,1.66666667 C8.23333333,1.66666667 9.36666667,2.08666667 10.2666667,2.79333333 L2.79333333,10.2666667 C2.08666667,9.36666667 1.66666667,8.23333333 1.66666667,7 Z M7,12.3333333 C5.76666667,12.3333333 4.63333333,11.9133333 3.73333333,11.2066667 L11.2066667,3.73333333 C11.9133333,4.63333333 12.3333333,5.76666667 12.3333333,7 C12.3333333,9.94666667 9.94666667,12.3333333 7,12.3333333 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="My-****---Activity---Orders" transform="translate(-696.000000, -722.000000)">
+            <g id="icon/content/block_24px" transform="translate(696.000000, 722.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g fill-rule="nonzero"></g>
+                <g id="↳-Color" mask="url(#mask-2)" fill="#8992A1">
+                    <g transform="translate(-1.000000, -1.000000)" id="Rectangle">
+                        <rect x="0" y="0" width="16" height="16"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

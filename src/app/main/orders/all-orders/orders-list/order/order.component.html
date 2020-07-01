@@ -1,0 +1,210 @@
+<li
+  class="list-item pointer"
+  [ngClass]="order.status | lowercase"
+  [class.extended]="isItemExtended"
+  (click)="toggleMoreInfo()">
+  <div class="list-content">
+    <div class="list-more-btn">
+      <i class="pi pi-chevron-down"></i>
+    </div>
+    <div class="list-type">
+      {{'ORDERS_PAGE.CATEGORIES.' + order.orderType | translate}}
+    </div>
+    <div class="list-amount">
+      {{order.amount | currencySignPipe | async}}
+    </div>
+    <div class="list-status">
+      <div class="list-status-content">
+        <div class="status-icon"></div>
+        <div class="status-text">
+          {{'ORDERS_PAGE.ORDER_STATUS.' + order.status | translate}}
+        </div>
+      </div>
+    </div>
+    <div class="list-date">{{order.createdAt | gmDate: 'dd MMM yyyy'}}</div>
+  </div>
+  <div class="progress">
+    <div class="step step-create">
+      <div class="step-info">
+        <div class="step-info-indicator">
+          <div class="step-info-indicator-inner"></div>
+        </div>
+        <div class="step-info-name">
+          {{'ORDERS_PAGE.ORDER_CREATED' | translate}}
+        </div>
+        <div class="step-info-date additional-info">
+          {{order.createdAt | gmDate: 'dd MMM yyyy'}}
+        </div>
+      </div>
+      <div
+        class="step-order-info"
+        [class.no-info]="order.orderType === orderTypeEnum.kwgMigration">
+        <div
+          class="step-order-info-wrap"
+          *ngIf="order.orderType !== orderTypeEnum.kwgMigration">
+
+          <ng-container
+            *ngIf="![orderTypeEnum.fullWithdrawal, orderTypeEnum.addressChange,
+                   orderTypeEnum.strategyChange, orderTypeEnum.referenceAccountChange].includes(order.orderType)">
+            <div class="step-order-info-item">
+              <span class="info-item-title">{{'COMMON.AMOUNT' | translate | titlecase}}: </span>
+              <span class="info-item-value">{{order.amount | currencySignPipe | async}}</span>
+            </div>
+          </ng-container>
+
+          <ng-container
+            *ngIf="order.orderType === orderTypeEnum.strategyChange">
+            <div class="step-order-info-item">
+              <span class="info-item-title">{{'ORDERS_PAGE.NEW_STRATEGY' | translate}} </span>
+              <span class="info-item-value">{{'COMMON.APEIRON' | translate | lowercase}}</span>
+              <span class="info-item-value">{{(orderStrategyToDisplay$ | async)?.labelSuffix}}</span>
+            </div>
+          </ng-container>
+
+          <ng-container
+            *ngIf="order.orderType === orderTypeEnum.taxExemption">
+            <div class="step-order-info-item">
+              <span class="info-item-title">{{'ORDERS_PAGE.TAX_ID' | translate}} </span>
+              <span class="info-item-value">{{order.germanTin}}</span>
+            </div>
+            <div class="step-order-info-item">
+              <span class="info-item-title">{{'ORDERS_PAGE.START_DATE' | translate}} </span>
+              <span class="info-item-value">{{order.startDate| gmDate: 'dd MMM yyyy'}}</span>
+            </div>
+            <div class="step-order-info-item">
+              <span class="info-item-title">{{'ORDERS_PAGE.END_DATE' | translate}} </span>
+              <span class="info-item-value" *ngIf="order.endDate">{{order.endDate| gmDate: 'dd MMM yyyy'}}</span>
+              <span class="info-item-value" *ngIf="!order.endDate">{{'TAX_EXEMPTION_PAGE.UNTIL_NEW_ORDER' | translate}}</span>
+            </div>
+          </ng-container>
+
+          <ng-container
+            *ngIf="order.orderType === orderTypeEnum.addressChange">
+            <div class="step-order-info-reference step-order-info-item">
+              <div class="step-grouped-info">
+                <div class="step-grouped-info-title">
+                  {{'ORDERS_PAGE.NEW_ADDRESS' | translate}}
+                </div>
+                <div class="step-grouped-info-item">
+                  <span>{{order.street}} </span>
+                  <span>{{order.streetNumber}},</span>
+                </div>
+                <div class="step-grouped-info-item">
+                  <span>{{order.postalCode}}, </span>
+                  <span>{{order.city}},</span>
+                </div>
+                <div class="step-grouped-info-item">
+                  {{orderCountry$ | async}}
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-container
+            *ngIf="order.orderType === orderTypeEnum.referenceAccountChange">
+            <div class="step-order-info-reference step-order-info-item">
+              <div class="step-grouped-info" *ngIf="(selectedCustomer$ | async) as selectedCustomer">
+                <div class="step-grouped-info-title">
+                  {{'ORDERS_PAGE.REFERENCE_ACCOUNT' | translate}}:
+                </div>
+                <div class="step-grouped-info-item">
+                  {{selectedCustomer?.bankAccount.holderFullName}}
+                </div>
+                <div class="step-grouped-info-item">
+                  {{order.iban}}
+                </div>
+                <div class="step-grouped-info-item">
+                  {{order.bic}}
+                </div>
+                <div class="step-grouped-info-item">
+                  {{order.bank}}
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-container
+            *ngIf="![orderTypeEnum.addressChange, orderTypeEnum.taxExemption,
+                    orderTypeEnum.strategyChange, orderTypeEnum.referenceAccountChange].includes(order.orderType)">
+            <div class="step-order-info-reference step-order-info-item">
+              <div class="step-grouped-info" *ngIf="(selectedCustomer$ | async) as selectedCustomer">
+                <div class="step-grouped-info-title">
+                  {{'ORDERS_PAGE.REFERENCE_ACCOUNT' | translate}}:
+                </div>
+                <div class="step-grouped-info-item">
+                  {{selectedCustomer?.bankAccount.holderFullName}}
+                </div>
+                <div class="step-grouped-info-item">
+                  {{selectedCustomer?.bankAccount.iban}}
+                </div>
+                <div class="step-grouped-info-item">
+                  {{selectedCustomer?.bankAccount.bank}}
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-container
+            *ngIf="[orderTypeEnum.addressChange, orderTypeEnum.taxExemption].includes(order.orderType) && !!order.agreementDownloadUrl">
+            <div class="step-order-info-item">
+              <!-- <span class="info-item-title">{{'ORDERS_PAGE.DOCUMENT' | translate}} </span> -->
+              <span class="info-item-value download-link"><a (click)="$event.stopPropagation()" [href]="order.agreementDownloadUrl" target="_blank">{{'ORDERS_PAGE.DOWNLOAD_DOCUMENT' | translate}}</a></span>
+            </div>
+          </ng-container>
+
+          <ng-container
+            *ngIf="[orderTypeEnum.referenceAccountChange].includes(order.orderType) && !!order.templateDownloadUrl">
+            <div class="step-order-info-item">
+              <!-- <span class="info-item-title">{{'ORDERS_PAGE.DOCUMENT' | translate}} </span> -->
+              <span class="info-item-value download-link"><a (click)="$event.stopPropagation()" [href]="order.templateDownloadUrl" target="_blank">{{'ORDERS_PAGE.DOWNLOAD_TEMPLATE' | translate}}</a></span>
+            </div>
+          </ng-container>
+
+        </div>
+      </div>
+    </div>
+    <div class="step step-result">
+      <div class="step-info">
+        <div class="step-info-indicator">
+          <div class="step-info-indicator-inner"></div>
+        </div>
+        <div class="step-info-name">
+          {{'ORDERS_PAGE.ORDER_STATUS.' + order.status | translate}}
+        </div>
+        <div
+          class="step-info-date additional-info"
+          *ngIf="![orderStatusEnum.created,orderStatusEnum.submitted].includes(order.status)">
+          {{order.updatedAt | duration | async}}
+        </div>
+      </div>
+      <div class="step-result-reason additional-info">
+        <span
+          *ngIf="order.status === orderStatusEnum.rejected">
+          Reason for rejection
+          <!-- TODO change displaying in styles when backend will return corresponding field -->
+        </span>
+        <span
+          *ngIf="[orderStatusEnum.created,orderStatusEnum.submitted].includes(order.status)">
+          <ng-container [ngSwitch]="order.orderType">
+            <ng-container *ngSwitchCase="orderTypeEnum.deposit">{{'ORDERS_PAGE.USUALLY_TAKES.X_TO_Y_DAYS' | translate : {x:2, y:3} }}</ng-container>
+            <ng-container *ngSwitchCase="orderTypeEnum.recurringDepositChange">{{'ORDERS_PAGE.USUALLY_TAKES.1_DAY' | translate }}</ng-container>
+            <ng-container *ngSwitchCase="orderTypeEnum.strategyChange">{{'ORDERS_PAGE.USUALLY_TAKES.X_TO_Y_DAYS' | translate : {x:5, y:7} }}</ng-container>
+            <ng-container *ngSwitchCase="orderTypeEnum.withdrawal">{{'ORDERS_PAGE.USUALLY_TAKES.X_TO_Y_DAYS' | translate : {x:3, y:4} }}</ng-container>
+            <ng-container *ngSwitchCase="orderTypeEnum.fullWithdrawal">{{'ORDERS_PAGE.USUALLY_TAKES.UP_TO_X_DAYS' | translate : {x:10} }}</ng-container>
+            <ng-container *ngSwitchCase="orderTypeEnum.taxExemption">{{'ORDERS_PAGE.USUALLY_TAKES.UP_TO_X_DAYS' | translate : {x:10} }}</ng-container>
+            <ng-container *ngSwitchCase="orderTypeEnum.addressChange">{{'ORDERS_PAGE.USUALLY_TAKES.UP_TO_X_DAYS' | translate : {x:10} }}</ng-container>
+            <ng-container *ngSwitchCase="orderTypeEnum.referenceAccountChange">{{'ORDERS_PAGE.USUALLY_TAKES.UP_TO_X_DAYS_AFTER_SENDING' | translate : {x:10} }}</ng-container>
+            <ng-container *ngSwitchDefault>{{'ORDERS_PAGE.USUALLY_TAKES.X_TO_Y_DAYS' | translate : {x:1, y:3} }}</ng-container>
+          </ng-container>
+        </span>
+      </div>
+    </div>
+    <div class="cancel-btn" *ngIf="order.cancellable">
+      <p-button
+        class="button-transparent"
+        [label]="'ORDERS_PAGE.CANCEL' | translate"
+        (onClick)="cancelOrder(order.id)">
+      </p-button>
+    </div>
+  </div>
+</li>

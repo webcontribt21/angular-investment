@@ -1,0 +1,50 @@
+<div class="user-tab">
+  <div class="user-tab__content">
+    <div class="user-control">
+      <div class="user-control__label">
+        {{'USER_SETTINGS_PAGE.EMAIL.CURRENT_EMAIL' | translate}}
+      </div>
+      <div class="user-control__email">
+        {{(user$ | async)?.email}}
+      </div>
+    </div>
+
+    <div class="user-control">
+      <div class="user-control__container">
+        <div class="user-control__label">
+          {{'USER_SETTINGS_PAGE.EMAIL.NEW_EMAIL' | translate}}
+        </div>
+        <div class="user-control__input">
+          <input
+            class="input plain-266"
+            [formControl]="emailControl"
+            type="email"
+            [class.input-invalid]="emailControl.invalid && emailControl.dirty" />
+          <ng-container *ngIf="emailControl as control">
+            <div class="errors" *ngIf="control.dirty && control.invalid">
+              <div class="errors-item" *ngIf="control.errors.pattern">
+                {{'USER_SETTINGS_PAGE.EMAIL.MESSAGES.INVALID_EMAIL' | translate}}
+              </div>
+              <div class="errors-item" *ngIf="control.errors.isSame">
+                {{'USER_SETTINGS_PAGE.EMAIL.MESSAGES.EMAIL_IS_SAME' | translate}}
+              </div>
+              <div class="errors-item" *ngIf="control.errors.required">
+                {{'MESSAGES.REQUIRED' | translate}}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="user-control__notification">
+        {{'USER_SETTINGS_PAGE.EMAIL.EMAIL_VERIFICATION_LINK' | translate}}
+      </div>
+    </div>
+
+    <p-button
+      class="button-blue"
+      (onClick)="submitNewEmail()"
+      [disabled]="emailControl.invalid"
+      [label]="'COMMON.CHANGE' | translate"
+    ></p-button>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+@import '../../../../../../styles/media.scss';
+@import '../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  width: 100%;
+  .new-strategy {
+    display: flex;
+    flex-direction: column;
+    @include tablets {
+      flex-direction: row;
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    &__summary {
+      @include tablets {
+        margin-left: 25px;
+      }
+      @include desktop {
+        margin-left: 32px;
+      }
+    }
+    &__select {
+      margin-bottom: 40px;
+    }
+    &__investment-portfolio {
+      .title {
+        line-height: 32px;
+        font-size: 20px;
+        font-weight: 600;
+        color: $navy;
+        margin-bottom: 16px;
+        @include tablets {
+          font-size: 22px;
+        }
+      }
+      .investment {
+        margin-bottom: 32px;
+      }
+      .performance {
+        margin-bottom: 32px;
+        @include tablets {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .confirm-update {
+    margin-top: 20px;
+    @include tablets {
+      margin-top: 32px;
+    }
+  }
+}

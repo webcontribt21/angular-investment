@@ -1,0 +1,98 @@
+@import '../../../../../styles/media.scss';
+@import '../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .ui-state-focus {
+    box-shadow: none!important;
+  }
+  .language-selector{
+    display: flex;
+    background:transparent;
+    border:0;
+    width: auto;
+    min-width:inherit;
+    margin-top: 2px;
+    @include tablets {
+      height: 100%;
+      margin: auto;
+    }
+    @include desktop {
+      height: 100%;
+      margin: auto;
+    }
+
+    & .ui-dropdown-panel {
+      top: 33px !important;
+      left: -50px !important;
+      @include tablets {
+        top: 52px !important;
+      }
+      @include desktop {
+        top: 50px!important;
+      }
+    }
+    .ui-dropdown-label-container{
+      display: flex;
+      .ui-dropdown-label{
+        position: relative;
+        width: auto;
+        margin: auto;
+        background:transparent;
+        transition: none;
+        display: flex;
+        padding: 0 16px 0 0;
+        font-size:inherit;
+        color: $gray90;
+        font-weight:300;
+        overflow: visible;
+
+        &:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: calc(50% - 3px);
+          height: 6px;
+          width: 6px;
+          right: 8px;
+          background: url("/assets/img/icon-arrow-down-white.svg") no-repeat center calc(50%);
+          background-size: 100% auto;
+          @include tablets {
+            width: 10px;
+            right: 0;
+            background: url("/assets/img/user-menu-arrow-down-icon.svg") no-repeat center calc(50%);
+          }
+          @include desktop {
+            width: 10px;
+            right: 0;
+            background: url("/assets/img/icon-arrow-down-white.svg") no-repeat center calc(50%);
+          }
+        }
+      }
+    }
+
+    .ui-dropdown-trigger{
+      display: none;
+    }
+
+    .option{
+      display:flex;
+      align-items: center;
+
+      
+      img{
+        width: 16px;
+        margin-right:6px;
+        @include tablets {
+          margin-top: auto;
+          margin-bottom: auto;
+          width: 20px;
+        }
+        @include desktop {
+          margin-top: auto;
+          margin-bottom: auto;
+          width: 20px;
+        }
+      }
+    }
+  }
+}

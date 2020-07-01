@@ -1,0 +1,26 @@
+<div class="make-order">
+  <div class="make-order__note">
+    <app-upload-note></app-upload-note>
+  </div>
+
+  <div class="make-order__change">
+    <a class="request-order change" (click)="changeDetails()">
+      {{'TAX_EXEMPTION_PAGE.CHANGE_TAX_EXEMPTION_DETAILS' | translate}}
+    </a>
+  </div>
+
+  <div class="make-order__upload">
+    <app-upload-form
+      [downloadTexts]="['TAX_EXEMPTION_PAGE.PLEASE_DOWNLOAD']">
+    </app-upload-form>
+  </div>
+
+  <div class="form-submit">
+    <p-button
+      class="button-blue"
+      [disabled]="!(isUploaded$ | async)"
+      [label]="'ORDERS_PAGE.COMMON.MAKE_ORDER' | translate"
+      (onClick)="makeOrder()">
+    </p-button>
+  </div>
+</div>

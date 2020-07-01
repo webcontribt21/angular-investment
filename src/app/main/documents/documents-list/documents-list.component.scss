@@ -1,0 +1,107 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+:host ::ng-deep {
+  .documents {
+    &-filter {
+      margin-bottom: 24px;
+      font-size: 12px;
+      line-height: 16px;
+      padding-left: 8px;
+      @include tablets {
+        padding-left: 0;
+      }
+    }
+
+    &-list {
+      .list-header {
+        @include tablets {
+          .type {
+            width: 55%;
+          }
+
+          .source {
+            width: 30%;
+            @include tablets {
+              text-align: left;
+            }
+          }
+
+          .date {
+            width: 15%;
+            text-align: right;
+          }
+        }
+      }
+      .list-body {
+        flex-direction: column;
+        margin-bottom: 16px;
+        @include tablets {
+          margin-bottom: 24px;
+        }
+        .list-item {
+          justify-content: space-between;
+          align-items: center;
+          padding: 0;
+          @include tablets {
+            padding: 0;
+          }
+          .list-content {
+            padding: 8px 46px 8px 8px;
+            flex-wrap: wrap;
+            @include tablets {
+              flex-direction: row;
+              justify-content: space-between;
+              padding: 16px 60px 16px 24px;
+            }
+            .list-type {
+              width: 100%;
+              @include tablets {
+                width: 55%;
+              }
+            }
+            .list-source {
+              width: 100%;
+              font-size: 12px;
+              line-height: 20px;
+              font-weight: 400;
+              color: $navy;
+              margin-bottom: 4px;
+              @include tablets {
+                width: 30%;
+                font-size: 14px;
+                line-height: 24px;
+                margin-bottom: 0;
+              }
+            }
+            .list-date {
+              width: 100%;
+              @include tablets {
+                width: 15%;
+              }
+            }
+          }
+
+          .list-download {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: center no-repeat url('../../../../assets/img/download.svg');
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          .list-content {
+            flex-direction: column;
+            @include tablets {
+              flex-direction: row;
+              justify-content: space-between;
+            }
+          }
+        }
+      }
+    }
+  }
+}

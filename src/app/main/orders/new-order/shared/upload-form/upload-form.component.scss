@@ -1,0 +1,111 @@
+@import '../../../../../../styles/media.scss';
+@import '../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .upload-form {
+    &__title {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      color: $navy;
+      margin-bottom: 4px;
+      @include tabletsHoriz {
+        font-size: 18px;
+        line-height: 32px;
+        letter-spacing: 0.12px;
+        margin-bottom: 8px;
+      }
+    }
+    &__text {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 20px;
+      color: $gray90;
+      margin-bottom: 16px;
+      @include tabletsHoriz {
+        margin-bottom: 24px;
+      }
+      .upload-form-progress {
+        margin-top: 42px;
+
+        .upload-form-progress-item {
+          display: flex;
+          margin-bottom: 3px;
+          height: 56px;
+
+          &__download {
+            .upload-form__link {
+              height: 24px;
+              font-size: 16px;
+              font-weight: 600;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.5;
+              letter-spacing: normal;
+              text-align: center;
+              color: $blue50;
+              text-decoration: none;
+
+              &:before {
+                content: "";
+                display: inline-block;
+                width: 12px;
+                height: 14px;
+                margin-right: 7px;
+                background: center no-repeat url('../../../../../../assets/img/download.svg');
+              }
+            }
+          }
+
+          &:not(.active) {
+            .ui-button-text {
+              color: $gray50;
+            }
+            .ui-button {
+              .ui-button-icon-left {
+                &:before {
+                  background-image: url("/assets/img/upload-grey.svg");
+                }
+              }
+            }
+          }
+
+          .indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 12px;
+            padding-top: 6px;
+            .circle {
+              width: 7px;
+              height: 7px;
+              border-radius: 50%;
+              border-width: 1px;
+              border-style: solid;
+              border-color: $gray30;
+              margin-bottom: 8px;
+
+              &.filled {
+                background-color: $gray50;
+                &.active {
+                  background-color: $blue50;
+                  border-color: $blue50;
+                }
+              }
+            }
+            .line {
+              display: flex;
+              width: 1px;
+              flex: 1;
+              background-color: $gray30;
+            }
+          }
+        }
+      }
+    }
+    &__link {
+      font-weight: 400;
+      text-decoration: underline;
+    }
+  }
+}

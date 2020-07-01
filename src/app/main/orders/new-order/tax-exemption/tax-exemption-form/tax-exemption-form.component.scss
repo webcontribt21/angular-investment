@@ -1,0 +1,252 @@
+@import '../../../../../../styles/media.scss';
+@import '../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .exemption-form {
+    &__note {
+      margin-bottom: 25px;
+      @include tabletsHoriz {
+        margin-bottom: 32px;
+      }
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+
+      .form {
+        &-row {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 16px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          @include tabletsHoriz {
+            margin-bottom: 32px;
+          }
+          &_create {
+            margin-bottom: 32px;
+          }
+          &_tax_id {
+            margin-bottom: 17px;
+            @include tabletsHoriz {
+              margin-bottom: 24px;
+            }
+            .form-row__input .input {
+              width: 100%;
+              @include tabletsHoriz {
+                width: 266px;
+              }
+            }
+          }
+          &_radio {
+            margin-bottom: 24px;
+            @include tabletsHoriz {
+              margin-bottom: 40px;
+            }
+          }
+          &__container {
+            display: flex;
+            flex-wrap: wrap;
+          }
+
+          &__col {
+            display: flex;
+            flex-direction: column;
+
+            &_first_name {
+              margin-left: 8px;
+              flex: 1;
+              @include tabletsHoriz {
+                flex: initial;
+                width: 210px;
+                margin-left: 16px;
+                margin-right: 16px;
+              }
+            }
+            &_last_name {
+              width: 100%;
+              margin-top: 8px;
+              @include tabletsHoriz {
+                width: 210px;
+                margin-top: 0;
+              }
+            }
+            &_day {
+              flex: 1;
+              @include tabletsHoriz {
+                flex: initial;
+                width: 68px;
+              }
+            }
+            &_month {
+              flex: 1;
+              margin: 0 8px;
+              @include tabletsHoriz {
+                flex: initial;
+                width: 68px;
+                margin: 0 16px;
+              }
+            }
+            &_year {
+              flex: 2;
+              @include tabletsHoriz {
+                flex: initial;
+                width: 96px;
+              }
+            }
+          }
+          &__title {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            color: $navy;
+            margin-bottom: 4px;
+            @include tabletsHoriz {
+              font-size: 18px;
+              line-height: 32px;
+              letter-spacing: 0.12px;
+              margin-bottom: 8px;
+            }
+            &_radio {
+              margin-bottom: 16px;
+              @include tabletsHoriz {
+                margin-bottom: 8px;
+              }
+            }
+          }
+          &__label {
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.18px;
+            color: $gray90;
+            margin-bottom: 4px;
+            @include tabletsHoriz {
+              font-size: 13px;
+              line-height: 20px;
+              letter-spacing: 0;
+            }
+          }
+          &__input {
+
+            .input, input {
+              width: 100%;
+              font-size: 14px;
+              font-weight: 300;
+              line-height: 20px;
+              color: $gray90;
+              padding: 12px;
+              border: 1px solid $gray30;
+              @include tabletsHoriz {
+                font-size: 16px;
+                line-height: 22px;
+                letter-spacing: .19px;
+              }
+            }
+            &-date {
+              .ui-inputtext:enabled:hover:not(.ui-state-error) {
+                border: 1px solid $gray30;
+              }
+            }
+            .dropdown-list {
+              @include tabletsHoriz {
+                width: 266px;
+              }
+              &_gender {
+                min-width: 85px;
+                width: 85px;
+                @include tabletsHoriz {
+                  min-width: 96px;
+                  width: 96px;
+                }
+                .ui-dropdown-label {
+                  font-size: 14px;
+                  padding-right: 30px;
+                  @include tabletsHoriz {
+                    font-size: 16px;
+                  }
+                }
+              }
+            }
+          }
+          &__radio {
+            margin-bottom: 16px;
+            @include tabletsHoriz {
+              margin-bottom: 18px;
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
+            .form-row__radio-container {
+              display: flex;
+
+              .ui-radiobutton {
+                .ui-radiobutton-box {
+                  box-shadow: none;
+                  border: 1px solid $gray50;
+                  .ui-radiobutton-icon {
+                    background-color: transparent;
+                  }
+                }
+              }
+
+              .ui-radiobutton-box.ui-state-active {
+                border-color: $orange50;
+                background-color: #fff;
+                .ui-radiobutton-icon {
+                  background-color: $orange50;
+                }
+              }
+
+              .ui-radiobutton-label {
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 20px;
+                color: $gray90;
+                margin-left: 7px;
+                cursor: pointer;
+                @include tabletsHoriz {
+                  font-size: 16px;
+                  line-height: 24px;
+                  margin-left: 15px;
+                }
+              }
+              &_custom {
+                margin-right: 8px;
+                @include tabletsHoriz {
+                  margin-right: 13px;
+                }
+                .ui-radiobutton-label {
+                  white-space: nowrap;
+                }
+              }
+            }
+            &-wrapper {
+              display: flex;
+              align-items: center;
+              & .order-request__amount-input:disabled {
+                color: transparent;
+              }
+            }
+            .input {
+              flex: 1;
+              padding-right: 36px;
+              @include tabletsHoriz {
+                width: 210px;
+                padding-right: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__submit {
+      margin-top: 40px;
+    }
+  }
+
+  .ui-dropdown-items-wrapper {
+    max-height: none !important;
+  }
+}

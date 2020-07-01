@@ -1,0 +1,194 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  @include tablets {
+    order: 1;
+  }
+  @include desktop {
+    order: 2;
+  }
+  .investment {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: 0 2px 6px 0 rgba(170, 170, 170, 0.16);
+    border-radius: 4px;
+    @include tablets {
+      margin-bottom: 24px;
+    }
+    @include desktop {
+      // margin-left: 32px;
+      margin-bottom: 0;
+    }
+  }
+
+  .strategy {
+    &-container {
+      padding: 16px;
+      @include desktop {
+        padding: 24px 16px;
+      }
+      @include desktop {
+        padding: 24px;
+      }
+    }
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      @include tablets {
+        margin-bottom: 4px;
+      }
+    }
+    &-title {
+      display: flex;
+      flex-direction: column;
+      @include tablets {
+        flex-direction: row;
+        align-items: center;
+      }
+      &__label {
+        display: inline;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 700;
+        margin-bottom: 3px;
+        color: $gray90;
+        @include tablets {
+          margin-right: 15px;
+          margin-bottom: 0;
+        }
+        @include desktop {
+          margin-right: 7px;
+        }
+      }
+      &__value {
+        line-height: 24px;
+      }
+      &__prefix, &__suffix {
+        font-size: 18px;
+        color: $blue50;
+      }
+      &__prefix {
+        font-weight: 700;
+        margin-right: 2px;
+      }
+      &__suffix {
+        font-weight: 300;
+      }
+    }
+    &-change {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      align-self: flex-start;
+      @include tablets {
+        align-self: auto;
+      }
+
+      &__icon {
+        width: 14px;
+        height: 12px;
+        margin-right: 4px;
+        @include tablets {
+          width: 12px;
+          height: 10px;
+        }
+        @include desktop {
+          width: 14px;
+          height: 12px;
+        }
+      }
+      &__text {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400;
+        color: $blue50;
+        @include desktop {
+          font-size: 14px;
+          line-height: 19px;
+        }
+      }
+    }
+    &-description {
+      display: none;
+      @include tablets {
+        display: block;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+        color: $gray90;
+      }
+    }
+  }
+
+  .products {
+
+    .ui-tabview.ui-tabview-top .ui-tabview-nav {
+      border-bottom: 1px solid $gray30;
+      margin-bottom: 0;
+      padding: 0 16px;
+      @include desktop {
+        padding: 0 24px;
+      }
+    }
+    .ui-tabview-panels {
+      box-shadow: none;
+    }
+
+    &-title {
+      margin-bottom: 32px;
+      @include desktop {
+        margin-bottom: 40px;
+      }
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      @include tablets {
+        flex-direction: row;
+      }
+    }
+
+    &-chart {
+      margin-bottom: 40px;
+      position: relative;
+
+      @include tablets {
+        min-width: 235px;
+        max-width: 235px;
+        margin-bottom: 0;
+        margin-right: 50px;
+      }
+      @include desktop {
+        min-width: 235px;
+        max-width: 235px;
+        margin-right: 107px;
+      }
+
+      .total-value {
+        position: absolute;
+        top: 95px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        color: $navy;
+        font-size: 22px;
+        line-height: 32px;
+        font-weight: 700;
+      }
+    }
+
+    &-map {
+      min-width: 335px;
+      max-width: 335px;
+      @include tablets {
+        min-width: 335px;
+        max-width: 335px;
+      }
+      @include desktop {
+        min-width: 335px;
+        max-width: 335px;
+      }
+    }
+  }
+}

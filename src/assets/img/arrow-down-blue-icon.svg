@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="8px" viewBox="0 0 10 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 59 (101010) - https://sketch.com -->
+    <title>00FBCA5E-5DD6-478C-832B-BDACF8999C2D_outlined</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="13.825 6.91250006 10 10.7291667 6.175 6.91250006 5 8.08750004 10 13.0874999 15 8.08750004"></polygon>
+    </defs>
+    <g id="04-My****" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="My-****---Overview---Tablet" transform="translate(-729.000000, -32.000000)">
+            <g id="icon/navigation/expand_more_24px-1" transform="translate(724.000000, 26.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="icon/navigation/expand_more_24px" fill-rule="nonzero"></g>
+                <g id="↳-Color-✱-/-Color-/-Icons-/-Selected-/-On-Primary-/-Active-" mask="url(#mask-2)" fill="#4DA8CF">
+                    <rect id="Rectangle-3" x="0" y="0" width="20" height="20"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

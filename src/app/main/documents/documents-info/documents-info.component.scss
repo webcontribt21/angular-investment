@@ -1,0 +1,39 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .info {
+    @include tabletsHoriz {
+      min-width: 288px;
+      max-width: 288px;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px 0 rgba(170,170,170,0.16);
+      padding: 24px 16px;
+    }
+    @include desktop {
+      padding: 24px;
+    }
+
+    & .title {
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    & .file {
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      text-decoration: underline;
+      color: $blue50;
+    }
+
+    &-category {
+      margin-bottom: 24px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

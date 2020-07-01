@@ -1,0 +1,24 @@
+<div class="performance-tabs">
+  <p-tabView>
+    <p-tabPanel [header]="'UPDATE_STRATEGY_PAGE.PORTFOLIO_PERFORMANCE.TAB_HEADERS.EXPECTED_PERFORMANCE' | translate">
+      <div class="tab-content">
+        <div class="expected-chart">
+          <app-stock-chart
+              *ngIf="(chartValues$ | async) as chartValues"
+              [data]="chartValues?.series"
+              [options]="chartValues?.options"
+              [showLegend]="true"
+          ></app-stock-chart>
+        </div>
+      </div>
+    </p-tabPanel>
+    <p-tabPanel
+      *ngIf="false"
+      [header]="'UPDATE_STRATEGY_PAGE.PORTFOLIO_PERFORMANCE.TAB_HEADERS.HISTORIC_PERFORMANCE' | translate"
+      [disabled]="true">
+      <div class="tab-content">
+        2
+      </div>
+    </p-tabPanel>
+  </p-tabView>
+</div>

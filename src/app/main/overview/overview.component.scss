@@ -1,0 +1,64 @@
+@import '../../../styles/media.scss';
+@import '../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .overview {
+    display: flex;
+    justify-content: center;
+    &-container {
+      padding-top: 40px;
+      @include tablets {
+        padding-top: 56px;
+      }
+      @include desktop {
+        padding-top: 72px;
+      }
+    }
+  }
+
+  .greeting {
+    margin-bottom: 24px;
+      @include desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 39px;
+    }
+    &-controls {
+      display: none;
+      .button-transparent {
+        margin-right: 16px;
+      }
+      .ui-button {
+        .ui-button-text {
+          padding: 10px 16px;
+        }
+      }
+      @include desktop {
+        display: flex;
+      }
+    }
+  }
+
+  .details {
+    margin-bottom: 16px;
+    @include tablets {
+      display: flex;
+      margin-bottom: 23px;
+    }
+    @include desktop {
+      margin-bottom: 32px;
+    }
+    .extended {
+      transform: rotate(180deg);
+    }
+  }
+
+  .activity-strategy {
+    display: flex;
+    flex-direction: column;
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+}

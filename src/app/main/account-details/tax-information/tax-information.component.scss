@@ -1,0 +1,51 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .tax-block {
+    margin-bottom: 40px;
+  }
+
+  .input-wrapper {
+    .input {
+      padding-right: 12px;
+    }
+  }
+
+  .tax-id {
+    margin-right: 20px;
+    &__action {
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+    }
+  }
+
+  .form {
+    @include tablets {
+      display: flex;
+      align-items: center;
+    }
+    .buttons {
+      margin-top: 15px;
+      @include tablets {
+        margin-top: 0;
+        margin-left: 16px;
+      }
+      .cancel-btn {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        color: $gray70;
+        margin-left: 24px;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        @include tablets {
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}

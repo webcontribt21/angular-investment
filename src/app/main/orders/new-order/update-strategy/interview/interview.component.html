@@ -1,0 +1,30 @@
+<div class="interview">
+  <div class="interview-question">
+    <a class="interview-question__back"
+      *ngIf="(interviewStep$ | async) !== 1"
+      (click)="previousQuestion()"
+    >
+      <span class="interview-question__back-text">
+        {{'UPDATE_STRATEGY_PAGE.INTERVIEW.PREVIOUS_QUESTION' | translate}}
+      </span>
+    </a>
+    <div class="form">
+      <form
+        [formGroup]="form"
+        ngxsForm="interview.addInterviewForm"
+        [ngxsFormClearOnDestroy]="true"
+        novalidate>
+        <ng-container *ngFor="let question of questionPageList$ | async; index as i">
+          <ng-container *ngIf="question.active">
+            <ng-container
+              *ngComponentOutlet="question.component; injector: question.injectedData">
+            </ng-container>
+          </ng-container>
+        </ng-container>
+      </form>
+    </div>
+  </div>
+  <div class="interview-summary">
+    <app-order-summary></app-order-summary>
+  </div>
+</div>

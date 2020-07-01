@@ -1,0 +1,48 @@
+<div class="order-summary">
+  <div class="summary">
+    <div class="summary-title">
+      {{'COMMON.ORDER_SUMMARY' | translate}}
+    </div>
+    <div class="summary-content">
+      <div class="summary-amount">
+        <div class="summary-amount__title">
+          {{'REFERENCE_ACCOUNT_ORDER_PAGE.ORDER_SUMMARY.CURRENT_ACCOUNT' | translate}}
+        </div>
+        <div class="summary-amount__result" *ngIf="(selectedCustomer$ | async) as customer">
+          <div class="summary-amount__item">
+            <span>{{customer.bankAccount?.holderFirstName}} </span>
+            <span>{{customer.bankAccount?.holderLastName}}</span>
+          </div>
+          <div class="summary-amount__item">
+            <span>{{customer.bankAccount?.iban}}</span>
+          </div>
+          <div class="summary-amount__item">
+            <span>{{customer.bankAccount?.bic}}</span>
+          </div>
+          <div class="summary-amount__item">
+            <span>{{customer.bankAccount?.bank}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="summary-amount">
+        <div class="summary-amount__title">
+          {{'REFERENCE_ACCOUNT_ORDER_PAGE.ORDER_SUMMARY.NEW_ACCOUNT' | translate}}
+        </div>
+        <div class="summary-amount__new-result" *ngIf="(referenceAccount$ | async)?.bankAccount as bankAccount">
+          <div class="summary-amount__item">
+            <span *ngIf="bankAccount.iban">{{bankAccount.iban}}</span>
+          </div>
+          <div class="summary-amount__item">
+            <span *ngIf="bankAccount.bic">{{bankAccount.bic}}</span>
+          </div>
+          <div class="summary-amount__item">
+            <span *ngIf="bankAccount.bank">{{bankAccount.bank}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="summary-processing">
+        {{'REFERENCE_ACCOUNT_ORDER_PAGE.ORDER_TAKES' | translate }}
+      </div>
+    </div>
+  </div>
+</div>

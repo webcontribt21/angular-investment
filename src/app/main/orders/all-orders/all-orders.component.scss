@@ -1,0 +1,110 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .all-orders {
+    display: flex;
+    justify-content: center;
+    &-container {
+      padding-top: 24px;
+      @include tablets {
+        padding-top: 56px;
+      }
+      .all-orders-header {
+        margin-bottom: 24px;
+        display: flex;
+        justify-content: space-between;
+        @include desktop {
+          margin-bottom: 39px;
+        }
+        .button-menu-wrap {
+          position: absolute;
+          display: inline-block;
+          bottom: -50px;
+          right: 16px;
+          @include tablets {
+            position: relative;
+            bottom: auto;
+            right: auto;
+          }
+          .menu-button {
+            &.is-open {
+              .close-icon {
+                transform: rotate(180deg);
+              }
+            }
+            .close-icon {
+              width: 20px;
+              height: 20px;
+              background-image: url(/assets/img/close-icon-white.svg);
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: 12px;
+              transform: rotate(45deg);
+              transition: transform .25s ease;
+              @include tablets {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      .h1 {
+        padding-left: 8px;
+        @include tablets {
+          padding-left: 0;
+        }
+      }
+
+      .content {
+        display: flex;
+        //flex-direction: column;
+        @include tablets {
+          justify-content: space-between;
+        }
+        @include desktop {
+          flex-direction: row;
+        }
+        &-list {
+          width: 100%;
+          order: 2;
+          display: flex;
+          flex-direction: column;
+          @include desktop {
+            order: 1;
+          }
+          .success-msg{
+            background-color: $green10;
+            color: $green;
+            padding:16px 16px 16px 13px;
+            display: flex;
+            align-items: center;
+            align-self: flex-start;
+            width: 100%;
+            margin-bottom:16px;
+            border-radius: 2px;
+            @include tablets {
+              margin-bottom:24px;
+              margin-top:-15px;
+              width:auto;
+            }
+
+            img{
+              width:18px;
+              margin-right:9px;
+            }
+          }
+        }
+        &-info {
+          @include tabletsHoriz {
+            order: 2;
+            margin-left: 16px;
+          }
+          @include desktop {
+            margin-left: 32px;
+          }
+        }
+      }
+    }
+  }
+}

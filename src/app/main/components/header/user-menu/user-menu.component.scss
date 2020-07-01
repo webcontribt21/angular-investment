@@ -1,0 +1,294 @@
+@import '../../../../../styles/media.scss';
+@import '../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .customer-container {
+    display: flex;
+
+    .user {
+      align-self: stretch;
+      display: flex;
+      @include desktop {
+        cursor: pointer;
+        flex-direction: column;
+      }
+
+      .user-select {
+        display: flex;
+        align-items: center;
+        padding:0 5px;
+        margin:0 -5px;
+        cursor: pointer;
+        &:after {
+          content: '';
+          width: 5px;
+          align-self: stretch;
+          background: url("/assets/img/icon-arrow-down-white.svg") no-repeat center calc(50%);
+          background-size: 100% auto;
+          @include tablets {
+            width: 10px;
+            background: url("/assets/img/user-menu-arrow-down-icon.svg") no-repeat center calc(50%);
+          }
+          @include desktop {
+            width: 8px;
+            background: url("/assets/img/icon-arrow-down-white.svg") no-repeat center calc(50%);
+          }
+        }
+
+        .img {
+          display: block;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          margin-right: 4px;
+          @include tablets {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+          }
+          @include desktop {
+            width: 17px;
+            height: 17px;
+          }
+        }
+        .user-name {
+          display: none;
+          @include desktop {
+            display: block;
+            color: #fff;
+            margin-right: 11px;
+          }
+        }
+      }
+      .user-id {
+        display: none;
+        @include desktop {
+          display: block;
+          font-size: 12px;
+          line-height: 16px;
+          color: $gray30;
+          padding-left: 25px;
+          margin-top: -1px;
+        }
+      }
+    }
+
+    .user-menu {
+      position: absolute;
+      right:0;
+      top:100%;
+      width:268px;
+      max-width:100%;
+      background: #fff;
+      border-radius: 2px;
+      box-shadow: 0 2px 8px 0 rgba(189,193,199,0.5);
+      visibility: hidden;
+      transition: visibility .2s;
+      z-index: 901;
+      @include desktop {
+        right: -15px;
+      }
+
+      &.active {
+        visibility: visible;
+        transition: visibility .2s;
+      }
+
+      .user-info{
+        padding:9px 16px 8px;
+        font-size:14px;
+        @include desktop {
+          font-size: 16px;
+          line-height: 24px;
+          padding: 11px 16px 12px;
+        }
+
+        .user-info__text {
+          font-weight: 300;
+        }
+        .user-info__name {
+          font-weight:600;
+        }
+      }
+
+      .account-info{
+        margin: 0;
+        padding: 6px 0;
+        background-color: $gray10;
+        border:solid $gray30;
+        border-width:1px 0 0;
+        @include desktop {
+          padding: 12px 0;
+        }
+
+        .account-info__title{
+          display:none;
+          margin-bottom:7px;
+          padding-left: 16px;
+          @include desktop {
+            display: block;
+          }
+        }
+
+        .account-info__holder {
+          padding-left: 40px;
+          background-repeat: no-repeat;
+          background-position: 16px 3px;
+          background-size: 18px auto;
+
+          &.child-account {
+            background-image: url("/assets/img/choose-account-child-account-grey-icon.svg");
+          }
+
+          &.single-account {
+            background-image: url("/assets/img/choose-account-single-account-grey-icon.svg");
+          }
+
+          .name {
+            font-size: 16px;
+            line-height: 24px;
+            color: $gray90;
+            font-weight: 600;
+            margin-bottom: 1px;
+          }
+
+          .relation {
+            color: $gray70;
+            font-weight: 300;
+            margin-bottom: 16px;
+          }
+        }
+
+        .row{
+          display: flex;
+          justify-content: space-between;
+
+          .col{
+
+
+            &.details{
+              a{
+                color: $blue30;
+              }
+            }
+          }
+        }
+      }
+
+      .menu-item{
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left:39px;
+        padding-right: 16px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        @include desktop {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+
+        &:first-child {
+          margin-top: 6px;
+          @include desktop {
+            margin-top: 10px;
+          }
+        }
+
+        &:hover {
+          background-color: rgba(217, 220,225, 0.2);
+        }
+
+        &:before{
+          content:'';
+          position: absolute;
+          left: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+          width:15px;
+          height:15px;
+          background-size: 100% auto;
+          background-repeat: no-repeat;
+          background-position: left center;
+          @include desktop {
+            width:18px;
+            height:18px;
+          }
+        }
+
+        &.switch-account{
+          &:before{
+            background-image: url("/assets/img/user-menu-switch-account-icon.svg");
+          }
+
+          .link{
+            line-height:20px;
+          }
+        }
+
+        &.account-details:before {
+          background-image: url("/assets/img/user-menu-account-details-icon.svg");
+          margin-left:-1px;
+          @include desktop {
+            width: 20px;
+            margin-left:-2px;
+          }
+        }
+
+        &.help:before {
+          width:12px;
+          background-image: url("/assets/img/user-menu-live-help-icon.svg");
+          @include desktop {
+            width: 15px;
+          }
+        }
+
+        &.sets:before {
+          height:13px;
+          background-size: auto 100%;
+          background-image: url("/assets/img/user-menu-settings-icon.svg");
+          @include desktop {
+            height:17px;
+            margin-left:-1px;
+          }
+        }
+
+        &.invite:before {
+          background-image: url("/assets/img/user-menu-invite-friends-icon.svg");
+          @include desktop {
+            width: 18px;
+            margin-left:-1px;
+          }
+        }
+
+        &.logout:before {
+          width:13px;
+          background-image: url("/assets/img/user-menu-logout-icon.svg");
+          @include desktop {
+            width:15px;
+            background-position: left top;
+            margin-left:1px;
+          }
+        }
+
+        a, .link{
+          color: $gray90;
+        }
+      }
+
+      .menu-options{
+        margin:0;
+        border-top:1px solid $gray30;
+      }
+    }
+  }
+
+  .overlay{
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index: 900;
+  }
+}

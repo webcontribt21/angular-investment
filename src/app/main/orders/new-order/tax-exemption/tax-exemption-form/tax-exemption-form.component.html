@@ -1,0 +1,276 @@
+<div class="exemption-form">
+  <div class="exemption-form__note">
+    <app-upload-note></app-upload-note>
+  </div>
+
+  <div class="exemption-form__form">
+    <form
+      [formGroup]="taxExemptionForm"
+      ngxsForm="order.taxExemptionForm"
+      ngxsFormDebounce="300"
+      (ngSubmit)="submit()"
+      novalidate
+    >
+      <ng-container *ngIf="joint">
+        <div class="form-row">
+          <div class="form-row__title">
+            {{'TAX_EXEMPTION_PAGE.YOUR_SPOUSE_NAME' | translate}}
+          </div>
+          <div class="form-row__container">
+            <div class="form-row__col">
+              <div class="form-row__label">
+                {{'COMMON.TITLE' | translate}}
+              </div>
+              <div class="form-row__input">
+                <p-dropdown
+                  class="dropdown-list dropdown-list_gender"
+                  styleClass="dropdown-list dropdown-list_gender"
+                  dropdownIcon="pi pi-caret-down"
+                  [autoDisplayFirst]="false"
+                  [options]="titleOptions$ | async"
+                  [formControl]="titleControl"
+                ></p-dropdown>
+                <ng-container *ngIf="titleControl as control">
+                  <div class="errors" *ngIf="control.touched && control.invalid">
+                    <div class="errors-item" *ngIf="control.errors.required">
+                      {{'MESSAGES.REQUIRED' | translate}}
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div class="form-row__col form-row__col_first_name">
+              <div class="form-row__label">
+                {{'COMMON.FIRST_NAME' | translate}}
+              </div>
+              <div class="form-row__input">
+                <input class="input" [formControl]="firstNameControl" />
+              </div>
+              <ng-container *ngIf="firstNameControl as control">
+                <div class="errors" *ngIf="control.dirty && control.invalid">
+                  <div class="errors-item" *ngIf="control.errors.required">
+                    {{'MESSAGES.REQUIRED' | translate}}
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="form-row__col form-row__col_last_name">
+              <div class="form-row__label">
+                {{'COMMON.LAST_NAME' | translate}}
+              </div>
+              <div class="form-row__input">
+                <input class="input" [formControl]="lastNameControl" />
+              </div>
+              <ng-container *ngIf="lastNameControl as control">
+                <div class="errors" *ngIf="control.dirty && control.invalid">
+                  <div class="errors-item" *ngIf="control.errors.required">
+                    {{'MESSAGES.REQUIRED' | translate}}
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-row__title">
+            {{'TAX_EXEMPTION_PAGE.YOUR_SPOUSE_BIRTH_DATE' | translate}}
+          </div>
+          <div class="form-row__container">
+            <div class="form-row__col form-row__col_day">
+              <div class="form-row__label">
+                {{'COMMON.DAY' | translate}}
+              </div>
+              <div class="form-row__input">
+                <div class="form-row__input">
+                  <p-inputMask
+                    class="form-row__input-date"
+                    mask="99"
+                    placeholder="DD"
+                    [formControl]="dayControl">
+                  </p-inputMask>
+                </div>
+              </div>
+            </div>
+            <div class="form-row__col form-row__col_month">
+              <div class="form-row__label">
+                {{'COMMON.MONTH' | translate}}
+              </div>
+              <div class="form-row__input">
+                <p-inputMask
+                  class="form-row__input-date"
+                  mask="99"
+                  placeholder="MM"
+                  [formControl]="monthControl">
+                </p-inputMask>
+
+              </div>
+            </div>
+            <div class="form-row__col form-row__col_year">
+              <div class="form-row__label">
+                {{'COMMON.YEAR' | translate}}
+              </div>
+              <div class="form-row__input">
+                <p-inputMask
+                  class="form-row__input-date"
+                  mask="9999"
+                  placeholder="YYYY"
+                  [formControl]="yearControl">
+                </p-inputMask>
+
+              </div>
+            </div>
+          </div>
+            <div class="errors"
+              *ngIf="(dayControl.dirty && dayControl.invalid)
+              || (monthControl.dirty && monthControl.invalid)
+              || (yearControl.dirty && yearControl.invalid)
+              || birthDateControl.invalid"
+            >
+              <div class="errors-item">
+                {{'TAX_EXEMPTION_PAGE.MESSAGES.WRONG_DATE_OF_BIRTH' | translate}}
+              </div>
+            </div>
+        </div>
+
+        <div class="form-row form-row_tax_id">
+          <div class="form-row__title">
+            {{'TAX_EXEMPTION_PAGE.YOUR_SPOUSE_TAX_ID' | translate}}
+          </div>
+          <div class="form-row__col">
+            <div class="form-row__input">
+              <input type="number" class="input" [formControl]="spouseGermanTinControl" />
+            </div>
+            <ng-container *ngIf="spouseGermanTinControl as control">
+              <div class="errors" *ngIf="control.dirty && control.invalid">
+                <div class="errors-item" *ngIf="control.errors.required">
+                  {{'MESSAGES.REQUIRED' | translate}}
+                </div>
+                <div class="errors-item" *ngIf="control.errors.min || control.errors.max">
+                  {{'MESSAGES.WRONG_TAX_ID' | translate}}
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </ng-container>
+
+      <div class="form-row form-row_create">
+        <button class="request-order create"
+          *ngIf="!joint; else removeSpouse"
+          (click)="createJointTax()"
+        >
+          {{'TAX_EXEMPTION_PAGE.CREATE_JOINT_TAX' | translate }}
+        </button>
+        <ng-template #removeSpouse>
+          <button class="request-order remove form-row__create" (click)="cancelJointTax()">
+            {{'TAX_EXEMPTION_PAGE.REMOVE_YOUR_SPOUSE' | translate }}
+          </button>
+        </ng-template>
+      </div>
+
+      <div class="form-row form-row_radio">
+        <div class="form-row__col">
+          <div class="form-row__title form-row__title_radio">
+            {{'TAX_EXEMPTION_PAGE.WHAT_AMOUNT' | translate}}
+          </div>
+          <div class="form-row__input form-row__radio" *ngIf="joint">
+            <p-radioButton
+              class="form-row__radio-container"
+              name="amount"
+              [value]="taxExemptionAmountTypeEnum.lossSettlement"
+              [label]="'TAX_EXEMPTION_PAGE.ONLY_ONE_SPOUSE_SPANNING' | translate"
+              [formControl]="amountTypeControl"
+            ></p-radioButton>
+          </div>
+          <div class="form-row__input form-row__radio">
+            <p-radioButton
+              class="form-row__radio-container"
+              name="amount"
+              [value]="taxExemptionAmountTypeEnum.useFull"
+              [label]="'TAX_EXEMPTION_PAGE.UP_TO_AMOUNT' | translate : {amount: (maxAmount | currencySignPipe | async)}"
+              [formControl]="amountTypeControl"
+            ></p-radioButton>
+          </div>
+          <div class="form-row__input form-row__radio">
+            <div class="form-row__radio-wrapper">
+              <p-radioButton
+                class="form-row__radio-container form-row__radio-container_custom"
+                name="amount"
+                [value]="taxExemptionAmountTypeEnum.useAmount"
+                [label]="('TAX_EXEMPTION_PAGE.CUSTOM_AMOUNT' | translate)"
+                [formControl]="amountTypeControl">
+              </p-radioButton>
+              <app-currency-input
+                [isDisabled]="amountTypeControl.value !== taxExemptionAmountTypeEnum.useAmount"
+                [isInvalid]="getControl('amount').invalid && getControl('amount').dirty"
+                [formControl]="amountControl"
+                (click)="onAmountSelect()">
+              </app-currency-input>
+            </div>
+            <ng-container *ngIf="amountControl as control">
+              <div class="errors" *ngIf="control.dirty && control.invalid && amountTypeControl.value === taxExemptionAmountTypeEnum.useAmount">
+                <div class="errors-item" *ngIf="control.errors.required">
+                  {{'MESSAGES.REQUIRED' | translate}}
+                </div>
+                <div class="errors-item" *ngIf="control.errors.min || control.errors.max">
+                  {{'MESSAGES.WRONG_AMOUNT' | translate : {min: minAmount, max: (maxAmount | currencySignPipe : 0 | async)} }}
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-row__col">
+          <div class="form-row__title">
+            {{'TAX_EXEMPTION_PAGE.TAX_EXEMPTION_START_DATE' | translate}}
+          </div>
+          <div class="form-row__input">
+            <p-dropdown
+              class="dropdown-list"
+              styleClass="dropdown-list"
+              dropdownIcon="pi pi-caret-down"
+              [options]="startDateOptions"
+              [formControl]="startDateControl"
+            ></p-dropdown>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-row__col">
+          <div class="form-row__title">
+            {{'TAX_EXEMPTION_PAGE.TAX_EXEMPTION_END_DATE' | translate}}
+          </div>
+          <div class="form-row__input">
+            <p-dropdown
+              class="dropdown-list"
+              styleClass="dropdown-list"
+              dropdownIcon="pi pi-caret-down"
+              [options]="endDateOptions$ | async"
+              [formControl]="endDateControl"
+            ></p-dropdown>
+          </div>
+          <ng-container *ngIf="endDateControl as control">
+            <div class="errors" *ngIf="control.dirty && control.invalid">
+              <div class="errors-item" *ngIf="control.errors.isWrong">
+                {{'TAX_EXEMPTION_PAGE.MESSAGES.WRONG_DATE' | translate}}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="form-submit exemption-form__submit">
+        <p-button
+          class="button-blue"
+          [label]="'TAX_EXEMPTION_PAGE.CREATE_TAX_EXEMPTION_FORM' | translate"
+          [disabled]="taxExemptionForm.invalid"
+        >
+        </p-button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+@import '../../../../../../styles/media.scss';
+@import '../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .make-order {
+    &__note {
+      margin-bottom: 25px;
+      @include tabletsHoriz {
+        margin-bottom: 32px;
+      }
+    }
+    &__change {
+      margin-bottom: 25px;
+      @include tabletsHoriz {
+        margin-bottom: 32px;
+      }
+    }
+    &__upload {
+      margin-bottom: 32px;
+      @include tabletsHoriz {
+        margin-bottom: 38px;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<p-dropdown
+    [options]="languages$ | async"
+    (onChange)="selectLanguage($event)"
+    [ngModel]="selectedLang$ | async"
+    styleClass="language-selector"
+    [showTransitionOptions]="'0ms'"
+    [hideTransitionOptions]="'0ms'">
+  <ng-template let-item pTemplate="selectedItem">
+    <div class="option selected">
+      <img src="assets/img/flag-{{item.value}}.svg" />
+    </div>
+  </ng-template>
+  <ng-template let-lang pTemplate="item">
+    <div class="option">
+      <img src="assets/img/flag-{{lang.value}}.svg" />
+      <span>{{lang.label}}</span>
+    </div>
+  </ng-template>
+</p-dropdown>

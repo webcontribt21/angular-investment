@@ -1,0 +1,250 @@
+@import '../../../../../../../styles/media.scss';
+@import '../../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .select-strategy {
+    border-radius: 2px;
+    box-shadow: 0 2px 8px 0 rgba(189,193,199,0.5);
+    &__header {
+      border-radius: 2px 2px 0 0;
+      display: flex;
+      padding: 16px 32px;
+      background-color: $gray10;
+      align-items: center;
+      .header {
+        &__icon {
+          height: 34px;
+          width: 55px;
+          padding-right: 16px;
+        }
+        &__text {
+          font-size: 14px;
+          line-height: 24px;
+        }
+        &__text-prefix {
+          font-weight: 400;
+          margin-right: 4px;
+          color: $gray90;
+        }
+        &__text-suffix {
+          font-weight: 600;
+          color: $navy;
+        }
+      }
+    }
+
+    &__content {
+      background-color: #fff;
+      padding: 24px 20px;
+      border-radius: 0 0 2px 2px;
+      @include tablets {
+        padding: 32px 26px;
+      }
+      .content {
+        &__title {
+          font-size: 20px;
+          line-height: 28px;
+          color: $navy;
+          font-weight: 600;
+          margin-bottom: 8px;
+          @include desktop {
+            font-size: 22px;
+            line-height: 32px;
+          }
+        }
+        &__message {
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 300;
+          color: $gray90;
+          margin-bottom: 32px;
+        }
+        &__invest {
+          .invest {
+            &__title {
+              color: $orange50;
+              display: flex;
+              font-size: 24px;
+              line-height: 30px;
+              .title-prefix {
+                font-weight: 600;
+                margin-right: 2px;
+              }
+              .title-suffix {
+                font-weight: 300;
+              }
+              .pi.pi-external-link {
+                margin-right: 8px;
+              }
+              .title-info {
+                position: relative;
+                &:hover {
+                  .title-info__tooltip {
+                    display: block;
+                  }
+                }
+                &__icon {
+
+                }
+                &__tooltip {
+                  position: absolute;
+                  display: none;
+                  z-index: 100;
+                  width: 210px;
+                  padding: 12px 20px;
+                  background-color: $gray10;
+                  border-radius: 2px;
+                  right: -20px;
+                  bottom: 34px;
+                  box-shadow: 0 2px 8px 2px rgba(189,193,199,0.5);
+                  &:before {
+                    content: '';
+                    display: block;
+                    width: 14px;
+                    height: 14px;
+                    position: absolute;
+                    bottom: -7px;
+                    background-color: $gray10;
+                    right: 20.5px;
+                    transform: rotate(45deg);
+                    box-shadow: 3px 3px 4px -2px rgba(189, 193, 199, 0.5);
+                  }
+                  @include tablets {
+                    width: 250px;
+                  }
+                  .tooltip-title {
+                    color: $navy;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                    &__prefix {
+                      margin-right: 2px;
+                    }
+                    &__suffix {
+
+                    }
+                  }
+                  .tooltip-content {
+                    color: $gray90;
+                    font-size: 12px;
+                    line-height: 20px;
+                    font-weight: 400;
+                  }
+                }
+              }
+            }
+            &__risk {
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              font-size: 10px;
+              line-height: 14px;
+              color: $gray70;
+              font-weight: 300;
+              .risk-bar {
+                width: 100%;
+              }
+              .risk-less {
+
+              }
+              .risk-more {
+                text-align: right;
+                padding-right: 15px;
+                @include tablets {
+                  padding-right: 17px;
+                }
+                @include tabletsHoriz {
+                  padding-right: 18px;
+                }
+                @include desktop {
+                  padding-right: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .custom-slider {
+    // overflow: hidden;
+    .ng5-slider {
+      margin: 14px 0 6px 8px;
+    }
+    & .ng5-slider .ng5-slider-bar {
+      height: 0;
+    }
+    & .ng5-slider .ng5-slider-selection {
+      background: orange;
+    }
+    & .ng5-slider .ng5-slider-pointer {
+      width: 12px;
+      height: 12px;
+      top: -8px;
+      bottom: 0;
+      background-color: $orange50;
+      border-radius: 50%;
+      margin-left: -14px;
+      @include tablets {
+        width: 16px;
+        height: 16px;
+        top: -10px;
+      }
+    }
+    & .ng5-slider .ng5-slider-pointer:after {
+      width: 6px;
+      height: 6px;
+      top: 3px;
+      left: 3px;
+      @include tablets {
+        width: 8px;
+        height: 8px;
+        top: 4px;
+        left: 4px;
+      }
+    }
+  }
+
+  .ng5-slider .ng5-slider-pointer.ng5-slider-active:after {
+    background-color: #fff;
+  }
+
+  .custom-slider .ng5-slider .ng5-slider-bubble {
+    bottom: 14px;
+  }
+
+  .custom-slider .ng5-slider .ng5-slider-limit {
+    font-weight: bold;
+    color: orange;
+  }
+
+  .custom-slider .ng5-slider .ng5-slider-tick {
+    width: 26px;
+    height: 3px;
+    margin-left: -36px;
+    border-radius: 0;
+    background: #ffe4d1;
+    top: -1px;
+    @include tablets {
+      width: 33px;
+      margin-left: -43px;
+      height: 4px;
+    }
+    @include tabletsHoriz {
+      width: 58px;
+      margin-left: -68px;
+    }
+    @include desktop {
+      width: 81px;
+      margin-left: -91px;
+    }
+    &:first-child {
+      display: none;
+    }
+  }
+
+  .custom-slider .ng5-slider .ng5-slider-tick.ng5-slider-selected {
+    background: $orange30;
+  }
+}

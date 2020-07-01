@@ -1,0 +1,19 @@
+<div class="info" *ngIf="(isDocumentsInfoShown$ | async)">
+  <div class="info-category" *ngIf="(quarterlyReport$ | async) as quarterlyReport">
+    <div class="info-category__title title">
+      {{'DOCUMENTS_PAGE.LAST_QUARTERLY_REPORT_PUBLISHED' | translate:{ date: (quarterlyReport?.publishDate | gmDate ) } }}
+    </div>
+    <a class="info-category__file file" [href]="quarterlyReport?.link" target="_blank">
+      {{'COMMON.REPORT' | translate}}
+    </a>
+  </div>
+
+  <div class="info-category" *ngIf="(taxStatementReport$ | async) as taxStatementReport">
+    <div class="info-category__title title">
+      {{'DOCUMENTS_PAGE.LAST_TAX_STATEMENT_PUBLISHED' | translate:{ date: (taxStatementReport?.publishDate | gmDate ) } }}
+    </div>
+    <a class="info-category__file file" [href]="taxStatementReport?.link" target="_blank">
+      {{'COMMON.REPORT' | translate}}
+    </a>
+  </div>
+</div>

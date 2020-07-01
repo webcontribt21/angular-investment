@@ -1,0 +1,43 @@
+@import '../../../styles/media.scss';
+@import '../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .documents {
+    display: flex;
+    justify-content: center;
+
+    &-container {
+      padding-top: 24px;
+      @include tablets {
+        padding-top: 56px;
+      }
+    }
+
+    &-title {
+      margin-bottom: 24px;
+      padding-left: 8px;
+      @include tablets {
+        padding-left: 0;
+        margin-bottom: 32px;
+      }
+    }
+
+    & .content {
+      display: flex;
+      @include tablets {
+        justify-content: space-between;
+      }
+      &-list {
+        width: 100%;
+      }
+      &-info {
+        @include tablets {
+          margin-left: 25px;
+        }
+        @include desktop {
+          margin-left: 32px;
+        }
+      }
+    }
+  }
+}

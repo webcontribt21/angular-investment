@@ -1,0 +1,84 @@
+<div class="summary">
+  <div class="summary-title">
+    {{'COMMON.ORDER_SUMMARY' | translate}}
+  </div>
+  <ng-container *ngIf="(taxForm$ | async) as taxForm">
+    <div class="summary-content rest">
+      <div class="summary-amount">
+        <div class="summary-amount__title">
+          {{'COMMON.AMOUNT' | translate | titlecase}}
+        </div>
+        <div class="summary-amount__number">
+          {{(taxForm.amount || 0) | currencySignPipe | async}}
+        </div>
+      </div>
+
+      <div class="summary-amount-secondary">
+        <div class="summary-amount-secondary__title">
+          {{'ORDERS_PAGE.TAX_ID' | translate}}
+        </div>
+        <div class="summary-amount-secondary__number">
+          {{taxForm.germanTin}}
+        </div>
+      </div>
+      <div class="summary-amount-secondary">
+        <div class="summary-amount-secondary__title">
+          {{'TAX_EXEMPTION_PAGE.ORDER_SUMMARY.START_DATE' | translate}}
+        </div>
+        <div class="summary-amount-secondary__number">
+          {{taxForm.startDate | gmDate: 'dd MMM yyyy'}}
+        </div>
+      </div>
+      <div class="summary-amount-secondary">
+        <div class="summary-amount-secondary__title">
+          {{'TAX_EXEMPTION_PAGE.ORDER_SUMMARY.END_DATE' | translate}}
+        </div>
+        <div class="summary-amount-secondary__number">
+          {{(taxForm.endDate | gmDate: 'dd MMM yyyy') || 'TAX_EXEMPTION_PAGE.UNTIL_NEW_ORDER' | translate}}
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-content summary-spouse" *ngIf="taxForm.spouse as spouse">
+      <div class="summary-account">
+        <div class="summary-spouse__title summary-account__title">
+          {{'TAX_EXEMPTION_PAGE.ORDER_SUMMARY.JOINT_TAX_EXEMPTION' | translate}}:
+        </div>
+        <div class="summary-spouse__item summary-account__item">
+          <div class="summary-spouse__label">
+            {{'COMMON.NAME' | translate}}:
+          </div>
+          <div class="summary-spouse__value">
+            <ng-container *ngIf="spouse.title; else noTitle">
+              {{title$ | customTranslate | async}} {{spouse.firstName}} {{spouse.lastName}}
+            </ng-container>
+            <ng-template #noTitle>
+              {{spouse.firstName}} {{spouse.lastName}}
+            </ng-template>
+          </div>
+        </div>
+        <div class="summary-spouse__item">
+          <div class="summary-spouse__label">
+            {{'TAX_EXEMPTION_PAGE.ORDER_SUMMARY.DATE_OF_BIRTH' | translate}}:
+          </div>
+          <div class="summary-spouse__value">
+            {{spouse.birthDate || '-'}}
+          </div>
+        </div>
+        <div class="summary-spouse__item">
+          <div class="summary-spouse__label">
+            {{'ORDERS_PAGE.TAX_ID' | translate}}
+          </div>
+          <div class="summary-spouse__value">
+            {{spouse.germanTin || '-'}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="summary-content">
+      <div class="summary-processing">
+        {{'ORDERS_PAGE.COMMON.ORDER_TAKES_UP_TO_X_DAYS' | translate : {x: 10} }}
+      </div>
+    </div>
+  </ng-container>
+</div>

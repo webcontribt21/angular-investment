@@ -1,0 +1,227 @@
+<section class="withdrawal">
+  <div class="withdrawal-title h1">
+    {{'WITHDRAWAL_PAGE.WITHDRAWAL' | translate}}
+  </div>
+  <div class="withdrawal-content order-content">
+    <div class="withdrawal-request order-request">
+      <div class="withdrawal-request__advice">
+        <div class="withdrawal-request__advice-image-wrap">
+          <img class="advice-image" src="./assets/img/withdraw-order.svg" alt="withdraw-icon" />
+        </div>
+        <div class="withdrawal-request__advice-content">
+          <div class="advice-title h5">
+            {{'WITHDRAWAL_PAGE.ADVICE.TITLE' | translate}}
+          </div>
+          <div class="advice-text">
+            {{'WITHDRAWAL_PAGE.ADVICE.TEXT_PART_1' | translate}}
+            <span class="advice-text__accent">{{(investmentStrategy$ | async).yearlyReturn | number:'1.2-2'}}% {{'WITHDRAWAL_PAGE.ADVICE.P_A' | translate}}</span>{{'WITHDRAWAL_PAGE.ADVICE.TEXT_PART_2' | translate}}
+            <span class="advice-text__accent">{{'WITHDRAWAL_PAGE.ADVICE.YEARS' | translate:{years: 5} }}</span>{{'WITHDRAWAL_PAGE.ADVICE.TEXT_PART_3' | translate}}
+          </div>
+          <div class="advice-additional">
+            <span class="advice-additional-text">
+              {{'WITHDRAWAL_PAGE.ADVICE.HAVE_QUESTIONS' | translate}}
+            </span>
+            <a class="advice-additional-link" target="_blank" href="https://www.****.de/kontakt">
+              {{'WITHDRAWAL_PAGE.ADVICE.DISCUSS_THEM_WITH_AN_ADVISOR_WITH_OUR_TEAM' | translate}}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="withdrawal-request__title order-request__title" *ngIf="!fullWithdrawControl.value">
+        {{'WITHDRAWAL_PAGE.FORM.TITLE' | translate}}
+      </div>
+      <div class="withdrawal-request__form">
+        <form class="form" [formGroup]="withdrawalOrderForm" (ngSubmit)="onSubmit()">
+          <ng-container *ngIf="!fullWithdrawControl.value">
+            <div class="form-amount">
+              <app-currency-input
+                [formControl]="amountFormControl"
+                [isInvalid]="(amountFormControl.invalid && amountFormControl.dirty) || withdrawalOrderForm.errors?.validateAmount">
+              </app-currency-input>
+              <ng-container *ngIf="amountFormControl as control">
+                <div class="errors" *ngIf="control.dirty && control.invalid && control.errors.required">
+                  <div class="errors-item" *ngIf="control.errors.required">
+                    {{'MESSAGES.REQUIRED' | translate}}
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="form-notification">
+              {{'WITHDRAWAL_PAGE.FORM.TEXT_PART_1' | translate}}
+              <span class="form-notification__amount">{{1000 | currencySignPipe : 0 | async}}</span>.
+              {{'WITHDRAWAL_PAGE.FORM.TEXT_PART_2' | translate}}
+              <span class="form-notification__amount">{{1000 | currencySignPipe : 0 | async}}</span>
+              {{'WITHDRAWAL_PAGE.FORM.TEXT_PART_3' | translate}}
+              <span class="form-notification__amount">{{5000 | currencySignPipe : 0 | async}}</span>
+              {{'WITHDRAWAL_PAGE.FORM.TEXT_PART_4' | translate}}
+            </div>
+            <div class="full-withdraw" *ngIf="reasonFormControl">
+              <div class="full-withdraw__title">
+                {{'WITHDRAWAL_PAGE.FEEDBACK.TITLE' | translate}}
+              </div>
+              <div class="full-withdraw__message">
+                {{'WITHDRAWAL_PAGE.FEEDBACK.MESSAGE' | translate}}
+              </div>
+              <div class="full-withdraw__dropdown">
+                <div class="dropdown-title">
+                  {{'WITHDRAWAL_PAGE.FULL_WITHDRAW.PLEASE_SELECT_A_REASON' | translate}}
+                </div>
+                <p-dropdown
+                  class="dropdown-list"
+                  scrollHeight="200px"
+                  dropdownIcon="pi pi-caret-down"
+                  [options]="translatedWithdrawReasons$ | async"
+                  [autoDisplayFirst]="false"
+                  [formControl]="reasonFormControl"
+                  (onChange)="selectReason($event)"
+                ></p-dropdown>
+              </div>
+              <div class="other-reason"
+                *ngIf="reasonFormControl.value && reasonFormControl.value === otherReasonValue">
+                <input
+                  class="other-reason__input input"
+                  type="text"
+                  [formControl]="otherReasonFormControl">
+              </div>
+            </div>
+          </ng-container>
+
+          <div class="withdrawal-toggle">
+            <p-inputSwitch
+              class="withdrawal-toggle-btn"
+              inputId="toggle"
+              [formControl]="fullWithdrawControl"
+              (onChange)="handleChange($event)">
+            </p-inputSwitch>
+            <label [attr.for]="'toggle'" class="withdrawal-toggle-text">
+              {{'WITHDRAWAL_PAGE.FORM.FULL_ACCOUNT_WITHDRAWAL' | translate}}
+            </label>
+          </div>
+
+          <ng-container *ngIf="fullWithdrawControl.value">
+            <div class="full-withdraw">
+              <div class="full-withdraw__title">
+                {{'WITHDRAWAL_PAGE.FULL_WITHDRAW.WE_ARE_SAD_TO_SEE_YOU_LEAVE_****' | translate}}
+              </div>
+              <div class="full-withdraw__message">
+                {{'WITHDRAWAL_PAGE.FULL_WITHDRAW.FULL_WITHDRAW_MESSAGE' | translate}}
+              </div>
+              <div class="full-withdraw__dropdown">
+                <div class="dropdown-title">
+                  {{'WITHDRAWAL_PAGE.FULL_WITHDRAW.PLEASE_SELECT_A_REASON' | translate}}
+                </div>
+                <p-dropdown
+                  class="dropdown-list"
+                  scrollHeight="200px"
+                  dropdownIcon="pi pi-caret-down"
+                  [options]="translatedFullWithdrawReasons$ | async"
+                  [autoDisplayFirst]="false"
+                  [formControl]="reasonFormControl"
+                  (onChange)="selectReason($event)"
+                ></p-dropdown>
+              </div>
+              <div class="other-reason"
+                *ngIf="reasonFormControl.value && reasonFormControl.value === otherReasonValue">
+                <input
+                  class="other-reason__input input"
+                  type="text"
+                  [formControl]="otherReasonFormControl">
+              </div>
+            </div>
+
+            <div class="request-confirmation request-confirmation__text">
+              <p-checkbox
+                class="request-confirmation__checkbox"
+                binary="true"
+                [label]="'WITHDRAWAL_PAGE.FULL_WITHDRAW.CONFIRM_MESSAGE' | translate"
+                [formControl]="confirmFormControl">
+              </p-checkbox>
+            </div>
+          </ng-container>
+
+          <div class="form-submit">
+            <p-button class="button-blue"
+              [disabled]="withdrawalOrderForm.invalid"
+              [label]="'COMMON.MAKE_A_REQUEST' | translate"
+              [type]="'submit'"
+            ></p-button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="withdrawal-summary">
+      <div class="summary">
+        <div class="summary-title">
+          {{'COMMON.ORDER_SUMMARY' | translate}}
+        </div>
+        <div class="summary-content">
+          <div class="summary-amount-secondary">
+            <div class="summary-amount-secondary__title">
+              {{'WITHDRAWAL_PAGE.ORDER_SUMMARY.ACCOUNT_BALANCE' | translate}}
+            </div>
+            <div class="summary-amount-secondary__number">
+              {{(portfolio$ | async)?.currentBalance | currencySignPipe | async}}
+            </div>
+          </div>
+          <div
+            class="summary-amount-secondary"
+            [class.has-additional-info]="fullWithdrawControl.value">
+            <div class="summary-amount-secondary__title">
+              {{'WITHDRAWAL_PAGE.ORDER_SUMMARY.WITHDRAWAL_AMOUNT' | translate}}
+            </div>
+            <div class="summary-amount-secondary__number">
+              <span *ngIf="fullWithdrawControl.value; else amountControl">
+                {{(-(portfolio$ | async)?.currentBalance) | currencySignPipe | async}}
+              </span>
+              <ng-template #amountControl>
+                <span>{{-((amountFormControl.value) || 0) | currencySignPipe | async}}</span>
+              </ng-template>
+            </div>
+          </div>
+          <div class="summary-processing additional-info" *ngIf="fullWithdrawControl.value">
+            {{'WITHDRAWAL_PAGE.FULL_WITHDRAW.AMOUNT_ADDITIONAL_MESSAGE' | translate}}
+          </div>
+        </div>
+        <div class="summary-content rest">
+          <div class="summary-amount">
+            <div class="summary-amount__title">
+              {{'WITHDRAWAL_PAGE.ORDER_SUMMARY.NEW_ACCOUNT_BALANCE' | translate}}
+            </div>
+            <div class="summary-amount__number">
+              <span *ngIf="fullWithdrawControl.value; else resultAmount">
+                {{0 | currencySignPipe | async}}
+              </span>
+              <ng-template #resultAmount>
+                {{((portfolio$ | async)?.currentBalance - amountFormControl.value) | currencySignPipe | async}}
+              </ng-template>
+            </div>
+          </div>
+          <div class="summary-account" *ngIf="(selectedCustomer$ | async) as customer">
+            <div class="summary-account__title">
+              {{'WITHDRAWAL_PAGE.ORDER_SUMMARY.REFERENCE_ACCOUNT_FOR_WITHDRAWAL' | translate}}
+            </div>
+            <div class="summary-account__item">
+              {{customer.holderName}}
+            </div>
+            <div class="summary-account__item">
+              {{customer.bankAccount.iban}}
+            </div>
+            <div class="summary-account__item">
+              {{customer.bankAccount.bank}}
+            </div>
+          </div>
+          <div class="summary-processing">
+            <ng-container *ngIf="fullWithdrawControl.value; else withdrawalTakes">
+              {{'WITHDRAWAL_PAGE.FULL_WITHDRAW.ORDER_TAKES' | translate}}
+            </ng-container>
+            <ng-template #withdrawalTakes>
+              {{'WITHDRAWAL_PAGE.ORDER_SUMMARY.ORDER_TAKES' | translate}}
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

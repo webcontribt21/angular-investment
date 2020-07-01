@@ -1,0 +1,24 @@
+<div class="upload-btn uploaded">
+  <div class="upload-btn__btn">
+    <p-fileUpload
+      #fileUpload
+      accept="application/pdf"
+      mode="basic"
+      [chooseLabel]="'ADDRESS_ORDER_PAGE.UPLOAD_FORM' | translate"
+      [customUpload]="true"
+      [showUploadButton]="false"
+      [showCancelButton]="false"
+      (uploadHandler)="onLoad($event)"
+      [auto]="true">
+    </p-fileUpload>
+  </div>
+  <div class="upload-btn__file" *ngIf="fileName">
+    <div class="upload-btn__file-label">{{fileName}}</div>
+    <img class="upload-btn__file-delete" src="/assets/img/close-icon-grey.svg" (click)="removeFile()">
+  </div>
+</div>
+<div class="errors" *ngIf="isNotPdfFormat">
+  <div class="errors-item">
+    {{'MESSAGES.WRONG_UPLOAD_DOCUMENT_FORMAT' | translate}}
+  </div>
+</div>

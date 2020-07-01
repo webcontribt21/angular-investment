@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="14px" viewBox="0 0 8 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>icon/action/hourglass_empty_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,0.333333333 L0,4.33333333 L0.00666666667,4.33333333 L0,4.34 L2.66666667,7 L0,9.66666667 L0.00666666667,9.67333333 L0,9.67333333 L0,13.6666667 L8,13.6666667 L8,9.67333333 L7.99333333,9.67333333 L8,9.66666667 L5.33333333,7 L8,4.34 L7.99333333,4.33333333 L8,4.33333333 L8,0.333333333 L0,0.333333333 Z M6.66666667,10 L6.66666667,12.3333333 L1.33333333,12.3333333 L1.33333333,10 L4,7.33333333 L6.66666667,10 Z M4,6.66666667 L1.33333333,4 L1.33333333,1.66666667 L6.66666667,1.66666667 L6.66666667,4 L4,6.66666667 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="My-****---Activity---Orders" transform="translate(-697.000000, -402.000000)">
+            <g id="icon/action/hourglass_empty_24px" transform="translate(697.000000, 402.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g fill-rule="nonzero"></g>
+                <g id="↳-Color" mask="url(#mask-2)" fill="#4C5D7A">
+                    <g transform="translate(-4.000000, -1.000000)" id="Rectangle">
+                        <rect x="0" y="0" width="16" height="16"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

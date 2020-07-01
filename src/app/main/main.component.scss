@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+:host {
+
+  .wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $gray10;
+  }
+
+  .main {
+    flex-grow: 1;
+    position: relative;
+  }
+}

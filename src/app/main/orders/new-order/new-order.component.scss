@@ -1,0 +1,297 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .new-order {
+    display: flex;
+    justify-content: center;
+
+    &__container {
+      padding-top: 24px;
+      @include tablets {
+        padding-top: 56px;
+      }
+    }
+
+    &__link {
+      margin-bottom: 16px;
+    }
+  }
+
+  /* summary-block (orders)
+  ********************/
+  .summary {
+    width: 100%;
+    padding: 20px 16px 34px 20px;
+    border-top: 4px solid $orange10;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    @include saw-tooth-vertical();
+    @include tablets {
+      padding: 20px 16px 20px 20px;
+    }
+
+    &-title {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      color: #192F57;
+      @include tablets {
+        font-size: 18px;
+        line-height: 32px;
+        letter-spacing: .12px;
+        padding: 0 16px 16px;
+      }
+    }
+    &-content {
+      padding-top: 32px;
+      border-top: 1px solid $gray30;
+      @include tablets {
+        padding: 32px 16px 16px 16px;
+      }
+      &_no_padding_bottom {
+        padding-bottom: 0;
+      }
+      &.rest {
+        padding-top: 16px;
+        border-top: 1px solid $gray30;
+        &_no_border_padding {
+          padding-top: 0;
+          border-top: 0;
+        }
+      }
+    }
+    &-amount {
+      margin-bottom: 32px;
+      @include tablets {
+        margin-bottom: 40px;
+      }
+      &__title {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+        color: $gray90;
+        margin-bottom: 4px;
+        @include tablets {
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 8px;
+        }
+      }
+      &__number {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 600;
+        color: $navy;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        @include tablets {
+          font-size: 28px;
+          line-height: 32px;
+        }
+      }
+      &-secondary {
+        margin-bottom: 24px;
+        &:last-child {
+          margin-bottom: 16px;
+          @include tablets {
+            margin-bottom: 0;
+          }
+        }
+        &__title {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 300;
+          color: $gray90;
+          margin-bottom: 2px;
+          @include tablets {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 4px;
+          }
+        }
+        &__number {
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 600;
+          color: $navy;
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 100%;
+          letter-spacing: .12px;
+          @include tablets {
+            font-size: 18px;
+            line-height: 32px;
+          }
+        }
+      }
+    }
+    &-account {
+      margin-bottom: 32px;
+      @include tablets {
+        margin-bottom: 40px;
+      }
+      &__title {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+        color: $gray90;
+        margin-bottom: 8px;
+        @include tablets {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+      &__item {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 600;
+        color: #192F57;
+        margin-bottom: 4px;
+        @include tablets {
+          font-size: 14px;
+          line-height: 20px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &-processing {
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 300;
+      color: $gray70;
+      @include tablets {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  /* orders content (layout for each order)
+  ********************/
+  .order-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablets {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  /* orders request-block (title and number input)
+  ********************/
+  .order-request {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 24px 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px 0 rgba(170,170,170,0.16);
+    margin-bottom: 16px;
+
+    @include tablets {
+      padding: 32px 33px;
+      margin-bottom: 0;
+    }
+    &__title {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      color: #192F57;
+      @include tablets {
+        font-size: 18px;
+        line-height: 32px;
+        letter-spacing: .12px;
+      }
+    }
+    &__amount {
+      display: inline-block;
+      position: relative;
+      &:after {
+        content: '€';
+        display: inline-block;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        color: $gray90;
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translate(-50%, -50%);
+        @include tablets {
+          font-size: 16px;
+          line-height: 22px;
+          right: 16px;
+        }
+      }
+      &-input {
+        width: 160px;
+        padding: 11px 36px 11px 12px;
+        background: #FFFFFF;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+        color: $gray90;
+        border: 1px solid $gray30;
+        border-radius: 2px;
+        @include tablets {
+          width: 210px;
+          font-size: 16px;
+          line-height: 22px;
+          padding-right: 40px;
+        }
+      }
+    }
+  }
+
+  /* request confirmation block (orders: full-withdrawal, monthly-deposit)
+  ********************/
+  .request-confirmation {
+    &__checkbox {
+      display: flex;
+      .ui-chkbox {
+        margin-right: 8px;
+        .ui-chkbox-box {
+          border-radius: 0;
+          &.ui-state-active {
+            background-color: $blue50;
+          }
+          &.ui-state-active:not(.ui-state-disabled):hover {
+            background-color: $blue50;
+          }
+        }
+        .ui-chkbox-box.ui-state-focus {
+          box-shadow: none;
+        }
+        &-label {
+          cursor: pointer;
+          margin: 0;
+        }
+      }
+    }
+    &__text {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 300;
+      color: $gray90;
+    }
+  }
+
+  /* submit-form button positioning
+  ********************/
+  .form-submit {
+    display: flex;
+    justify-content: center;
+    @include tablets {
+      justify-content: flex-start;
+    }
+  }
+}

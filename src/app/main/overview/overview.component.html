@@ -1,0 +1,32 @@
+<section class="overview">
+  <div class="overview-container container">
+    <div class="greeting">
+      <h1 class="greeting-title h1">
+        {{greeting$ | async}}
+      </h1>
+      <div class="greeting-controls">
+        <p-button
+            class="button-transparent"
+            [routerLink]="['/', 'orders', 'new', 'monthly']"
+            [label]="'OVERVIEW_PAGE.CHANGE_MONTHLY_DEPOSIT' | translate">
+        </p-button>
+        <p-button
+            class="button-blue"
+            [routerLink]="['/', 'orders', 'new', 'deposit']"
+            [label]="'OVERVIEW_PAGE.ONE_TIME_DEPOSIT' | translate">
+        </p-button>
+      </div>
+    </div>
+
+    <div class="details">
+      <app-total-stats></app-total-stats>
+      <app-portfolio-history></app-portfolio-history>
+    </div>
+
+    <div class="activity-strategy">
+      <app-account-activity></app-account-activity>
+      <app-investment></app-investment>
+    </div>
+  </div>
+
+</section>

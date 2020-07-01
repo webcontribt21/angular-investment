@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>**** | Loading...</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style id="antiClickjack">
+    body {
+      display: none !important;
+    }
+  </style>
+  <script type="text/javascript">
+    if (self === top) {
+      var antiClickjack = document.getElementById("antiClickjack");
+      antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+      top.location = self.location;
+    }
+  </script>
+  <style>
+    .display-img {
+      display: inline-block;
+      width: 47px;
+      height: 64px;
+    }
+    @media screen and (min-width: 768px) {
+      .display-img {
+        width: 57px;
+        height: 74px;
+      }
+    }
+    #gm-old-browser {
+      display: none;
+    }
+    #gm-old-browser.gm-old-browser--show {
+      display: block;
+    }
+    .gm-old-browser-content {
+      min-height: 210px;
+      padding: 30px;
+    }
+    .gm-old-browser-logo-wrapper {
+      padding: 30px 0;
+      text-align: center;
+    }
+    .gm-old-browser-logo {
+      height: 40px;
+    }
+    #gm-old-browser-message {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .gm-old-browser-logos-wrapper {
+      width: 250px;
+      margin: 0 auto;
+    }
+    .gm-old-browser-logos-item {
+      display: block;
+      width: 250px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+    .gm-old-browser-logos-item img {
+      width: 60px;
+      height: 60px;
+
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .gm-old-browser-logos-item-name {
+      display: inline-block;
+      line-height: 60px;
+      padding-left: 80px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <app-root>
+    <div style="
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    ">
+      <img class="display-img" src="/assets/img/logo-icon-blue-animated.svg" style="
+        display: block;
+        max-width: 100%;
+      " />
+    </div>
+  </app-root>
+  <div id="gm-old-browser">
+    <div class="gm-old-browser-content">
+      <div class="gm-old-browser-logo-wrapper">
+        <img class="gm-old-browser-logo" src="./assets/img/logo-blue.svg?1510565023798">
+      </div>
+      <div id="gm-old-browser-message"></div>
+      <div class="gm-old-browser-logos-wrapper">
+        <a class="gm-old-browser-logos-item" href="https://www.google.com/chrome/" target="_blank">
+          <img src="./assets/img/chrome_logo.png" alt="Google Chrome">
+          <span class="gm-old-browser-logos-item-name">Google Chrome</span>
+        </a>
+        <a class="gm-old-browser-logos-item" href="https://www.mozilla.org/firefox/new/" target="_blank">
+          <img src="./assets/img/firefox_logo.png" alt="Firefox">
+          <span class="gm-old-browser-logos-item-name">Firefox</span>
+        </a>
+        <a class="gm-old-browser-logos-item" href="https://www.apple.com/safari/" target="_blank">
+          <img src="./assets/img/safari_logo.png" alt="Safari">
+          <span class="gm-old-browser-logos-item-name">Safari >= 9</span>
+        </a>
+        <a class="gm-old-browser-logos-item" href="https://www.microsoft.com/edge" target="_blank">
+          <img src="./assets/img/edge_logo.png" alt="Microsoft Edge">
+          <span class="gm-old-browser-logos-item-name">Microsoft Edge</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<section class="all-orders">
+  <div class="all-orders-container container">
+    <div class="all-orders-header">
+      <h1 class="all-orders-title h1">
+        {{'ORDERS_PAGE.ORDERS' | translate}}
+      </h1>
+      <div class="button-menu-wrap">
+        <p-menu
+            class="menu-dropdown"
+            #menu
+            [popup]="true"
+            [model]="translatedMenuItems$ | async"
+            [appendTo]="null"
+        ></p-menu>
+        <button
+            pButton
+            type="button"
+            class="menu-button"
+            icon="pi pi-caret-down"
+            iconPos="right"
+            [class.is-open]="menu.visible && (isMobile$ | async)"
+            [label]="(isMobile$ | async) ? '' : 'ORDERS_PAGE.MENU.MAKE_A_NEW_ORDER' | translate"
+            (click)="menu.toggle($event)">
+          <span class="close-icon"></span>
+        </button>
+      </div>
+    </div>
+    <div *ngIf="!(orders$ | async).length; else orders" class="no-items">
+      <img class="no-items__icon" src="/assets/img/icon-empty.svg" />
+      <div class="no-items__text">
+        {{'ORDERS_PAGE.YOU_DO_NOT_HAVE_ORDERS_YET' | translate}}
+      </div>
+    </div>
+    <ng-template #orders>
+      <div class="content">
+        <div class="content-list">
+          <app-orders-list></app-orders-list>
+        </div>
+        <div class="content-info" *ngIf="isTabletsHorizontal$ | async">
+          <app-orders-info></app-orders-info>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</section>

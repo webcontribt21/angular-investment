@@ -1,0 +1,41 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .asset-map-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @include tablets {
+      flex-direction: row;
+    }
+  }
+  .asset-map {
+    img {
+      width: 100%;
+      @include tablets {
+        width: 335px;
+      }
+    }
+    position: relative;
+
+    .asset-map__circle {
+      position: absolute;
+      top: var(--posTop);
+      right: var(--posRight);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::after {
+        position: absolute;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        background-color: rgba(var(--colorR), var(--colorG), var(--colorB), 0.59);
+        border: solid 1px rgba(var(--colorR), var(--colorG), var(--colorB), 1);
+        content: "";
+      }
+    }
+  }
+}

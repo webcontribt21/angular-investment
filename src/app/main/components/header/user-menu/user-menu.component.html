@@ -1,0 +1,92 @@
+<div class="customer-container" *ngIf="(selectedCustomer$ | async) as selectedCustomer">
+
+  <div class="user" (click)="openUserMenu()">
+    <div class="user-select">
+      <img class="img" src="/assets/img/icon-account.svg" />
+      <div class="user-name">{{(selfData$ | async)?.fullname}}</div>
+    </div>
+    <div class="user-id" *ngIf="!(isSingleOwnerAccount$ | async)">
+      <ng-container [ngSwitch]="relation$ | async">
+        <span *ngSwitchCase="'GUARDIAN'">
+          {{'ACCOUNT_SWITCHER.CHILD_ACCOUNT' | translate}}:
+        </span>
+        <span *ngSwitchCase="'OWNER'">
+          {{'ACCOUNT_SWITCHER.SINGLE_ACCOUNT' | translate}}:
+        </span>
+        <span>{{selectedCustomer.holderName}}</span>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="user-menu" [class.active]="isOpenUserMenu$ | async">
+    <div class="user-info">
+      <span class="user-info__text">{{'HEADER.USER_MENU.SIGNED_IN_AS' | translate}} </span>
+      <span class="user-info__name">{{(selfData$ | async)?.fullname}}</span>
+    </div>
+    <div class="account-info" *ngIf="!(isSingleAccount$ | async)">
+      <div class="account-info__title title">{{'HEADER.USER_MENU.ACCOUNT' | translate}}</div>
+      <div
+        class="account-info__holder"
+        *ngIf="(relation$ | async) as relation"
+        [class.child-account]="relation === 'GUARDIAN'"
+        [class.single-account]="relation === 'OWNER'"
+      >
+        <div class="name">
+          {{selectedCustomer.holderName}}
+        </div>
+        <div class="relation">
+          <ng-container [ngSwitch]="relation">
+            <span *ngSwitchCase="'GUARDIAN'">
+              {{'ACCOUNT_SWITCHER.CHILD_ACCOUNT' | translate}}
+            </span>
+            <span *ngSwitchCase="'OWNER'">
+              {{'ACCOUNT_SWITCHER.SINGLE_ACCOUNT' | translate}}
+            </span>
+          </ng-container>
+        </div>
+      </div>
+      <div (click)="switchAccount()" class="menu-item switch-account pointer">
+        <button class="link">
+          {{'HEADER.USER_MENU.SWITCH_ACCOUNT' | translate}}
+        </button>
+      </div>
+      <div routerLink="/account-details" class="menu-item account-details pointer">
+        <a>{{'HEADER.USER_MENU.ACCOUNT_DETAILS' | translate}}</a>
+      </div>
+    </div>
+    <ul class="menu-options">
+      <li routerLink="/account-details" class="menu-item account-details pointer" *ngIf="isSingleAccount$ | async">
+        <a>
+          <span>{{'HEADER.USER_MENU.ACCOUNT_DETAILS' | translate}}</span>
+        </a>
+      </li>
+      <li (click)="showIntercom()" class="menu-item help pointer" *ngIf="!(isDesktop$ | async)">
+        <a>
+          <span>{{'HEADER.USER_MENU.LIVE_HELP' | translate}}</span>
+        </a>
+      </li>
+      <li routerLink="/settings" class="menu-item sets pointer">
+        <a>
+          <span>{{'HEADER.USER_MENU.USER_SETTINGS' | translate}}</span>
+        </a>
+      </li>
+      <li routerLink="/invite-friends" class="menu-item invite pointer">
+        <a>
+          <span>{{'HEADER.USER_MENU.INVITE_FRIENDS' | translate}}</span>
+        </a>
+      </li>
+      <li (click)="logout()" class="menu-item logout pointer">
+        <button class="link" >
+          <span>{{'HEADER.USER_MENU.LOG_OUT' | translate}}</span>
+        </button>
+      </li>
+    </ul>
+    
+  </div>
+</div>
+
+<div
+    class="overlay"
+    (click)="closeMenu()"
+    *ngIf="(isOpenUserMenu$ | async)">
+</div>

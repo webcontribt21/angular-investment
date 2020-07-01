@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>icon/action/info_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M7.25925926,4.2962963 L8.74074074,4.2962963 L8.74074074,5.77777778 L7.25925926,5.77777778 L7.25925926,4.2962963 Z M7.25925926,7.25925926 L8.74074074,7.25925926 L8.74074074,11.7037037 L7.25925926,11.7037037 L7.25925926,7.25925926 Z M8,0.592592593 C3.91111111,0.592592593 0.592592593,3.91111111 0.592592593,8 C0.592592593,12.0888889 3.91111111,15.4074074 8,15.4074074 C12.0888889,15.4074074 15.4074074,12.0888889 15.4074074,8 C15.4074074,3.91111111 12.0888889,0.592592593 8,0.592592593 Z M8,13.9259259 C4.73333333,13.9259259 2.07407407,11.2666667 2.07407407,8 C2.07407407,4.73333333 4.73333333,2.07407407 8,2.07407407 C11.2666667,2.07407407 13.9259259,4.73333333 13.9259259,8 C13.9259259,11.2666667 11.2666667,13.9259259 8,13.9259259 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="My-****----Update-strategy-New-strategy" transform="translate(-298.000000, -487.000000)">
+            <g id="icon/action/info_24px" transform="translate(298.000000, 487.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g fill-rule="nonzero"></g>
+                <g id="↳-Color" mask="url(#mask-2)" fill="#53ABD1">
+                    <g transform="translate(-0.888889, 0.111111)" id="Rectangle">
+                        <rect x="0" y="0" width="17.7777778" height="17.7777778"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

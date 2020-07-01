@@ -1,0 +1,37 @@
+<ng-container *ngIf="(paginationData$ | async) as paginationData">
+  <div class="data-pagination" *ngIf="!paginationData.isOnePage">
+    <div class="data-pagination-container">
+      <button
+          class="data-pagination-btn data-pagination-btn-prev"
+          (click)="firstPage()"
+          [disabled]="paginationData?.isBegin"
+          [class.disabled]="paginationData?.isBegin">
+        <img src="/assets/img/first_page-24px.svg" />
+      </button>
+      <button
+          class="data-pagination-btn data-pagination-btn-prev"
+          (click)="prevPage()"
+          [disabled]="paginationData?.isBegin"
+          [class.disabled]="paginationData?.isBegin">
+        <img src="/assets/img/chevron_left-24px.svg" />
+      </button>
+      <div class="data-pagination-text">
+        {{paginationData?.text}}
+      </div>
+      <button
+          class="data-pagination-btn data-pagination-btn-next"
+          (click)="nextPage()"
+          [disabled]="paginationData?.isEnd"
+          [class.disabled]="paginationData?.isEnd">
+        <img src="/assets/img/chevron_right-24px.svg" />
+      </button>
+      <button
+          class="data-pagination-btn data-pagination-btn-next"
+          (click)="lastPage()"
+          [disabled]="paginationData?.isEnd"
+          [class.disabled]="paginationData?.isEnd">
+        <img src="/assets/img/last_page-24px.svg" />
+      </button>
+    </div>
+  </div>
+</ng-container>

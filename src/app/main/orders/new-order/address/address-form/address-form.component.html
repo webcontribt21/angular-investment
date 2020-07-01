@@ -1,0 +1,109 @@
+<div class="address-form">
+  <div class="address-form__note">
+    <app-upload-note></app-upload-note>
+  </div>
+
+  <div class="address-form__title">
+    {{'ADDRESS_ORDER_PAGE.YOUR_NEW_ADDRESS' | translate}}
+  </div>
+
+  <div class="address-form__form">
+    <form class="form"
+      [formGroup]="addressForm"
+      ngxsForm="order.newAddressOrderForm"
+      ngxsFormDebounce="300"
+      (ngSubmit)="onSubmit()"
+      novalidate
+    >
+      <div class="form-row">
+        <div class="form-row__col">
+          <div class="form-row__label">
+            {{'ADDRESS_ORDER_PAGE.STREET_NAME' | translate}}
+          </div>
+          <div class="form-row__input">
+            <input class="input" [formControl]="streetNameControl" />
+          </div>
+          <ng-container *ngIf="streetNameControl as control">
+            <div class="errors" *ngIf="control.dirty && control.invalid">
+              <div class="errors-item" *ngIf="control.errors.required">
+                {{'MESSAGES.REQUIRED' | translate}}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <div class="form-row__col form-row__col_street">
+          <div class="form-row__label">
+            {{'ADDRESS_ORDER_PAGE.STREET_#' | translate}}
+          </div>
+          <div class="form-row__input">
+            <input class="input" [formControl]="buildingNumberControl" />
+          </div>
+          <ng-container *ngIf="buildingNumberControl as control">
+            <div class="errors" *ngIf="control.dirty && control.invalid">
+              <div class="errors-item" *ngIf="control.errors.required">
+                {{'MESSAGES.REQUIRED' | translate}}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-row__col form-row__col_zip">
+          <div class="form-row__label">
+            {{'ADDRESS_ORDER_PAGE.ZIP_CODE' | translate}}
+          </div>
+          <div class="form-row__input">
+            <input class="input" [formControl]="postalCodeControl" />
+          </div>
+          <ng-container *ngIf="postalCodeControl as control">
+            <div class="errors" *ngIf="control.dirty && control.invalid">
+              <div class="errors-item" *ngIf="control.errors.required">
+                {{'MESSAGES.REQUIRED' | translate}}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <div class="form-row__col form-row__col_city">
+          <div class="form-row__label">
+            {{'ADDRESS_ORDER_PAGE.CITY' | translate}}
+          </div>
+          <div class="form-row__input">
+            <input class="input" [formControl]="cityControl" />
+          </div>
+          <ng-container *ngIf="cityControl as control">
+            <div class="errors" *ngIf="control.dirty && control.invalid">
+              <div class="errors-item" *ngIf="control.errors.required">
+                {{'MESSAGES.REQUIRED' | translate}}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <div class="form-row__col form-row__col_country">
+          <div class="form-row__label">
+            {{'ADDRESS_ORDER_PAGE.COUNTRY' | translate}}
+          </div>
+          <div class="form-row__input">
+            <p-dropdown [options]="countryOptions$ | async"  class="dropdown-list" [formControl]="countryControl">
+            </p-dropdown>
+          </div>
+          <ng-container *ngIf="countryControl as control">
+            <div class="errors" *ngIf="control.dirty && control.invalid">
+              <div class="errors-item" *ngIf="control.errors.required">
+                {{'MESSAGES.REQUIRED' | translate}}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="form-submit address-form__submit">
+        <p-button class="button-blue"
+          [disabled]="addressForm.invalid"
+          [label]="'ADDRESS_ORDER_PAGE.CONFIRM_NEW_ADDRESS' | translate"
+          [type]="'submit'">
+        </p-button>
+      </div>
+    </form>
+  </div>
+</div>

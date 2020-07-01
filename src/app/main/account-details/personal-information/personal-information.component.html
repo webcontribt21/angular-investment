@@ -1,0 +1,45 @@
+<div class="account-tab" *ngIf="(selectedCustomer$ | async) as customer">
+  <div class="account-tab__content">
+    <ul class="account-list">
+      <li class="account-list__item personal-info__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.PERSONAL.NAME' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{customer.holderName}}
+        </div>
+      </li>
+      <li class="account-list__item personal-info__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.PERSONAL.ACCOUNT_ID' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{customer.customerNumber}}
+        </div>
+      </li>
+      <li class="account-list__item personal-info__item">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.PERSONAL.LICENCE' | translate}}
+        </div>
+        <div class="account-list__value">
+          <a [href]="licenceLink$ | async" target="_blank">{{'ACCOUNT_DETAILS_PAGE.PERSONAL.KWG' | translate}}</a>
+        </div>
+      </li>
+      <li class="account-list__item personal-info__item" *ngIf="customer.address as address">
+        <div class="account-list__key">
+          {{'ACCOUNT_DETAILS_PAGE.PERSONAL.ADDRESS' | translate}}
+        </div>
+        <div class="account-list__value">
+          {{'ACCOUNT_DETAILS_PAGE.PERSONAL.ADDRESS_LINE_1' | translate: { address: address } }}<br/>
+          {{'ACCOUNT_DETAILS_PAGE.PERSONAL.ADDRESS_LINE_2' | translate: { address: address } }}<br/>
+          {{country$ | customTranslate | async}}
+        </div>
+      </li>
+    </ul>
+    <div class="account-link">
+      <a class="request-order change" [routerLink]="['/', 'orders', 'new', 'address']">
+        {{'ACCOUNT_DETAILS_PAGE.PERSONAL.REQUEST_ADDRESS_CHANGE' | translate }}
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+<section class="monthly">
+  <div class="monthly-title h1">
+    {{'MONTHLY_PAGE.MONTHLY_CONTRIBUTION_ORDER' | translate}}
+  </div>
+  <div class="monthly-content order-content">
+
+    <div class="monthly-request order-request">
+      <div class="monthly-request__title order-request__title">
+        {{'MONTHLY_PAGE.REQUEST.TITLE' | translate}}
+      </div>
+      <div class="monthly-request__form">
+        <form class="form" [formGroup]="monthlyOrderFormGroup" (ngSubmit)="onSubmit()">
+          <div class="form-amount">
+            <app-currency-input
+              [formControl]="amountFormControl"
+              [isInvalid]="amountFormControl.invalid && amountFormControl.dirty">
+            </app-currency-input>
+            <ng-container *ngIf="amountFormControl as control">
+              <div class="errors" *ngIf="control.dirty && control.invalid">
+                <div class="errors-item" *ngIf="control.errors.minAmountError || control.errors.max">
+                  {{'MESSAGES.WRONG_AMOUNT' | translate : {min: minMaxValues.min, max: (minMaxValues.max | currencySignPipe : 0 | async) } }}
+                </div>
+                <div class="errors-item" *ngIf="control.errors.oldAmountError">
+                  {{'MESSAGES.OLD_AMOUNT' | translate }}
+                </div>
+                <div class="errors-item" *ngIf="control.errors.required">
+                  {{'MESSAGES.REQUIRED' | translate}}
+                </div>
+              </div>
+            </ng-container>
+          </div>
+          <div class="form-notification">
+            {{'MONTHLY_PAGE.REQUEST.NOTIFICATION' | translate}}
+          </div>
+          <div class="form-submit">
+            <p-button class="button-blue"
+              [disabled]="monthlyOrderFormGroup.invalid"
+              [label]="'COMMON.MAKE_A_REQUEST' | translate"
+              [type]="'submit'"
+            ></p-button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="monthly-summary">
+      <div class="summary">
+        <div class="summary-title">
+          {{'COMMON.ORDER_SUMMARY' | translate}}
+        </div>
+        <div class="summary-content summary-content_no_padding_bottom">
+          <div class="summary-amount-secondary">
+            <div class="summary-amount-secondary__title">
+              {{'MONTHLY_PAGE.ORDER_SUMMARY.CURRENT_MONTHLY_CONTRIBUTION' | translate}}
+            </div>
+            <div class="summary-amount-secondary__number">
+              {{(selectedCustomer$ | async)?.currentRecurringDeposit.amount | currencySignPipe | async}}
+            </div>
+          </div>
+          <div class="summary-amount">
+            <div class="summary-amount__title">
+              {{'MONTHLY_PAGE.ORDER_SUMMARY.NEW_MONTHLY_CONTRIBUTION' | translate}}
+            </div>
+            <div class="summary-amount__number">
+              {{(amountFormControl.value || 0) | currencySignPipe | async}}
+            </div>
+          </div>
+        </div>
+        <div class="summary-content rest rest_no_border_padding">
+          <div class="summary-account" *ngIf="(selectedCustomer$ | async) as customer">
+            <div class="summary-account__title">
+              {{'MONTHLY_PAGE.ORDER_SUMMARY.REFERENCE_ACCOUNT_FOR_DIRECT_DEBIT' | translate}}
+            </div>
+            <div class="summary-account__item">
+              {{customer.holderName}}
+            </div>
+            <div class="summary-account__item">
+              {{customer.bankAccount.iban}}
+            </div>
+            <div class="summary-account__item">
+              {{customer.bankAccount.bank}}
+            </div>
+          </div>
+          <div class="summary-processing">
+            {{'MONTHLY_PAGE.ORDER_SUMMARY.ORDER_TAKES' | translate}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<div class="history">
+  <p-tabView (onChange)="switchHistory($event)" [activeIndex]="(selectedHistory$ | async).tab">
+    <p-tabPanel [header]="'OVERVIEW_PAGE.PORTFOLIO_HISTORY.BALANCE' | translate">
+      <div class="history-tab">
+        <app-stock-chart
+          [data]="(chartBalanceValues$ | async)?.series"
+          [options]="(chartBalanceValues$ | async)?.options"
+          [selectedPeriod]="(selectedBalancePeriod$ | async)"
+          (selectedPeriodChange)="balancePeriodChanged($event)"
+        ></app-stock-chart>
+      </div>
+    </p-tabPanel>
+    <p-tabPanel [header]="'OVERVIEW_PAGE.PORTFOLIO_HISTORY.PERFORMANCE' | translate">
+      <div class="history-tab">
+        <app-stock-chart
+          [data]="(chartPerformanceValues$ | async)?.series"
+          [options]="(chartPerformanceValues$ | async)?.options"
+          [selectedPeriod]="(selectedPerformancePeriod$ | async)"
+          (selectedPeriodChange)="performancePeriodChanged($event)"
+        ></app-stock-chart>
+      </div>
+    </p-tabPanel>
+  </p-tabView>
+</div>

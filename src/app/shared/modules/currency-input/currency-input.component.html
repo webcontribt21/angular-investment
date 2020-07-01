@@ -1,0 +1,10 @@
+<label class="order-request__amount">
+  <input class="order-request__amount-input"
+    type="text"
+    currencyMask
+    [options]="currencyInputOptions$ | async"
+    [formControl]="currencyFormControl"
+    [class.input-invalid]="isInvalid"
+    [attr.disabled]="isDisabled || null"
+  />
+</label>

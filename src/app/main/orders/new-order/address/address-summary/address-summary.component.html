@@ -1,0 +1,47 @@
+<div class="order-summary">
+  <div class="summary">
+    <div class="summary-title">
+      {{'COMMON.ORDER_SUMMARY' | translate}}
+    </div>
+    <div class="summary-content">
+      <div class="summary-amount">
+        <div class="summary-amount__title">
+          {{'ADDRESS_ORDER_PAGE.ORDER_SUMMARY.CURRENT_ADDRESS' | translate}}
+        </div>
+        <div class="summary-amount__result" *ngIf="(selectedCustomer$ | async) as customer">
+          <div class="summary-amount__item">
+            <span>{{customer.address?.streetName}} </span>
+            <span>{{customer.address?.buildingNumber}},</span>
+          </div>
+          <div class="summary-amount__item">
+            <span>{{customer.address?.postalCode}}, </span>
+            <span>{{customer.address?.city}},</span>
+          </div>
+          <div class="summary-amount__item">
+            <span>{{oldCountry$ | customTranslate | async}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="summary-amount">
+        <div class="summary-amount__title">
+          {{'ADDRESS_ORDER_PAGE.ORDER_SUMMARY.NEW_ADDRESS' | translate}}
+        </div>
+        <div class="summary-amount__new-result" *ngIf="(newAddress$ | async)?.address as address">
+          <div class="summary-amount__item">
+            <span *ngIf="address.streetAndNumber">{{address.streetAndNumber}},</span>
+          </div>
+          <div class="summary-amount__item">
+            <span *ngIf="address.postalCode">{{address.postalCode}}, </span>
+            <span *ngIf="address.city">{{address.city}},</span>
+          </div>
+          <div class="summary-amount__item">
+            <span>{{newCountry$ | customTranslate | async}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="summary-processing">
+        {{'ORDERS_PAGE.COMMON.ORDER_TAKES_UP_TO_X_DAYS' | translate : {x: 10} }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+
+  @include tabletsHoriz {
+    width: 100%;
+    max-width: 100%;
+  }
+  @include desktop {
+    max-width: 928px;
+  }
+  .history {
+    width: 100%;
+    & .ui-tabview-panels {
+      padding: 0;
+      box-shadow: none;
+    }
+
+    .ui-tabview.ui-tabview-top .ui-tabview-nav li a {
+      padding-top: 0;
+      > span {
+        @include tabletsHoriz {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-tab {
+      background-color: #fff;
+      padding: 16px 16px 0 16px;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px 0 rgba(170,170,170,0.16);
+
+      @include tablets {
+        min-width: 484px;
+        max-width: 484px;
+        height: 100%;
+        padding: 16px 16px 0 16px;
+      }
+      @include tabletsHoriz {
+        min-width: 656px;
+        max-width: 656px;
+      }
+      @include desktop {
+        min-width: 928px;
+        max-width: 928px;
+        height: auto;
+        padding: 24px 24px 16px 24px;
+      }
+    }
+  }
+}

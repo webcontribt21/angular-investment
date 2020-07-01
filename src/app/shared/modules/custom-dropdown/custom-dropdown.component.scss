@@ -1,0 +1,51 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+
+  & .ui-dropdown {
+    width: auto;
+    min-width: inherit;
+    background: transparent;
+    border: 0;
+
+    & .ui-dropdown-trigger {
+      width: 10px;
+
+      & .ui-dropdown-trigger-icon {
+        font-size: 12px;
+        color: #4C5D7A;
+      }
+    }
+
+    & .ui-dropdown-panel .ui-dropdown-item {
+      white-space: nowrap;
+    }
+
+    & .ui-inputtext {
+      font-size: 12px;
+      line-height: 16px;
+      color: $navy;
+      padding-right: 18px;
+      @include tablets {
+        font-size: 14px;
+        line-height: 24px;
+      }
+      @include desktop {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+:host-context(.align-right)::ng-deep {
+  & .ui-dropdown .ui-dropdown-panel {
+    right: 0 !important;
+    left: auto !important;
+
+    & .ui-dropdown-item {
+      white-space: nowrap;
+    }
+  }
+}

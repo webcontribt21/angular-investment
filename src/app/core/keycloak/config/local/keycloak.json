@@ -1,0 +1,8 @@
+{
+  "realm": "****-customers",
+  "auth-server-url": "https://auth.****-dev.de/auth",
+  "ssl-required": "external",
+  "resource": "my-****-local",
+  "public-client": true,
+  "confidential-port": 0
+}

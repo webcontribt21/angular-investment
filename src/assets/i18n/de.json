@@ -1,0 +1,579 @@
+{
+  "COMMON": {
+    "MONTH_NAMES": "Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember",
+    "SHORT_MONTH_NAMES": "Jan, Feb, Mär, Apr, Mai, Jun, Jul, Aug, Sep, Okt, Nov, Dez",
+    "APEIRON": "apeiron",
+    "DESCRIPTION": "BESCHREIBUNG",
+    "DATE": "DATUM",
+    "AMOUNT": "BETRAG",
+    "SOURCE": "QUELLE",
+    "PAGINATION": {
+      "OF": "von"
+    },
+    "REPORT": "Herunterladen",
+    "TOTAL_BALANCE": "VERWALTETES VERMÖGEN",
+    "BACK_TO": {
+      "OVERVIEW": "Zurück zur Übersicht",
+      "ORDERS": "Zurück zur Auftragsübersicht"
+    },
+    "MAKE_A_REQUEST": "Auftrag erteilen",
+    "ORDER_SUMMARY": "Auftragsübersicht",
+    "ADD": "Hinzufügen",
+    "CHANGE": "Ändern",
+    "EDIT": "Bearbeiten",
+    "CANCEL": "Abbrechen",
+    "TITLE": "Anrede",
+    "FIRST_NAME": "Vorname",
+    "LAST_NAME": "Nachname",
+    "DAY": "Tag",
+    "WEEKS": {
+      "1": "1 Woche"
+    },
+    "MONTH": "Monat",
+    "MONTHS": {
+      "1": "1 Monat"
+    },
+    "YEAR": "Jahr",
+    "YEARS": {
+      "1": "1 Jahr",
+      "3": "3 Jahre",
+      "5": "5 Jahre"
+    },
+    "YTD": "Dieses Jahr",
+    "NAME": "Name",
+    "ALL": "Gesamt",
+    "DOWNLOAD": {
+      "CSV": "CSV herunterladen",
+      "JPEG": "JPEG Bild herunterladen",
+      "PDF": "PDF Dokument herunterladen",
+      "PNG": "PNG Bild herunterladen",
+      "SVG": "SVG Vektorgrafik herunterladen",
+      "XLS": "XLS herunterladen"
+    },
+    "RANGE_FROM": "Von",
+    "RANGE_TO": "Bis",
+    "NO_DATA": "Noch nichts verfügbar"
+  },
+  "PAGES_TITLES": {
+    "MAIN": "**** | Übersicht",
+    "TRANSACTIONS": "**** | Transaktionen",
+    "DOCUMENTS": "**** | Dokumente",
+    "ORDERS": "**** | Aufträge",
+    "ACCOUNT_DETAILS": "**** | Kontoinformationen",
+    "USER_SETTINGS": "**** | Nutzereinstellungen",
+    "INVITE_FRIENDS": "**** | Freunde werben"
+  },
+  "MESSAGES": {
+    "ALLOWED_CHARACTERS": "Bitte nur Zeichen gemäß des deutschen Alphabets verwenden",
+    "PASSWORD_CHANGED_SUCCESSFULLY": "Passwort erfolgreich geändert",
+    "REQUIRED": "Erforderlich",
+    "EMAIL_CHANGED_SUCCESSFULLY": "Wir haben Ihnen einen Verifikationslink gesendet.",
+    "COMMUNICATION_PREFERENCES_CHANGED_SUCCESSFULLY": "Kommunikationseinstellungen erfolgreich geändert",
+    "WRONG_TAX_ID": "Die Steueridentifikationsnummer muss genau 11 Zeichen lang sein",
+    "WRONG_AMOUNT": "Der Betrag muss zwischen {{min}} und {{max}} liegen.",
+    "OLD_AMOUNT": "Der Betrag sollte nicht dem aktuellen Betrag entsprechen.",
+    "WRONG_UPLOAD_DOCUMENT_FORMAT": "Das Dokument muss in einem PDF-Format vorliegen",
+    "SOMETHING_WENT_WRONG": "Es tut uns leid, aber leider ist etwas schief gelaufen."
+  },
+  "HEADER": {
+    "MAIN_MENU": {
+      "OVERVIEW": "Übersicht",
+      "TRANSACTIONS": "Transaktionen",
+      "ORDERS": "Aufträge",
+      "DOCUMENTS": "Dokumente"
+    },
+    "USER_MENU": {
+      "SIGNED_IN_AS": "Angemeldet als",
+      "ACCOUNT": "KONTO",
+      "ACCOUNT_DETAILS": "Kontoinformationen",
+      "ACCOUNT_HOLDER": "Kontoinhaber",
+      "SWITCH_ACCOUNT": "Konto wechseln",
+      "LIVE_HELP": "Hilfe",
+      "USER_SETTINGS": "Nutzereinstellungen",
+      "INVITE_FRIENDS": "Freunde werben",
+      "LOG_OUT": "Abmelden"
+    }
+  },
+  "FOOTER": {
+    "NEED_HELP": "Benötigen Sie Hilfe?",
+    "CONTACT_US": "Kontaktieren Sie uns unter",
+    "BOOK_A_CALL": "Buchen Sie einen Rückruf",
+    "PRIVACY": "Datenschutz",
+    "LEGAL_INFORMATION": "Rechtliche Informationen",
+    "LEGAL_NOTICE": "Impressum"
+  },
+  "ACCOUNT_SWITCHER": {
+    "CHOOSE_AN_ACCOUNT": "Wählen Sie ein Konto",
+    "CHILD_ACCOUNT": "Kinderkonto",
+    "SINGLE_ACCOUNT": "Einzelkonto"
+  },
+  "OVERVIEW_PAGE": {
+    "GREETING": {
+      "GOOD_MORNING": "Guten Morgen",
+      "WELCOME_BACK": "Willkommen zurück",
+      "GOOD_AFTERNOON": "Guten Tag",
+      "GOOD_EVENING": "Guten Abend",
+      "MERRY_CHRISTMAS": "Frohe Weihnachten",
+      "HAPPY_NEW_YEAR": "Frohes Neues Jahr",
+      "NICE_TO_SEE_YOU": "Schön Sie zu sehen",
+      "TODAY_IS_WORLD_SAVINGS_DAY": "Heute ist Weltspartag"
+    },
+    "CHANGE_MONTHLY_DEPOSIT": "Monatliche Sparrate ändern",
+    "ONE_TIME_DEPOSIT": "Einzahlen",
+    "COMMON": {
+      "CHANGE": "Ändern"
+    },
+    "ACCOUNT_ACTIVITY": {
+      "ACCOUNT_ACTIVITY": "Jüngste Kontobewegungen",
+      "LOADING": "Bitte gedulden Sie sich einen Augenblick. Ihre Kontodaten werden geladen."
+    },
+    "TOTAL": {
+      "TOTAL_BALANCE": "VERWALTETES VERMÖGEN",
+      "TOTAL_PORTFOLIO": "Anlagebetrag",
+      "LIQUIDITY": "Liquidität",
+      "PERFORMANCE_EURO": "WERTENTWICKLUNG (€)",
+      "PERFORMANCE_PERCENT": "WERTENTWICKLUNG (%)",
+      "MONEY_WEIGHTED_PERFORMANCE": "Geldgewichtete Leistung",
+      "SIMPLIFIED_PERFORMANCE": "Vereinfachte Leistung (%)",
+      "ALL_TIME": "Alle Zeit",
+      "HOW_WE_CALCULATE_PERFORMANCE": "Wie wir die Leistung berechnen",
+      "LINK": "berechnung-der-rendite",
+      "TOTAL_DEPOSIT": "GESAMTEINZAHLUNGEN",
+      "MONTHLY_DEPOSIT": "MONATLICHE SPARRATE",
+      "ADD": "Einzahlen"
+    },
+    "PORTFOLIO_HISTORY": {
+      "PORTFOLIO_HISTORY": "PORTFOLIO-HISTORIE",
+      "BALANCE": "Vermögen",
+      "PERFORMANCE": "Wertentwicklung"
+    },
+    "INVESTMENT": {
+      "INVESTMENT_STRATEGY": "Anlagestrategie",
+      "INVEST": "Anlegen",
+      "ASSET_CATEGORY": "Anlageklasse",
+      "ASSET_INDUSTRY": "Sektor",
+      "ASSET_LOCATION": "Region",
+      "PERCENTAGE": "Anteil",
+      "AMOUNT": "Betrag",
+      "TOTAL": "Gesamt",
+      "ASSETS": "Anlageklassen",
+      "INDUSTRIES": "Sektoren",
+      "LOCATION": "Regionen"
+    }
+  },
+  "TRANSACTIONS_PAGE": {
+    "TRANSACTIONS": "Transaktionen",
+    "YOU_DO_NOT_HAVE_TRANSACTIONS_YET": "Sie haben noch keine Transaktionen",
+    "REFERENCE": "Verwendungszweck",
+    "SUM_OF_DIVIDENDS_RECEIVED": "SUMME ALLER DIVIDENDEN",
+    "SUM_OF_TAX_OPTIMISATIONS": "SUMME ALLER STEUEROPTIMIERUNGEN",
+    "TOTAL_DEPOSITED_AMOUNT": "GESAMTEINZAHLUNGEN",
+    "OUTSTANDING": "Aussstehend",
+    "TYPE": "TRANSAKTIONSTYP"
+  },
+  "DOCUMENTS_PAGE": {
+    "DOCUMENTS": "Dokumente",
+    "LAST_QUARTERLY_REPORT_PUBLISHED": "LETZTER VERÖFFENTLICHTER QUARTALSBERICHT VOM {{date}}",
+    "LAST_TAX_STATEMENT_PUBLISHED": "LETZTE VERÖFFENTLICHTE STEUERBESCHEINIGUNG VOM {{date}}",
+    "YOU_DO_NOT_HAVE_DOCUMENTS_YET": "Sie haben noch keine Dokumente"
+  },
+  "ORDERS_PAGE": {
+    "DOWNLOAD_DOCUMENT": "Übermitteltes Formular herunterladen",
+    "DOWNLOAD_TEMPLATE": "Formular herunterladen",
+    "ORDERS": "Aufträge",
+    "STATUS": "STATUS",
+    "CREATED_ON": "ERSTELLT AM",
+    "TYPE": "AUFTRAGSTYP",
+    "YOU_DO_NOT_HAVE_ORDERS_YET": "Sie haben noch keine Aufträge.",
+    "USUALLY_TAKES": {
+      "X_TO_Y_DAYS": "Dies dauert in der Regel {{x}}-{{y}} Bankarbeitstage.",
+      "1_DAY": "Dies dauert in der Regel 1 Bankarbeitstag.",
+      "UP_TO_X_DAYS": "Dies dauert bis zu {{x}} Bankarbeitstage.",
+      "UP_TO_X_DAYS_AFTER_SENDING": "Dies dauert bis zu {{x}} Bankarbeitstage, nachdem das Dokument bei unserer Partnerbank eingegangen ist."
+    },
+    "CANCEL": "Stornieren",
+    "REFERENCE_ACCOUNT": "Referenzkonto",
+    "ORDER_CREATED": "Auftrag erstellt",
+    "YOUR_ORDER_IS_SUBMITTED_SUCCESSFULLY": "Ihr Auftrag wurde erfolgreich übermittelt.",
+    "YOUR_ORDER_IS_CANCELLED_SUCCESSFULLY": "Ihr Auftrag wurde erfolgreich storniert.",
+    "NEW_STRATEGY": "Neue Anlagestrategie:",
+    "TAX_ID": "Steueridentifikationsnummer:",
+    "START_DATE": "Startdatum:",
+    "END_DATE": "Enddatum:",
+    "NEW_ADDRESS": "Neue Adresse:",
+    "CATEGORIES": {
+      "ADDRESS_CHANGE": "Adressänderung",
+      "TAX_EXEMPTION": "Freistellungsauftrag",
+      "DEPOSIT": "Einzahlung",
+      "WITHDRAWAL": "Auszahlung",
+      "RECURRING_DEPOSIT_CHANGE": "Änderung der monatlichen Sparrate",
+      "FULL_WITHDRAWAL": "Vollauszahlung",
+      "KWG_MIGRATION": "KWG-Migration",
+      "STRATEGY_CHANGE": "Strategieänderung",
+      "REFERENCE_ACCOUNT_CHANGE": "Referenzkontoänderung"
+    },
+    "ORDER_STATUS": {
+      "COMPLETED": "Ausgeführt",
+      "SUBMITTED": "In Bearbeitung",
+      "CANCELED": "Storniert",
+      "REJECTED": "Abgelehnt",
+      "CREATED": "In Bearbeitung"
+    },
+    "MENU": {
+      "MAKE_A_NEW_ORDER": "Neuen Auftrag erstellen",
+      "ONE_TIME_DEPOSIT": "Einzahlung",
+      "WITHDRAWAL": "Auszahlung",
+      "CHANGE_MONTHLY_DEPOSIT": "Monatliche Sparrate ändern",
+      "CHANGE_INVESTMENT_STRATEGY": "Anlagestrategie ändern",
+      "CREATE_TAX_EXEMPTION": "Freistellungsauftrag erstellen",
+      "CHANGE_ADDRESS": "Adresse ändern",
+      "CHANGE_REFERENCE_ACCOUNT": "Referenzkonto ändern"
+    },
+    "COMMON": {
+      "PLEASE_NOTE": "Bitte beachten Sie:",
+      "TO_COMPLETE_ORDER": "Um diesen Auftrag abzuschließen, müssen Sie ein Dokument herunterladen, unterschreiben und hochladen.",
+      "ORDER_TAKES": "Der Auftrag dauert {{min}}-{{max}} Bankarbeitstage.",
+      "ORDER_TAKES_UP_TO_X_DAYS": "Der Auftrag dauert bis zu {{x}} Bankarbeitstage.",
+      "MAKE_ORDER": "Auftrag erteilen"
+    },
+    "CREATION_CONSTRAINT": {
+      "TITLE": "Der Auftrag kann im Moment nicht erstellt werden.",
+      "TEXT": "Sie müssen warten, bis ein oder mehrere Aufträge abgeschlossen sind."
+    }
+  },
+  "WITHDRAWAL_PAGE": {
+    "WITHDRAWAL": "Auszahlungsauftrag",
+    "ADVICE": {
+      "TITLE": "Investment-Hinweis",
+      "TEXT_PART_1": "Um die durchschnittlich erwartete Rendite von",
+      "P_A": "p.a.",
+      "TEXT_PART_2": " zu erreichen, beträgt die empfohlene Mindestanlagedauer",
+      "YEARS": "{{years}} Jahre",
+      "TEXT_PART_3": ". Sollten volatile Marktbedingungen der Grund für Ihren vorzeitigen Ausstieg sein, führt der Verkauf zu einem niedrigeren Marktpreis nur zu einer Realisierung von Verlusten. Daher wäre es ratsam, Ihre Investition in Ihr Portfolio zu erhöhen. Mit diesem antizyklischen Investitionsansatz können Sie von niedrigeren Marktpreisen profitieren.",
+      "HAVE_QUESTIONS": "Haben Sie Fragen?",
+      "DISCUSS_THEM_WITH_AN_ADVISOR_WITH_OUR_TEAM": "Besprechen Sie diese mit einem Experten aus unserem Team."
+    },
+    "FORM": {
+      "TITLE": "Wie viel möchten Sie auszahlen?",
+      "TEXT_PART_1": "Der Mindestauszahlungsbetrag beträgt",
+      "TEXT_PART_2": "Nach Ihrer Auszahlung muss Ihr Kontostand mindestens",
+      "TEXT_PART_3": "mit Sparrate oder",
+      "TEXT_PART_4": "ohne Sparplan betragen.",
+      "FULL_ACCOUNT_WITHDRAWAL": "Vollauszahlung"
+    },
+    "ORDER_SUMMARY": {
+      "ACCOUNT_BALANCE": "Aktueller Kontostand:",
+      "WITHDRAWAL_AMOUNT": "Auszahlungsbetrag:",
+      "NEW_ACCOUNT_BALANCE": "Neuer Kontostand:",
+      "ORDER_TAKES": "Es dauert 3-4 Bankarbeitstage, bis das Geld auf Ihrem Bankkonto erscheint.",
+      "REFERENCE_ACCOUNT_FOR_WITHDRAWAL": "Referenzkonto für Ihre Auszahlung:"
+    },
+    "FEEDBACK": {
+      "TITLE": "Bitte geben Sie uns Ihr Feedback",
+      "MESSAGE": "Haben Sie Bedenken bei Ihrem Portfolio oder sind Sie unzufrieden mit Ihrer Rendite? Um uns kontinuierlich zu verbessern, würden wir gerne wissen, warum Sie eine Auszahlung beantragen."
+    },
+    "FULL_WITHDRAW": {
+      "WE_ARE_SAD_TO_SEE_YOU_LEAVE_****": "Wir sind traurig, dass Sie **** verlassen.",
+      "FULL_WITHDRAW_MESSAGE": "Um unser Serviceangebot kontinuierlich zu verbessern, würden wir uns freuen, wenn Sie uns ein Feedback geben, warum Sie Ihr gesamtes Kontoguthaben auszahlen wollen.",
+      "PLEASE_SELECT_A_REASON": "Bitte wählen Sie einen Grund aus",
+      "CONFIRM_MESSAGE": "Ich bestätige, dass ich mir bewusst bin, dass eine Vollauszahlung Kapitalertragssteuern und Marktschwankungen unterliegen kann und dass **** daher den endgültigen Auszahlungsbetrag nicht garantieren kann.",
+      "AMOUNT_ADDITIONAL_MESSAGE": "Dieser Betrag kann sich ändern und hängt vom Marktwert des Portfolios ab.",
+      "ORDER_TAKES": "Es dauert bis zu 10 Bankarbeitstage, bis das Geld auf Ihrem Bankkonto erscheint."
+    },
+    "FULL_WITHDRAW_REASONS": {
+      "I_HAVE_SHORT_TERM_EXPENSES": "Ich habe kurzfristige Ausgaben.",
+      "I_AM_CONCERNED_BY_THE_CURRENT_CAPITAL_MARKET_DEVELOPMENTS": "Die aktuelle Kapitalmarktentwicklung macht mir Sorgen.",
+      "THE_FEES_ARE_TOO_HIGH": "Die Gebühren sind zu hoch.",
+      "I_AM_NOT_HAPPY_WITH_PERFORMANCE": "Ich bin mit der Rendite nicht zufrieden.",
+      "I_AM_NOT_HAPPY_WITH_THE_PRODUCT_FEATURES": "Ich bin mit den Funktionen des Produkts nicht zufrieden.",
+      "THE_CUSTOMER_SERVICE_IS_POOR": "Der Kundenservice ist schlecht.",
+      "I_AM_SWITCHING_TO_A_DIFFERENT_SERVICE_PROVIDER": "Ich wechsle zu einem anderen Dienstleister.",
+      "I_DO_NOT_WANT_TO_PROVIDE_A_REASON": "Ich möchte keinen Grund angeben.",
+      "OTHER": "Anderer."
+    },
+    "WITHDRAW_REASONS": {
+      "TAKE_SOME_PROFITS": "Ich möchte Gewinne mitnehmen.",
+      "THINKING_ABOUT_LEAVING": "Ich spiele mit dem Gedanken, **** zu verlassen.",
+      "TRYING_OTHER_SERVICE_PROVIDER": "Ich möchte gleichzeitig einen anderen Anbieter ausprobieren."
+    }
+  },
+  "ONE_TIME_DEPOSIT_PAGE": {
+    "ONE_TIME_DEPOSIT_ORDER": "Einzahlungsauftrag",
+    "REQUEST": {
+      "TITLE": "Wie viel würden Sie gerne anlegen?",
+      "NOTIFICATION_PART_1": "Das Minimum für eine Einzahlung beträgt",
+      "NOTIFICATION_PART_2": "Für eine kleinere Einzahlung können Sie",
+      "NOTIFICATION_PART_3": "stattdessen Ihre monatliche Sparrate",
+      "NOTIFICATION_PART_4": "erhöhen."
+    },
+    "ORDER_SUMMARY": {
+      "DEPOSIT_AMOUNT": "Einzahlungsbetrag:",
+      "REFERENCE_ACCOUNT_FOR_DIRECT_DEBIT": "Referenzkonto für Lastschrift:",
+      "ORDER_TAKES": "Auftrag dauert 2-3 Bankarbeitstage"
+    }
+  },
+  "MONTHLY_PAGE": {
+    "MONTHLY_CONTRIBUTION_ORDER": "Änderung Ihrer monatlichen Sparrate",
+    "REQUEST": {
+      "TITLE": "Neue monatliche Sparrate",
+      "NOTIFICATION": "Bitte beachten Sie, dass aufgrund des hohen Transaktionsaufkommens zum Monatswechsel eine Änderung der Sparplanrate ab 5 Bankarbeitstagen vor Monatsende nicht gewährleistet werden kann. Die Änderung Ihrer monatlichen Sparrate wird spätestens zum darauffolgenden Monatsersten umgesetzt werden."
+    },
+    "ORDER_SUMMARY": {
+      "CURRENT_MONTHLY_CONTRIBUTION": "Aktuelle monatliche Sparrate:",
+      "NEW_MONTHLY_CONTRIBUTION": "Neue monatliche Sparrate:",
+      "REFERENCE_ACCOUNT_FOR_DIRECT_DEBIT": "Referenzkonto für Lastschrift:",
+      "ORDER_TAKES": "Die Bearbeitung dauert 1 Bankarbeitstag."
+    }
+  },
+  "UPDATE_STRATEGY_PAGE": {
+    "UPDATE_YOUR_STRATEGY": "Änderung Ihrer Anlagestrategie",
+    "WE_WILL_ASK_YOU_A_FEW_QUESTIONS": "Wir stellen Ihnen ein paar Fragen zu Ihren neuen Anlagezielen und empfehlen Ihnen darauf aufbauend eine neue Strategie.",
+    "NEW_SAMPLE_INVESTMENT_PORTFOLIO": "So könnte Ihr neues Portfolio aussehen",
+    "CONFIRM_STRATEGY_UPDATE": "Anlagestrategie aktualisieren",
+    "SUMMARY": {
+      "CURRENT_STRATEGY": "Aktuelle Anlagestrategie:",
+      "NEW_CHOSEN_STRATEGY": "Neu gewählte Anlagestrategie:",
+      "N_A": "Keine Angabe",
+      "ORDER_TAKES": "Auftrag dauert 5-7 Bankarbeitstage"
+    },
+    "INTERVIEW": {
+      "PREVIOUS_QUESTION": "Vorherige Frage",
+      "CONTINUE": "Weiter",
+      "ERRORS": {
+        "MIN_AND_MAX": "Der Betrag muss zwischen {{min}} und {{max}} liegen.",
+        "MONTHLY_SAVINGS_MUST_BE": "Die monatlichen Ersparnisse müssen kleiner oder gleich dem monatlichen Einkommen sein.",
+        "DISPOSABLE_SAVING": "Ihr frei verfügbares Kapital kann nicht niedriger als Ihr verwaltetes Vermögen ({{balance}}) bei uns sein.",
+        "REQUIRED": "Hoppla. Wir brauchen noch Ihre Antwort."
+      }
+    },
+    "NEW_STRATEGY": {
+      "RISK_PROFILE": "Risikoprofil:",
+      "PLEASE_SELECT_AN_INVESTMENT_STRATEGY": "Bitte wählen Sie eine Anlagestrategie",
+      "STRATEGY_RECOMMENDATION_MESSAGE": "Wir empfehlen Ihnen die beste Strategie basierend auf Ihren Anlagezielen, aber Sie können trotzdem eine weniger riskante Strategie wählen.",
+      "LESS_RISKY": "Konservativ",
+      "RISKY": "Risikofreudig"
+    },
+    "PORTFOLIO_INVESTMENT": {
+      "TAB_HEADERS": {
+        "ASSETS": "Anlageklassen",
+        "INDUSTRIES": "Branchen",
+        "LOCATION": "Regionen"
+      },
+      "VIEW_FULL_LIST": "Vollständige Wertpapier-Liste",
+      "ALL_STOCK_IN_YOUR_SAMPLE_PORTFOLIO": " im Überblick",
+      "RISK": "Anlageklasse",
+      "ASSET_LABEL": "Anlageprodukt",
+      "TABLE_DESCRIPTION_PART1": "Dies stellt die aktuelle Zusammensetzung von",
+      "TABLE_DESCRIPTION_PART2": "dar. Bitte berücksichtigen Sie, dass es sich hierbei lediglich um eine Momentaufnahme handelt. Alle unsere Anlagestrategien werden laufend überwacht und bei Bedarf optimiert."
+    },
+    "PORTFOLIO_PERFORMANCE": {
+      "TAB_HEADERS": {
+        "EXPECTED_PERFORMANCE": "Erwartete Rendite",
+        "HISTORIC_PERFORMANCE": "Historische Rendite"
+      },
+      "PESSIMISTIC": "Pessimistisches Szenario",
+      "DEPOSITED": "Anlagebetrag",
+      "EXPECTED": "Erwartetes Szenario",
+      "OPTIMISTIC": "Optimistisches Szenario"
+    },
+    "INSUFFICIENT_EXPERIENCE": {
+      "CANCEL_MESSAGE": "Ich möchte mir die notwendigen Kenntnisse erstmal nicht aneignen und aktuell meine Anlagestrategie nicht ändern.",
+      "BUTTON": "Weiter",
+      "CONFIRMATION_MESSAGE": "Ich bestätige, dass ich mir die entsprechenden Kenntnisse aneignen werde.",
+      "DOCUMENT_TITLE": "Risiken der Kapitalanlage",
+      "DOCUMENT_LINK": "https://static.****.com/documents/286ebf866d437db365dc0c064dbe3495/****_Vermoegensverwaltung_Risiken_Kapitalanlage.pdf",
+      "TEXT_PARAGRAPH_1": "Unser Ziel ist es, Ihnen zu helfen, Ihr Geld gewinnbringend am Finanzmarkt zu investieren.",
+      "TEXT_PARAGRAPH_2": "Leider können wir Ihnen im Moment nicht empfehlen Ihre Anlagestrategie zu ändern.",
+      "TEXT_PARAGRAPH_3_1": "Der Grund:",
+      "TEXT_PARAGRAPH_3_2": "Ihr Wissen über den Finanzmarkt und Ihre Erfahrung in den relevanten Anlageklassen reicht dazu nicht aus.",
+      "TEXT_PARAGRAPH_4_1": "Wussten Sie schon?",
+      "TEXT_PARAGRAPH_4_2": "Wenn Sie in ETFs investieren, investieren Sie automatisch in verschiedene Anlageklassen.",
+      "TEXT_PARAGRAPH_5_1": "Kapitalmarkt einfach erklärt",
+      "TEXT_PARAGRAPH_5_2": "Wir helfen Ihnen gerne dabei zu lernen. Das Wissen rund um ETFs und Co. muss nicht kompliziert sein - wenn es gut erklärt ist.",
+      "TEXT_PARAGRAPH_6": "Laden Sie sich bitte folgendes PDF herunter, damit sind Sie schon mal einen Schritt weiter.",
+      "TITLE": "Es tut uns leid… das scheint nicht zu passen"
+    }
+  },
+  "REFERENCE_ACCOUNT_ORDER_PAGE": {
+    "NEW_REFERENCE_ACCOUNT_ORDER": "Auftrag zur Referenzkontoänderung",
+    "NOTE_1": "Um diesen Auftrag abzuschließen, müssen Sie ein Dokument herunterladen, unterschreiben und per Post an unsere Partnerbank DAB BNP Paribas verschicken. Bitte unterschreiben Sie beide Seiten.",
+    "NOTE_2": "Um diesen Auftrag abzuschließen, müssen Sie ein Dokument herunterladen, unterschreiben und per Post an unsere Partnerbank DAB BNP Paribas verschicken. Bitte unterschreiben Sie beide Seiten. Die Versandadresse finden Sie nachstehend.",
+    "YOUR_NEW_ACCOUNT": "Ihr neues Konto",
+    "FIRST_NAME": "Vorname",
+    "LAST_NAME": "Nachname",
+    "IBAN": "IBAN",
+    "INVALID_IBAN": "Oh, das scheint keine gültige IBAN zu sein.",
+    "BIC": "BIC",
+    "INVALID_BIC": "Hoppla. Das ist keine gültige BIC.",
+    "BANK_NAME": "Bankname",
+    "ORDER_SUMMARY": {
+      "CURRENT_ACCOUNT": "Aktuelles Konto",
+      "NEW_ACCOUNT": "Neues Konto"
+    },
+    "CONFIRM_NEW_ACCOUNT": "Dokument erstellen",
+    "PLEASE_DOWNLOAD": "Bitte herunterladen, beide Seiten unterschreiben und an unsere Partnerbank per Post an folgende Addresse senden:",
+    "PLEASE_DOWNLOAD_1": "BNP Paribas S.A.",
+    "PLEASE_DOWNLOAD_2": "Niederlassung Deutschland",
+    "PLEASE_DOWNLOAD_3": "Fintech Team",
+    "PLEASE_DOWNLOAD_4": "Landsberger Straße 300",
+    "PLEASE_DOWNLOAD_5": "80687 München",
+    "CHANGE_REFERENCE_ACCOUNT_DETAILS": "Kontodaten ändern",
+    "ORDER_TAKES": "Wenn das Dokument bei unserer Partnerbank eingegangen ist, dauert der Auftrag bis zu 10 Bankarbeitstage.",
+    "SEND_FORM": "An die Bank verschicken"
+  },
+  "ADDRESS_ORDER_PAGE": {
+    "NEW_ADDRESS_ORDER": "Auftrag zur Adressänderung",
+    "YOUR_NEW_ADDRESS": "Ihre neue Adresse",
+    "STREET_NAME": "Straße",
+    "STREET_#": "Hausnr.",
+    "ZIP_CODE": "Postleitzahl",
+    "CITY": "Ort",
+    "COUNTRY": "Land",
+    "CONFIRM_NEW_ADDRESS": "Formular erstellen",
+    "CHANGE_ADDRESS_DETAILS": "Adressdaten ändern",
+    "REQUIRED_FORM_FOR_SIGNATURE": "Erforderliches Formular zur Unterschrift",
+    "PLEASE_DOWNLOAD": "Bitte laden Sie das Adressänderungsformular herunter, unterschreiben es und laden es anschließend hoch.",
+    "DOWNLOAD_FORM": "Formular herunterladen",
+    "UPLOAD_FORM": "Formular hochladen",
+    "SIGN_FORM": "Formular unterschreiben",
+    "ORDER_SUMMARY": {
+      "CURRENT_ADDRESS": "Aktuelle Adresse",
+      "NEW_ADDRESS": "Neue Adresse"
+    }
+  },
+  "TAX_EXEMPTION_PAGE": {
+    "TAX_EXEMPTION_ORDER": "Freistellungsauftrag",
+    "YOUR_SPOUSE_NAME": "Name Ihres Ehepartners",
+    "YOUR_SPOUSE_BIRTH_DATE": "Geburtsdatum Ihres Ehepartners",
+    "YOUR_SPOUSE_TAX_ID": "Deutsche Steueridentifikationsnummer Ihres Ehepartners",
+    "REMOVE_YOUR_SPOUSE": "Ich möchte den Freistellungsauftrag ohne meinen Ehepartner erstellen",
+    "WHAT_AMOUNT": "Wie hoch soll Ihr Freistellungsauftrag sein?",
+    "ONLY_ONE_SPOUSE_SPANNING": "Es soll nur eine ehegattenübergreifende / lebenspartnerübergreifende Verlustverrechnung beantragt werden.",
+    "UP_TO_AMOUNT": "Bis zur Höhe des Sparerpauschbetrages von insgesamt {{amount}}.",
+    "CUSTOM_AMOUNT": "Benutzerdefinierter Betrag:",
+    "TAX_EXEMPTION_START_DATE": "Der Freistellungsauftrag ist gültig ab",
+    "TAX_EXEMPTION_END_DATE": "Der Freistellungsauftrag ist gültig bis",
+    "CREATE_JOINT_TAX": "Ich möchte gemeinsam mit meinem Ehepartner einen Freistellungsauftrag einreichen",
+    "CREATE_TAX_EXEMPTION_FORM": "Formular erstellen",
+    "CHANGE_TAX_EXEMPTION_DETAILS": "Angaben zum Freistellungsauftrag ändern",
+    "PLEASE_DOWNLOAD": "Bitte laden Sie das Formular zum Freistellungsauftrag herunter, unterschreiben es und laden es anschließend hoch.",
+    "UNTIL_NEW_ORDER": "Bis zum Eingang eines neuen Auftrags",
+    "MESSAGES": {
+      "WRONG_DATE": "Das Enddatum sollte nach dem Startdatum liegen.",
+      "WRONG_DATE_OF_BIRTH": "Ungültiges Geburtsdatum"
+    },
+    "ORDER_SUMMARY": {
+      "START_DATE": "Startdatum",
+      "END_DATE": "Enddatum",
+      "JOINT_TAX_EXEMPTION": "Ein gemeinsamer Freistellungsauftrag mit meinem Ehepartner",
+      "DATE_OF_BIRTH": "Geburtsdatum"
+    }
+  },
+  "INVITE_FRIENDS_PAGE": {
+    "TITLE": "Laden Sie Ihre Freunde zu **** ein",
+    "FOR_EACH_SUCCESSFUL_RECOMMENDATION": "Für jede erfolgreiche Empfehlung eines neuen Kunden/-in erhalten Sie und der Geworbene jeweils 50 € auf Ihr ****-Konto.",
+    "IF_YOU_WANT_TO_REFER": "Wenn Sie jemanden werben möchten, können Sie Ihren persönlichen Empfehlungscode mit Ihren Bekannten teilen, den diese dann im Rahmen der Registrierung in das entsprechende Eingabefeld eingeben müssten.",
+    "REFERRAL_CODE": "Empfehlungscode",
+    "COPIED": "Kopiert!",
+    "THE_TRANSFER_OF_BONUS": "Die Auszahlung erfolgt sechs Monate nach der Kontoeröffnung des Geworbenen, jedoch nur, wenn Sie und der Geworbene noch Kunde sind und beide innerhalb der sechs Monate an keiner anderen Werbeaktion teilgenommen haben. Die Aktion gilt nur, wenn der persönliche Empfehlungscode verwendet wurde."
+  },
+  "ACCOUNT_DETAILS_PAGE": {
+    "ACCOUNT_DETAILS": "Kontoinformationen",
+    "TAB_HEADERS": {
+      "PERSONAL_INFORMATION": "Persönliche Angaben",
+      "BANK_INFORMATION": "Bankverbindung",
+      "TAX_INFORMATION": "Steuerliche Angaben"
+    },
+    "PERSONAL": {
+      "NAME": "Name",
+      "ACCOUNT_ID": "Kundennummer",
+      "LICENCE": "Lizenz",
+      "KWG": "§32 Kreditwesengesetz (KWG)",
+      "ADDRESS": "Adresse",
+      "ADDRESS_LINE_1": "{{address.streetName}} {{address.buildingNumber}}",
+      "ADDRESS_LINE_2": "{{address.postalCode}} {{address.city}}",
+      "REQUEST_ADDRESS_CHANGE": "Eine Adressänderung beantragen"
+    },
+    "BANK": {
+      "REFERENCE_ACCOUNT": "Referenzkonto",
+      "ACCOUNT_OWNER": "Kontoinhaber",
+      "IBAN": "IBAN",
+      "BIC": "BIC",
+      "BANK_NAME": "Bankname",
+      "MANDATE_REFERENCE": "Mandatsreferenz",
+      "CHANGE_REFERENCE_ACCOUNT": {
+        "PART_1": "Um Ihr Referenzkonto zu ändern, senden Sie uns eine Nachricht per Email an ",
+        "PART_2": ". Bitte nennen Sie dabei Ihren Namen und Ihre Kundennummer, welche Sie unter “Persönliche Angaben” finden."
+      },
+      "CLEARING_ACCOUNT": "Verrechnungskonto",
+      "MAILTO": {
+        "SUBJECT": "Referenzkontoänderung",
+        "BODY": "Liebes ****-Team,\nhiermit beantrage ich das Formular für eine Referenzkontoänderung.\n\nViele Grüße"
+      },
+      "REQUEST_ACCOUNT_CHANGE": "Eine Referenzkontoänderung beantragen"
+    },
+    "TAX": {
+      "YOUR_TAX_ID": "Ihre Steueridentifikationsnummer",
+      "GERMAN_TAX_ID": "Steueridentifikationsnummer",
+      "TAX_EXEMPTION_STATUS": "Status Ihres Freistellungsauftrags",
+      "TOTAL_AMOUNT": "Gesamtbetrag",
+      "USED_AMOUNT": "Genutzter Betrag",
+      "MAKE_TAX_EXEMPTION_ORDER": "Freistellungsauftrag einreichen",
+      "TAX_TYPE": "Veranlagung",
+      "TAX_TYPES": {
+        "NONE": "Keine",
+        "SINGLE": "Einzeln",
+        "JOINT": "Gemeinsam",
+        "OVERSIZE": "Nicht veranlagt",
+        "FOREIGN": "Ausländisch"
+      },
+      "SAVE": "Speichern"
+    }
+  },
+  "USER_SETTINGS_PAGE": {
+    "ACCOUNT_SETTINGS": "Nutzereinstellungen",
+    "TAB_HEADERS": {
+      "EMAIL": "Email",
+      "PASSWORD": "Passwort",
+      "COMMUNICATION_PREFERENCES": "Kommunikationseinstellungen"
+    },
+    "EMAIL": {
+      "CURRENT_EMAIL": "Aktuelle Email",
+      "NEW_EMAIL": "Neue Email",
+      "MESSAGES": {
+        "EMAIL_IS_SAME": "Die Email ist die gleiche wie Ihre aktuelle.",
+        "EMAIL_IS_USED": "Die gewählte Email-Adresse wird bereits verwendet. Bitte wählen Sie eine andere.",
+        "INVALID_EMAIL": "Ungültige Email"
+      },
+      "EMAIL_VERIFICATION_LINK": "Um Ihre Email-Adresse zu ändern, werden wir einen Verifikationslink an Ihre neue Email-Adresse versenden."
+    },
+    "PASSWORD": {
+      "CURRENT_PASSWORD": "Aktuelles Passwort",
+      "NEW_PASSWORD": "Neues Passwort",
+      "MESSAGES": {
+        "PASSWORD_IS_WRONG": "Ihr aktuelles Passwort ist falsch.",
+        "PASSWORD_MIN_LENGTH": "Ihr Passwort sollte mindestens 8 Zeichen lang sein.",
+        "PASSWORD_ONE_LETTER": "Ihr Passwort muss mindestens einen Kleinbuchstaben enthalten.",
+        "PASSWORD_ONE_NUMBER": "Ihr Passwort muss mindestens eine Zahl enthalten.",
+        "PASSWORD_NOT_EMAIL": "Ihr Passwort darf nicht Ihre Email-Adresse sein."
+      }
+    },
+    "COMMUNICATION": {
+      "PHONE_NUMBER": "Telefonnummer",
+      "PREFERRED_COMMUNICATION_LANGUAGE": "Bevorzugte Kommunikationssprache",
+      "WHY_DO_WE_NEED_THIS": "Wofür benötigen wir dies?",
+      "WE_WILL_USE_THIS_LANGUAGE": "Wir werden diese Sprache für alle unsere E-Mails verwenden, die wir an Sie senden.",
+      "MESSAGES": {
+        "INVALID_PHONE": "Ungültige Telefonnummer"
+      }
+    }
+  },
+  "EXTERNAL_LINKS": {
+    "WEBSITE": {
+      "PRIVACY": "{{domain}}/datenschutz",
+      "BOOK_A_CALL": "{{domain}}/rueckrufservice",
+      "LEGAL_INFORMATION": "{{domain}}/vertragsunterlagen",
+      "LEGAL_NOTICE": "{{domain}}/impressum"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .switch-account{
+    @include tablets {
+      padding-bottom:8px;
+    }
+
+    .switch-account__title{
+      position: relative;
+      text-align: center;
+      padding-bottom:24px;
+      color: $navy;
+
+      @include tablets {
+        font-size:22px;
+        line-height: 32px;
+        padding-top:24px;
+      }
+
+      .pi-times {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+      }
+    }
+
+    .list{
+      border-bottom:1px solid $gray30;
+
+      @include tablets {
+        border:0;
+      }
+
+      .item{
+        border-top:1px solid $gray30;
+        @include tablets {
+          border:0;
+        }
+
+        &.active{
+          background: #FAFBFF url("/assets/img/checked-icon.svg") no-repeat calc(100% - 16px) center;
+
+          @include tablets {
+            background-position: calc(100% - 24px) center;
+          }
+        }
+
+        &:not(.active) {
+          .customer {
+            cursor: pointer;
+            &:hover {
+              background-color: #FAFBFF;
+            }
+          }
+        }
+
+        &.child-account {
+          .customer{
+            background-image: url("/assets/img/choose-account-child-account-icon.svg");
+            @include tablets {
+            }
+          }
+        }
+
+        &.single-account {
+          .customer{
+            background-image: url("/assets/img/choose-account-single-account-icon.svg");
+            @include tablets {
+              background-size: 14px auto;
+              background-position: 15px 21px;
+            }
+          }
+        }
+
+        .customer{
+          border:0;
+          width:100%;
+          padding:12px 16px 12px 28px;
+          background: transparent no-repeat 8px 14px;
+          background-size: 16px auto;
+          text-align: left;
+
+          @include tablets {
+            padding:16px 24px 16px 40px;
+            background-position: 12px 20px;
+            background-size: 18px auto;
+          }
+
+          .name{
+            display: block;
+            font-size:14px;
+            font-weight:600;
+            color:#192f57;
+            margin-bottom:4px;
+
+            @include tablets {
+              margin:0;
+              font-size:16px;
+              line-height: 24px;
+            }
+          }
+
+          .acc-number, .acc-type{
+            color: $gray70;
+            line-height: 16px;
+
+            @include tablets {
+              font-size:14px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

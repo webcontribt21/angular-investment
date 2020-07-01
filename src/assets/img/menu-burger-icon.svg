@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="12px" viewBox="0 0 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 59 (101010) - https://sketch.com -->
+    <title>D60C37ED-4A14-494A-93A0-68D1C6DF3911_outlined</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M21,11.01 L3,11 L3,13 L21,13 L21,11.01 Z M3,16 L15,16 L15,18 L3,18 L3,16 Z M21,6 L3,6 L3,8.01 L21,8 L21,6 Z" id="path-1"></path>
+    </defs>
+    <g id="04-My****" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="My-****---Overview---Mobile" transform="translate(-19.000000, -22.000000)">
+            <g id="icon/editor/notes_24px" transform="translate(16.000000, 16.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g fill-rule="nonzero"></g>
+                <g id="↳-Color-✱-/-Color-/-Icons-/-White-/-Active" mask="url(#mask-2)" fill="#FFFFFF">
+                    <rect id="Rectangle-13" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

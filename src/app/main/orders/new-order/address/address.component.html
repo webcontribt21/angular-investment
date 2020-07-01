@@ -1,0 +1,20 @@
+<section class="address">
+  <div class="address-title h1">
+    {{'ADDRESS_ORDER_PAGE.NEW_ADDRESS_ORDER' | translate}}
+  </div>
+  <div class="address-content order-content">
+    <div class="address-request order-request">
+      <div class="address-request__form" *ngIf="!(isMakeOrder$ | async); else makeOrder">
+        <app-address-form></app-address-form>
+      </div>
+      <ng-template #makeOrder>
+        <div class="address-request__make-order">
+          <app-make-order></app-make-order>
+        </div>
+      </ng-template>
+    </div>
+    <div class="address-summary">
+      <app-address-summary></app-address-summary>
+    </div>
+  </div>
+</section>

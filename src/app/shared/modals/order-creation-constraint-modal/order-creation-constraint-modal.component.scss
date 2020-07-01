@@ -1,0 +1,17 @@
+@import '../../../../styles/media.scss';
+@import '../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .order-creation-constraint{
+    height: 250px;
+    padding: 40px 25px;
+
+    @include tablets {
+      padding-top:30px;
+    }
+
+    .text{
+      margin-top:15px;
+    }
+  }
+}

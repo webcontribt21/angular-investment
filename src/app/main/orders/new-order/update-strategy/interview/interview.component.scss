@@ -1,0 +1,178 @@
+@import '../../../../../../styles/media.scss';
+@import '../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .interview {
+    display: flex;
+    flex-direction: column;
+    @include tablets {
+      flex-direction: row;
+    }
+
+    &-question {
+      padding: 16px;
+      background-color: #fff;
+      box-shadow: 0 2px 8px 0 rgba(189,193,199,0.5);
+      border-radius: 2px;
+      margin-bottom: 16px;
+      @include tablets {
+        flex-grow: 1;
+        align-self: flex-start;
+        padding: 24px;
+        margin-bottom: 0;
+      }
+      @include tabletsHoriz {
+        padding: 32px 40px 24px 32px;
+      }
+      &__back {
+        display: inline-block;
+        margin-bottom: 16px;
+        &-text {
+          font-size: 14px;
+          line-height: 19px;
+          font-weight: 400;
+          letter-spacing: .09px;
+          color: $blue50;
+          padding-left: 16px;
+          position: relative;
+
+          &:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background: url("/assets/img/arrow-back-blue-small.svg") no-repeat;
+          }
+        }
+      }
+    }
+
+    &-summary {
+      @include tablets {
+        margin-left: 25px;
+      }
+      @include desktop {
+        margin-left: 32px;
+      }
+    }
+  }
+
+  // reusable styles for each question
+  .question {
+    .title, .sub-title {
+      line-height: 28px;
+      font-weight: 600;
+      color: $navy;
+      margin-bottom: 24px;
+      @include tablets {
+        line-height: 32px;
+      }
+    }
+    .title {
+      font-size: 20px;
+      @include tablets {
+        font-size: 22px;
+      }
+    }
+    .sub-title {
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: .12px;
+      @include tablets {
+        font-size: 18px;
+      }
+    }
+    .options {
+      &-list {
+        margin-bottom: 40px;
+        .options-item {
+          display: flex;
+          margin-bottom: 16px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .options-label {
+            display: flex;
+            cursor: pointer;
+          }
+          .item-radio {
+            margin-right: 16px;
+            &_no_margin {
+              margin-right: 0;
+            }
+            .ui-radiobutton {
+              .ui-radiobutton-box {
+                box-shadow: none;
+                border: 1px solid $gray50;
+                .ui-radiobutton-icon {
+                  background-color: transparent;
+                }
+              }
+            }
+            .ui-radiobutton-box.ui-state-active {
+              border-color: $orange50;
+              background-color: #fff;
+              .ui-radiobutton-icon {
+                background-color: $orange50;
+              }
+            }
+          }
+          .item-checkbox {
+            margin-right: 16px;
+            .ui-chkbox {
+              .ui-chkbox-box {
+                border-radius: 0;
+                border: 1px solid $gray50;
+                &.ui-state-active {
+                  background-color: $orange50;
+                  border-color: $orange50;
+                }
+                &.ui-state-active:not(.ui-state-disabled):hover {
+                  background-color: $orange50;
+                }
+              }
+              .ui-chkbox-box.ui-state-focus {
+                box-shadow: none;
+              }
+            }
+          }
+          .item-value {
+            .item-text {
+              font-size: 14px;
+              line-height: 20px;
+              color: $navy;
+              font-weight: 600;
+              @include tablets {
+                font-size: 16px;
+                line-height: 24px;
+              }
+            }
+            .item-explain {
+              font-size: 14px;
+              line-height: 20px;
+              font-weight: 300;
+              color: $gray90;
+              @include tablets {
+                font-size: 16px;
+                line-height: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // interview questions submit button
+  .submit-btn {
+    display: flex;
+    justify-content: center;
+    @include tabletsHoriz {
+      justify-content: flex-start;
+    }
+  }
+}

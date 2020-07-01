@@ -1,0 +1,109 @@
+<div class="reference-account-form">
+  <div class="reference-account-form__note">
+    <app-upload-note altNoteKey='REFERENCE_ACCOUNT_ORDER_PAGE.NOTE_1'></app-upload-note>
+  </div>
+
+  <div class="reference-account-form__title">
+    {{'REFERENCE_ACCOUNT_ORDER_PAGE.YOUR_NEW_ACCOUNT' | translate}}
+  </div>
+
+  <div class="reference-account-form__form">
+    <form class="form"
+      [formGroup]="referenceAccountForm"
+      ngxsForm="order.referenceAccountOrderForm"
+      ngxsFormDebounce="300"
+      (ngSubmit)="onSubmit()"
+      novalidate
+    >
+      <div class="form-row">
+        <div class="form-row__col form-row__col_name">
+          <div class="form-row__label">
+            {{'HEADER.USER_MENU.ACCOUNT_HOLDER' | translate}} | {{'REFERENCE_ACCOUNT_ORDER_PAGE.FIRST_NAME' | translate}}
+          </div>
+          <div class="form-row__input">
+            <input class="input" [formControl]="firstNameControl" />
+          </div>
+        </div>
+        <div class="form-row__col form-row__col_name">
+          <div class="form-row__label">
+            {{'HEADER.USER_MENU.ACCOUNT_HOLDER' | translate}} | {{'REFERENCE_ACCOUNT_ORDER_PAGE.LAST_NAME' | translate}}
+          </div>
+          <div class="form-row__input">
+            <input class="input" [formControl]="lastNameControl" />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-row__col form-row__col_iban">
+          <div class="form-row__label">
+            {{'REFERENCE_ACCOUNT_ORDER_PAGE.IBAN' | translate}}
+          </div>
+          <div class="form-row__input">
+            <input class="input" [formControl]="ibanControl" />
+          </div>
+          <ng-container *ngIf="ibanControl as control">
+            <div class="errors" *ngIf="control.dirty && control.invalid">
+              <div class="errors-item" *ngIf="control.errors.required">
+                {{'MESSAGES.REQUIRED' | translate}}
+              </div>
+              <div class="errors-item" *ngIf="control.errors.iban">
+                {{'REFERENCE_ACCOUNT_ORDER_PAGE.INVALID_IBAN' | translate}}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-row__col form-row__col_bic">
+          <div class="form-row__label">
+            {{'REFERENCE_ACCOUNT_ORDER_PAGE.BIC' | translate}}
+          </div>
+          <div class="form-row__input">
+            <input class="input" [formControl]="bicControl" />
+          </div>
+          <ng-container *ngIf="bicControl as control">
+            <div class="errors" *ngIf="control.dirty && control.invalid">
+              <div class="errors-item" *ngIf="control.errors.required">
+                {{'MESSAGES.REQUIRED' | translate}}
+              </div>
+              <div class="errors-item" *ngIf="control.errors.bic">
+                {{'REFERENCE_ACCOUNT_ORDER_PAGE.INVALID_BIC' | translate}}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-row__col form-row__col_bank">
+          <div class="form-row__label">
+            {{'REFERENCE_ACCOUNT_ORDER_PAGE.BANK_NAME' | translate}}
+          </div>
+          <div class="form-row__input">
+            <input class="input" [formControl]="bankControl" />
+          </div>
+          <ng-container *ngIf="bankControl as control">
+            <div class="errors" *ngIf="control.dirty && control.invalid">
+              <div class="errors-item" *ngIf="control.errors.required">
+                {{'MESSAGES.REQUIRED' | translate}}
+              </div>
+              <div class="errors-item" *ngIf="control.errors.disallowedCharacters || control.errors.invalidGerman">
+                {{'MESSAGES.ALLOWED_CHARACTERS' | translate}}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="form-submit reference-account-form__submit">
+        <p-button class="button-blue"
+          [disabled]="referenceAccountForm.invalid || referenceAccountForm.pending"
+          [label]="'REFERENCE_ACCOUNT_ORDER_PAGE.CONFIRM_NEW_ACCOUNT' | translate"
+          [type]="'submit'">
+        </p-button>
+      </div>
+    </form>
+  </div>
+</div>

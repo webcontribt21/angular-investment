@@ -1,0 +1,48 @@
+@import '../styles/media.scss';
+
+/*BASIC STYLES*/
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+*:focus, *:active, *:hover {
+  outline: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  cursor: default;
+}
+
+.pi.pi-external-link {
+  font-size: 12px;
+  vertical-align: top;
+  margin-left: 4px;
+  margin-top: 4px;
+}
+/*End of Basic Styles*/

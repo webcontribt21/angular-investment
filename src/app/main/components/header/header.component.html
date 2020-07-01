@@ -1,0 +1,92 @@
+<header class="header">
+  <div class="header-container container">
+    <div class="inner">
+      <div class="menu">
+        <button class="menu-btn" (click)="openLeftMenu()" *ngIf="!(isDesktop$ | async)"></button>
+        <p-sidebar *ngIf="!(isDesktop$ | async)"
+          #sidebar
+          [styleClass]="'mob'"
+          [visible]="isOpenLeftMenu$ | async"
+          [modal]="true"
+          [showCloseIcon]="false"
+          (visibleChange)="closeMenu()">
+          <nav class="sidebar">
+            <button class="close-btn" (click)="closeMenu()" *ngIf="sidebar.visible">
+              <img src="/assets/img/close-icon-white.svg" />
+            </button>
+            <ul>
+              <li class="overview">
+                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                  <span><img src="/assets/img/menu-overview-icon.svg" /></span>
+                  {{'HEADER.MAIN_MENU.OVERVIEW' | translate}}
+                </a>
+              </li>
+              <li class="transactions">
+                <a routerLink="/transactions" routerLinkActive="active">
+                  <span><img src="/assets/img/menu-transactions-icon.svg" /></span>
+                  {{'HEADER.MAIN_MENU.TRANSACTIONS' | translate}}
+                </a>
+              </li>
+              <li class="orders">
+                <a routerLink="/orders" routerLinkActive="active">
+                  <span><img src="/assets/img/menu-orders-icon.svg" /></span>
+                  {{'HEADER.MAIN_MENU.ORDERS' | translate}}
+                </a>
+              </li>
+              <li class="documents">
+                <a routerLink="/documents" routerLinkActive="active">
+                  <span><img src="/assets/img/menu-documents-icon.svg" /></span>
+                  {{'HEADER.MAIN_MENU.DOCUMENTS' | translate}}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </p-sidebar>
+        <p-sidebar *ngIf="isDesktop$ | async"
+          [styleClass]="'desk'"
+          [visible]="true"
+          [modal]="false"
+          [showCloseIcon]="false"
+          (visibleChange)="closeMenu()">
+          <nav class="sidebar">
+            <ul>
+              <li class="overview">
+                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                  <span><img src="/assets/img/menu-overview-icon.svg" /></span>
+                  {{'HEADER.MAIN_MENU.OVERVIEW' | translate}}
+                </a>
+              </li>
+              <li class="transactions">
+                <a routerLink="/transactions" routerLinkActive="active">
+                  <span><img src="/assets/img/menu-transactions-icon.svg" /></span>
+                  {{'HEADER.MAIN_MENU.TRANSACTIONS' | translate}}
+                </a>
+              </li>
+              <li class="orders">
+                <a routerLink="/orders" routerLinkActive="active">
+                  <span><img src="/assets/img/menu-orders-icon.svg" /></span>
+                  {{'HEADER.MAIN_MENU.ORDERS' | translate}}
+                </a>
+              </li>
+              <li class="documents">
+                <a routerLink="/documents" routerLinkActive="active">
+                  <span><img src="/assets/img/menu-documents-icon.svg" /></span>
+                  {{'HEADER.MAIN_MENU.DOCUMENTS' | translate}}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </p-sidebar>
+      </div>
+
+      <a class="logo" routerLink="/">
+        <img class="logo__img"src="/assets/img/logo-white.svg" />
+      </a>
+    </div>
+
+    <div class="inner-user">
+      <app-language-selector class="switch-language"></app-language-selector>
+      <app-user-menu></app-user-menu>
+    </div>
+  </div>
+</header>

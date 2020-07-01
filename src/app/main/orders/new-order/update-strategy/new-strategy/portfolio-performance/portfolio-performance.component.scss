@@ -1,0 +1,28 @@
+@import '../../../../../../../styles/media.scss';
+@import '../../../../../../../styles/variables.scss';
+
+:host ::ng-deep {
+  .ui-tabview-nav {
+    li {
+      max-width: 50%;
+    }
+  }
+  .expected-chart {
+    @include tablets {
+      min-width: 322px;
+      max-width: 322px;
+    }
+    @include tabletsHoriz {
+      min-width: 562px;
+      max-width: 562px;
+    }
+    @include desktop {
+      min-width: 756px;
+      max-width: 756px;
+    }
+  }
+  .highcharts-container {
+    width: 100%!important;
+    max-width: 100%;
+  }
+}

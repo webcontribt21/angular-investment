@@ -1,0 +1,579 @@
+{
+  "COMMON": {
+    "MONTH_NAMES": "January, February, March, April, May, June, July, August, September, October, November, December",
+    "SHORT_MONTH_NAMES": "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec",
+    "APEIRON": "apeiron",
+    "DESCRIPTION": "DESCRIPTION",
+    "DATE": "DATE",
+    "AMOUNT": "AMOUNT",
+    "SOURCE": "SOURCE",
+    "PAGINATION": {
+      "OF": "of"
+    },
+    "REPORT": "Download",
+    "TOTAL_BALANCE": "ASSETS UNDER MANAGEMENT",
+    "BACK_TO": {
+      "OVERVIEW": "Back to overview",
+      "ORDERS": "Back to orders"
+    },
+    "MAKE_A_REQUEST": "Submit order",
+    "ORDER_SUMMARY": "Order summary",
+    "ADD": "Add",
+    "CHANGE": "Change",
+    "EDIT": "Edit",
+    "CANCEL": "Cancel",
+    "TITLE": "Salutation",
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "DAY": "Day",
+    "WEEKS": {
+      "1": "1 week"
+    },
+    "MONTH": "Month",
+    "MONTHS": {
+      "1": "1 month"
+    },
+    "YEAR": "Year",
+    "YEARS": {
+      "1": "1 year",
+      "3": "3 years",
+      "5": "5 years"
+    },
+    "YTD": "Current year",
+    "NAME": "Name",
+    "ALL": "All time",
+    "DOWNLOAD": {
+      "CSV": "Download CSV",
+      "JPEG": "Download JPEG image",
+      "PDF": "Download PDF document",
+      "PNG": "Download PNG image",
+      "SVG": "Download SVG vector image",
+      "XLS": "Download XLS"
+    },
+    "RANGE_FROM": "From",
+    "RANGE_TO": "To",
+    "NO_DATA": "No data to display"
+  },
+  "PAGES_TITLES": {
+    "MAIN": "**** | Overview",
+    "TRANSACTIONS": "**** | Transactions",
+    "DOCUMENTS": "**** | Documents",
+    "ORDERS": "**** | Orders",
+    "ACCOUNT_DETAILS": "**** | Account details",
+    "USER_SETTINGS": "**** | User settings",
+    "INVITE_FRIENDS": "**** | Invite friends"
+  },
+  "MESSAGES": {
+    "ALLOWED_CHARACTERS": "Please only use characters of the German alphabet",
+    "PASSWORD_CHANGED_SUCCESSFULLY": "Password changed successfully",
+    "REQUIRED": "Required",
+    "EMAIL_CHANGED_SUCCESSFULLY": "We've sent you a verification link.",
+    "COMMUNICATION_PREFERENCES_CHANGED_SUCCESSFULLY": "Communication preferences changed successfully",
+    "WRONG_TAX_ID": "The tax identification number must contain exactly 11 digits",
+    "WRONG_AMOUNT": "The amount must be between €{{min}} and {{max}}.",
+    "OLD_AMOUNT": "The amount must not be equal to the old amount.",
+    "WRONG_UPLOAD_DOCUMENT_FORMAT": "The document must be in a PDF format",
+    "SOMETHING_WENT_WRONG": "We’re sorry, but unfortunately something went wrong."
+  },
+  "HEADER": {
+    "MAIN_MENU": {
+      "OVERVIEW": "Overview",
+      "TRANSACTIONS": "Transactions",
+      "ORDERS": "Orders",
+      "DOCUMENTS": "Documents"
+    },
+    "USER_MENU": {
+      "SIGNED_IN_AS": "Signed in as",
+      "ACCOUNT": "ACCOUNT",
+      "ACCOUNT_DETAILS": "Account details",
+      "ACCOUNT_HOLDER": "Account holder",
+      "SWITCH_ACCOUNT": "Switch account",
+      "LIVE_HELP": "Live help",
+      "USER_SETTINGS": "User settings",
+      "INVITE_FRIENDS": "Invite friends",
+      "LOG_OUT": "Log out"
+    }
+  },
+  "FOOTER": {
+    "NEED_HELP": "Need help?",
+    "CONTACT_US": "Contact us at",
+    "BOOK_A_CALL": "Book a call-back",
+    "PRIVACY": "Privacy policy",
+    "LEGAL_INFORMATION": "Legal information",
+    "LEGAL_NOTICE": "Legal Notice"
+  },
+  "ACCOUNT_SWITCHER": {
+    "CHOOSE_AN_ACCOUNT": "Choose an account",
+    "CHILD_ACCOUNT": "Child account",
+    "SINGLE_ACCOUNT": "Single account"
+  },
+  "OVERVIEW_PAGE": {
+    "GREETING": {
+      "GOOD_MORNING": "Good morning",
+      "WELCOME_BACK": "Welcome back",
+      "GOOD_AFTERNOON": "Good afternoon",
+      "GOOD_EVENING": "Good evening",
+      "MERRY_CHRISTMAS": "Merry Christmas",
+      "HAPPY_NEW_YEAR": "Happy New Year",
+      "NICE_TO_SEE_YOU": "Nice to see you",
+      "TODAY_IS_WORLD_SAVINGS_DAY": "Today is World Savings Day"
+    },
+    "CHANGE_MONTHLY_DEPOSIT": "Change monthly savings rate",
+    "ONE_TIME_DEPOSIT": "Deposit",
+    "COMMON": {
+      "CHANGE": "Change"
+    },
+    "ACCOUNT_ACTIVITY": {
+      "ACCOUNT_ACTIVITY": "Recent Account Activities",
+      "LOADING": "Please be patient for a moment. Your account details are being loaded."
+    },
+    "TOTAL": {
+      "TOTAL_BALANCE": "ASSETS UNDER MANAGEMENT",
+      "TOTAL_PORTFOLIO": "Investment amount",
+      "LIQUIDITY": "Liquidity",
+      "PERFORMANCE_EURO": "PERFORMANCE (€)",
+      "PERFORMANCE_PERCENT": "PERFORMANCE (%)",
+      "MONEY_WEIGHTED_PERFORMANCE": "Money weighted performance",
+      "SIMPLIFIED_PERFORMANCE": "Simplified performance (%)",
+      "ALL_TIME": "All time",
+      "HOW_WE_CALCULATE_PERFORMANCE": "How we calculate performance",
+      "LINK": "performance-calculation",
+      "TOTAL_DEPOSIT": "TOTAL DEPOSITS",
+      "MONTHLY_DEPOSIT": "MONTHLY SAVINGS RATE",
+      "ADD": "Deposit"
+    },
+    "PORTFOLIO_HISTORY": {
+      "PORTFOLIO_HISTORY": "PORTFOLIO HISTORY",
+      "BALANCE": "Balance",
+      "PERFORMANCE": "Performance"
+    },
+    "INVESTMENT": {
+      "INVESTMENT_STRATEGY": "Investment strategy",
+      "INVEST": "Invest",
+      "ASSET_CATEGORY": "Asset class",
+      "ASSET_INDUSTRY": "Industry",
+      "ASSET_LOCATION": "Region",
+      "PERCENTAGE": "Share",
+      "AMOUNT": "Amount",
+      "TOTAL": "Total",
+      "ASSETS": "Asset classes",
+      "INDUSTRIES": "Industries",
+      "LOCATION": "Regions"
+    }
+  },
+  "TRANSACTIONS_PAGE": {
+    "TRANSACTIONS": "Transactions",
+    "YOU_DO_NOT_HAVE_TRANSACTIONS_YET": "You don’t have transactions yet",
+    "REFERENCE": "Payment reference",
+    "SUM_OF_DIVIDENDS_RECEIVED": "SUM OF DIVIDENDS RECEIVED",
+    "SUM_OF_TAX_OPTIMISATIONS": "SUM OF TAX OPTIMISATIONS",
+    "TOTAL_DEPOSITED_AMOUNT": "TOTAL DEPOSITS",
+    "OUTSTANDING": "Outstanding",
+    "TYPE": "TRANSACTION TYPE"
+  },
+  "DOCUMENTS_PAGE": {
+    "DOCUMENTS": "Documents",
+    "LAST_QUARTERLY_REPORT_PUBLISHED": "LAST QUARTERLY REPORT PUBLISHED ON {{date}}",
+    "LAST_TAX_STATEMENT_PUBLISHED": "LAST TAX STATEMENT PUBLISHED ON {{date}}",
+    "YOU_DO_NOT_HAVE_DOCUMENTS_YET": "You don’t have documents yet"
+  },
+  "ORDERS_PAGE": {
+    "DOWNLOAD_DOCUMENT": "Download submitted form",
+    "DOWNLOAD_TEMPLATE": "Download form",
+    "ORDERS": "Orders",
+    "STATUS": "STATUS",
+    "CREATED_ON": "CREATED ON",
+    "TYPE": "ORDER TYPE",
+    "YOU_DO_NOT_HAVE_ORDERS_YET": "You don’t have orders yet.",
+    "USUALLY_TAKES": {
+      "X_TO_Y_DAYS": "This ususually takes {{x}}-{{y}} business days.",
+      "1_DAY": "This ususually takes 1 day.",
+      "UP_TO_X_DAYS": "This ususually takes up to {{x}} business days.",
+      "UP_TO_X_DAYS_AFTER_SENDING": "This ususually takes up to {{x}} business days, once our custodian bank has received the document."
+    },
+    "CANCEL":"Cancel",
+    "REFERENCE_ACCOUNT": "Reference account",
+    "ORDER_CREATED": "Order created",
+    "YOUR_ORDER_IS_SUBMITTED_SUCCESSFULLY": "Your order was submitted successfully.",
+    "YOUR_ORDER_IS_CANCELLED_SUCCESSFULLY": "Your order was cancelled successfully.",
+    "NEW_STRATEGY": "New investment strategy:",
+    "TAX_ID": "Tax ID:",
+    "START_DATE": "Start date:",
+    "END_DATE": "End Date:",
+    "NEW_ADDRESS": "New address:",
+    "CATEGORIES": {
+      "ADDRESS_CHANGE": "Address change",
+      "TAX_EXEMPTION": "Tax exemption order",
+      "DEPOSIT": "Deposit",
+      "WITHDRAWAL": "Withdrawal",
+      "RECURRING_DEPOSIT_CHANGE": "Change of monthly savings rate",
+      "FULL_WITHDRAWAL": "Full withdrawal",
+      "KWG_MIGRATION": "KWG migration",
+      "STRATEGY_CHANGE": "Strategy change",
+      "REFERENCE_ACCOUNT_CHANGE": "Change of reference account"
+    },
+    "ORDER_STATUS": {
+      "COMPLETED": "Completed",
+      "SUBMITTED": "In progress",
+      "CANCELED": "Cancelled",
+      "REJECTED": "Rejected",
+      "CREATED": "In progress"
+    },
+    "MENU": {
+      "MAKE_A_NEW_ORDER": "Submit a new order",
+      "ONE_TIME_DEPOSIT": "Deposit",
+      "WITHDRAWAL": "Withdrawal",
+      "CHANGE_MONTHLY_DEPOSIT": "Change monthly savings rate",
+      "CHANGE_INVESTMENT_STRATEGY": "Change investment strategy",
+      "CREATE_TAX_EXEMPTION": "Create tax exemption order",
+      "CHANGE_ADDRESS": "Change address",
+      "CHANGE_REFERENCE_ACCOUNT": "Change reference account"
+    },
+    "COMMON": {
+      "PLEASE_NOTE": "Please note:",
+      "TO_COMPLETE_ORDER": "To complete this order we’ll need you to download, sign and upload a document.",
+      "ORDER_TAKES": "Order takes {{min}}-{{max}} business days.",
+      "ORDER_TAKES_UP_TO_X_DAYS": "Order takes up to {{x}} business days.",
+      "MAKE_ORDER": "Submit an order"
+    },
+    "CREATION_CONSTRAINT": {
+      "TITLE": "The order can’t be created at the moment.",
+      "TEXT": "You have to wait till one or more orders are completed."
+    }
+  },
+  "WITHDRAWAL_PAGE": {
+    "WITHDRAWAL": "Withdrawal order",
+    "ADVICE": {
+      "TITLE": "Investment advice",
+      "TEXT_PART_1": "In order to achieve the average expected return of",
+      "P_A": "p.a.",
+      "TEXT_PART_2": ", the advised minimal investment period is",
+      "YEARS": "{{years}} years",
+      "TEXT_PART_3": ". If volatile market conditions are the reason for your premature withdrawal, selling at a lower market price only leads to a realization of losses. From a strategic perspective, it would be advisable to increase your investment in your portfolio. This countercyclical investment approach allows you to profit from lower market prices.",
+      "HAVE_QUESTIONS": "Have questions?",
+      "DISCUSS_THEM_WITH_AN_ADVISOR_WITH_OUR_TEAM": "Discuss them with an expert with our team."
+    },
+    "FORM": {
+      "TITLE": "How much do you want to withdraw?",
+      "TEXT_PART_1": "The minimum withdrawal is",
+      "TEXT_PART_2": "After your withdrawal, your account balance must be at least",
+      "TEXT_PART_3": "including a savings rate or",
+      "TEXT_PART_4": "without a savings plan.",
+      "FULL_ACCOUNT_WITHDRAWAL": "Full withdrawal"
+    },
+    "ORDER_SUMMARY": {
+      "ACCOUNT_BALANCE": "Current account balance:",
+      "WITHDRAWAL_AMOUNT": "Withdrawal amount:",
+      "NEW_ACCOUNT_BALANCE": "New account balance:",
+      "ORDER_TAKES": "It requires 3-4 business days for the money to appear in your bank account.",
+      "REFERENCE_ACCOUNT_FOR_WITHDRAWAL": "Reference account for your withdrawal:"
+    },
+    "FEEDBACK": {
+      "TITLE": "Please give us your feedback",
+      "MESSAGE": "Are you worried about your portfolio or unhappy with your performance? To continuously improve our service offering, we would be happy if you provided us with some feedback on why you want to make a withdrawal."
+    },
+    "FULL_WITHDRAW": {
+      "WE_ARE_SAD_TO_SEE_YOU_LEAVE_****": "We are sad to see you leave ****.",
+      "FULL_WITHDRAW_MESSAGE": "To continuously improve our service offering, we would be happy if you provided us with some feedback on why you want to withdraw your entire account balance.",
+      "PLEASE_SELECT_A_REASON": "Please select a reason",
+      "CONFIRM_MESSAGE": "I confirm that I am aware that a full withdrawal might be subject to capital gains taxes and market fluctuations and that ****, therefore, cannot guarantee the final withdrawal amount.",
+      "AMOUNT_ADDITIONAL_MESSAGE": "This amount is subject to change and will depend on the market value of portfolio.",
+      "ORDER_TAKES": "It requires up to 10 business days for the money to appear in your bank account."
+    },
+    "FULL_WITHDRAW_REASONS": {
+      "I_HAVE_SHORT_TERM_EXPENSES": "I have short-term expenses.",
+      "I_AM_CONCERNED_BY_THE_CURRENT_CAPITAL_MARKET_DEVELOPMENTS": "I am concerned by the current capital market developments.",
+      "THE_FEES_ARE_TOO_HIGH": "The fees are too high.",
+      "I_AM_NOT_HAPPY_WITH_PERFORMANCE": "I am not happy with performance.",
+      "I_AM_NOT_HAPPY_WITH_THE_PRODUCT_FEATURES": "I am not happy with the product features.",
+      "THE_CUSTOMER_SERVICE_IS_POOR": "The customer service is poor.",
+      "I_AM_SWITCHING_TO_A_DIFFERENT_SERVICE_PROVIDER": "I am switching to a different service provider.",
+      "I_DO_NOT_WANT_TO_PROVIDE_A_REASON": "I do not want to provide a reason.",
+      "OTHER": "Other."
+    },
+    "WITHDRAW_REASONS": {
+      "TAKE_SOME_PROFITS": "I want to take some of my profits.",
+      "THINKING_ABOUT_LEAVING": "I am thinking about leaving ****.",
+      "TRYING_OTHER_SERVICE_PROVIDER": "I want to simultaneously try another service provider."
+    }
+  },
+  "ONE_TIME_DEPOSIT_PAGE": {
+    "ONE_TIME_DEPOSIT_ORDER": "Deposit order",
+    "REQUEST": {
+      "TITLE": "How much would you like to deposit?",
+      "NOTIFICATION_PART_1": "The minimum deposit is",
+      "NOTIFICATION_PART_2": "For a smaller deposit, you can",
+      "NOTIFICATION_PART_3": "increase your monthly savings rate",
+      "NOTIFICATION_PART_4": "instead."
+    },
+    "ORDER_SUMMARY": {
+      "DEPOSIT_AMOUNT": "Deposit amount:",
+      "REFERENCE_ACCOUNT_FOR_DIRECT_DEBIT": "Reference account for direct debit:",
+      "ORDER_TAKES": "Order takes 2-3 business days"
+    }
+  },
+  "MONTHLY_PAGE": {
+    "MONTHLY_CONTRIBUTION_ORDER": "Change of your monthly savings rate",
+    "REQUEST": {
+      "TITLE": "New monthly savings rate",
+      "NOTIFICATION": "Please note that due to the high number of transactions towards the end of month a change of your monthly savings rate 5 or fewer bank working days prior to month end cannot be guaranteed. The change of your monthly savings rate will be implemented latest the following month."
+    },
+    "ORDER_SUMMARY": {
+      "CURRENT_MONTHLY_CONTRIBUTION": "Current monthly savings rate:",
+      "NEW_MONTHLY_CONTRIBUTION": "New monthly savings rate:",
+      "REFERENCE_ACCOUNT_FOR_DIRECT_DEBIT": "Reference account for direct debit:",
+      "ORDER_TAKES": "It requires 1 business day for processing."
+    }
+  },
+  "UPDATE_STRATEGY_PAGE": {
+    "UPDATE_YOUR_STRATEGY": "Change of your investment strategy",
+    "WE_WILL_ASK_YOU_A_FEW_QUESTIONS": "We’ll ask you a few questions about your new investment goals and recommend you a new strategy based on that.",
+    "NEW_SAMPLE_INVESTMENT_PORTFOLIO": "Your new portfolio could look like this",
+    "CONFIRM_STRATEGY_UPDATE": "Update investment strategy",
+    "SUMMARY": {
+      "CURRENT_STRATEGY": "Current investment strategy:",
+      "NEW_CHOSEN_STRATEGY": "New chosen investment strategy:",
+      "N_A": "Not specified",
+      "ORDER_TAKES": "Order takes 5-7 business days"
+    },
+    "INTERVIEW": {
+      "PREVIOUS_QUESTION": "Previous question",
+      "CONTINUE": "Continue",
+      "ERRORS": {
+        "MIN_AND_MAX": "Amount must be between {{min}} and {{max}}",
+        "MONTHLY_SAVINGS_MUST_BE": "Monthly savings must be less or equal to monthly income.",
+        "DISPOSABLE_SAVING": "Your disposable savings cannot be lower than your assets ({{balance}}) managed by us.",
+        "REQUIRED": "Oops. We still need your answer."
+      }
+    },
+    "NEW_STRATEGY": {
+      "RISK_PROFILE": "Risk profile:",
+      "PLEASE_SELECT_AN_INVESTMENT_STRATEGY": "Please select an investment strategy",
+      "STRATEGY_RECOMMENDATION_MESSAGE": "We recommend you the best strategy based on your investment goals but you can still choose a less risky one.",
+      "LESS_RISKY": "Conservative",
+      "RISKY": "Adventurous"
+    },
+    "PORTFOLIO_INVESTMENT": {
+      "TAB_HEADERS": {
+        "ASSETS": "Assets",
+        "INDUSTRIES": "Industries",
+        "LOCATION": "Location"
+      },
+      "VIEW_FULL_LIST": "View full security list",
+      "ALL_STOCK_IN_YOUR_SAMPLE_PORTFOLIO": " at a glance",
+      "RISK": "Asset class",
+      "ASSET_LABEL": "Investment product",
+      "TABLE_DESCRIPTION_PART1": "This represents the current composition of",
+      "TABLE_DESCRIPTION_PART2": "Please take into account that this is only a snapshot. All our investment strategies are continuously monitored and optimized as required."
+    },
+    "PORTFOLIO_PERFORMANCE": {
+      "TAB_HEADERS": {
+        "EXPECTED_PERFORMANCE": "Expected performance",
+        "HISTORIC_PERFORMANCE": "Historic performance"
+      },
+      "PESSIMISTIC": "Pessimistic scenario",
+      "DEPOSITED": "Investment amount",
+      "EXPECTED": "Expected scenario",
+      "OPTIMISTIC": "Optimistic scenario"
+    },
+    "INSUFFICIENT_EXPERIENCE": {
+      "CANCEL_MESSAGE": "I don’t want to acquire the necessary knowledge for now and don’t want to change my investment strategy.",
+      "BUTTON": "Continue",
+      "CONFIRMATION_MESSAGE": "I confirm that I will acquire the appropriate knowledge.",
+      "DOCUMENT_TITLE": "Investment risks",
+      "DOCUMENT_LINK": "https://static.****.com/documents/286ebf866d437db365dc0c064dbe3495/****_Vermoegensverwaltung_Risiken_Kapitalanlage.pdf",
+      "TEXT_PARAGRAPH_1": "Our goal is to help you invest your money profitably on the financial market.",
+      "TEXT_PARAGRAPH_2": "Unfortunately, we cannot recommend you to change your investment strategy at the moment.",
+      "TEXT_PARAGRAPH_3_1": "The reason:",
+      "TEXT_PARAGRAPH_3_2": "Your knowledge of the financial market and your experience in the relevant asset classes is insufficient.",
+      "TEXT_PARAGRAPH_4_1": "Did you already know?",
+      "TEXT_PARAGRAPH_4_2": "When you invest in ETFs, you automatically invest in different asset classes.",
+      "TEXT_PARAGRAPH_5_1": "Capital market simply explained",
+      "TEXT_PARAGRAPH_5_2": "We’re happy to help you learn. The knowledge about ETFs does not have to be complicated - if it is well explained.",
+      "TEXT_PARAGRAPH_6": "Please download the following PDF to be on step ahead.",
+      "TITLE": "We’re sorry … but that doesn’t seem right"
+    }
+  },
+  "REFERENCE_ACCOUNT_ORDER_PAGE": {
+    "NEW_REFERENCE_ACCOUNT_ORDER": "Change of reference account order",
+    "NOTE_1": "To complete this order we’ll need you to download, sign and send a document by post to our custodian bank DAB BNP Paribas. Please sign the document on both sides.",
+    "NOTE_2": "To complete this order we’ll need you to download, sign and send a document by post to our custodian bank DAB BNP Paribas. Please sign the document on both sides. Please find the postal address below.",
+    "YOUR_NEW_ACCOUNT": "Your new account",
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "IBAN": "IBAN",
+    "INVALID_IBAN": "Please provide a valid IBAN.",
+    "BIC": "BIC",
+    "INVALID_BIC": "Oops. This is not a valid BIC.",
+    "BANK_NAME": "Bank name",
+    "ORDER_SUMMARY": {
+      "CURRENT_ACCOUNT": "Current account",
+      "NEW_ACCOUNT": "New account"
+    },
+    "CONFIRM_NEW_ACCOUNT": "Create document",
+    "PLEASE_DOWNLOAD": "Please send the form, signed on both sides, via post to the following address:",
+    "PLEASE_DOWNLOAD_1": "BNP Paribas S.A.",
+    "PLEASE_DOWNLOAD_2": "Niederlassung Deutschland",
+    "PLEASE_DOWNLOAD_3": "Fintech Team",
+    "PLEASE_DOWNLOAD_4": "Landsberger Straße 300",
+    "PLEASE_DOWNLOAD_5": "80687 München",
+    "CHANGE_REFERENCE_ACCOUNT_DETAILS": "Kontodaten ändern",
+    "ORDER_TAKES": "When our custodian bank has received the document, the order takes up to 10 business days.",
+    "SEND_FORM": "Send to the bank"
+  },
+  "ADDRESS_ORDER_PAGE": {
+    "NEW_ADDRESS_ORDER": "Change of address order",
+    "YOUR_NEW_ADDRESS": "Your new address",
+    "STREET_NAME": "Street",
+    "STREET_#": "Number",
+    "ZIP_CODE": "Zip code",
+    "CITY": "City",
+    "COUNTRY": "Country",
+    "CONFIRM_NEW_ADDRESS": "Create form",
+    "CHANGE_ADDRESS_DETAILS": "Change your address details",
+    "REQUIRED_FORM_FOR_SIGNATURE": "Required form for signature",
+    "PLEASE_DOWNLOAD": "Please download the change address form, sign it and upload it.",
+    "DOWNLOAD_FORM": "Download form",
+    "UPLOAD_FORM": "Upload form",
+    "SIGN_FORM": "Sign the form",
+    "ORDER_SUMMARY": {
+      "CURRENT_ADDRESS": "Current address",
+      "NEW_ADDRESS": "New address"
+    }
+  },
+  "TAX_EXEMPTION_PAGE": {
+    "TAX_EXEMPTION_ORDER": "Tax exemption order",
+    "YOUR_SPOUSE_NAME": "Name of your spouse",
+    "YOUR_SPOUSE_BIRTH_DATE": "Birth date of your spouse",
+    "YOUR_SPOUSE_TAX_ID": "German Tax ID of your spouse",
+    "REMOVE_YOUR_SPOUSE": "I wish to create the tax exemption order without my spouse",
+    "WHAT_AMOUNT": "What's the amount of your tax exemption order?",
+    "ONLY_ONE_SPOUSE_SPANNING": "Only loss offset between spouses / life partners should be applied for.",
+    "UP_TO_AMOUNT": "Up to the amount of the saver lump sum of a total of {{amount}}.",
+    "CUSTOM_AMOUNT": "Custom amount:",
+    "TAX_EXEMPTION_START_DATE": "The tax exemption order is valid from",
+    "TAX_EXEMPTION_END_DATE": "The tax exemption order is valid until",
+    "CREATE_JOINT_TAX": "I wish to submit a tax exemption order together with my spouse",
+    "CREATE_TAX_EXEMPTION_FORM": "Create form",
+    "CHANGE_TAX_EXEMPTION_DETAILS": "Edit your tax examption order",
+    "PLEASE_DOWNLOAD": "Please download the tax exemption form, sign it and upload it.",
+    "UNTIL_NEW_ORDER": "Until a new order is received",
+    "MESSAGES": {
+      "WRONG_DATE": "End date should be later than start date",
+      "WRONG_DATE_OF_BIRTH": "Invalid date of birth"
+    },
+    "ORDER_SUMMARY": {
+      "START_DATE": "Start date",
+      "END_DATE": "End date",
+      "JOINT_TAX_EXEMPTION": "A joint tax exemption order with my spouse",
+      "DATE_OF_BIRTH": "Date of birth"
+    }
+  },
+  "INVITE_FRIENDS_PAGE": {
+    "TITLE": "Invite a friend to join ****",
+    "FOR_EACH_SUCCESSFUL_RECOMMENDATION": "For each successful recommendation of a new customer, you and your friend receive €50 on your **** account, respectively.",
+    "IF_YOU_WANT_TO_REFER": "If you want to refer someone, please share your personal referral code with your friends, which needs to be entered in the corresponding registration field by them.",
+    "REFERRAL_CODE": "Referral code",
+    "COPIED": "Copied!",
+    "THE_TRANSFER_OF_BONUS": "The transfer of the bonus will be made six months after the date of your friend’s account opening, but only if you and your friend are still our customers and if both did not participate in any other promotion. The referral bonus can only be considered if the personal referral code was used."
+  },
+  "ACCOUNT_DETAILS_PAGE": {
+    "ACCOUNT_DETAILS": "Account details",
+    "TAB_HEADERS": {
+      "PERSONAL_INFORMATION": "Personal details",
+      "BANK_INFORMATION": "Bank details",
+      "TAX_INFORMATION": "Tax details"
+    },
+    "PERSONAL": {
+      "NAME": "Name",
+      "ACCOUNT_ID": "Customer number",
+      "LICENCE": "License",
+      "KWG": "Art. 32 German Banking Act (KWG)",
+      "ADDRESS": "Address",
+      "ADDRESS_LINE_1": "{{address.buildingNumber}} {{address.streetName}}",
+      "ADDRESS_LINE_2": "{{address.postalCode}} {{address.city}}",
+      "REQUEST_ADDRESS_CHANGE": "Request an address change"
+    },
+    "BANK": {
+      "REFERENCE_ACCOUNT": "Reference account",
+      "ACCOUNT_OWNER": "Account holder",
+      "IBAN": "IBAN",
+      "BIC": "BIC",
+      "BANK_NAME": "Bank name",
+      "MANDATE_REFERENCE": "Mandate reference",
+      "CHANGE_REFERENCE_ACCOUNT": {
+        "PART_1": "To change your reference account, please send us a message either by email to ",
+        "PART_2": ". Please include your name and your customer number, which you can find under \"Personal details\"."
+      },
+      "CLEARING_ACCOUNT": "Clearing Account",
+      "MAILTO": {
+        "SUBJECT": "Reference account change",
+        "BODY": "Dear **** Team,\nI hereby request the reference account change form.\n\nKind regards"
+      },
+      "REQUEST_ACCOUNT_CHANGE": "Request a reference account change"
+    },
+    "TAX": {
+      "YOUR_TAX_ID": "Your Tax ID",
+      "GERMAN_TAX_ID": "German Tax ID",
+      "TAX_EXEMPTION_STATUS": "Status of your tax exemption order",
+      "TOTAL_AMOUNT": "Total amount",
+      "USED_AMOUNT": "Used amount",
+      "MAKE_TAX_EXEMPTION_ORDER": "Submit a tax exemption order",
+      "TAX_TYPE": "Type",
+      "TAX_TYPES": {
+        "NONE": "None",
+        "SINGLE": "Single",
+        "JOINT": "Joint",
+        "OVERSIZE": "Oversize",
+        "FOREIGN": "Foreign"
+      },
+      "SAVE": "Save"
+    }
+  },
+  "USER_SETTINGS_PAGE": {
+    "ACCOUNT_SETTINGS": "User settings",
+    "TAB_HEADERS": {
+      "EMAIL": "Email",
+      "PASSWORD": "Password",
+      "COMMUNICATION_PREFERENCES": "Communication preferences"
+    },
+    "EMAIL": {
+      "CURRENT_EMAIL": "Current email",
+      "NEW_EMAIL": "New email",
+      "MESSAGES": {
+        "EMAIL_IS_SAME": "The email is the same as your current one.",
+        "EMAIL_IS_USED": "The selected email address is already in use. Please choose another one.",
+        "INVALID_EMAIL": "Invalid Email"
+      },
+      "EMAIL_VERIFICATION_LINK": "To change your email address, we will send a verification link to your new email address."
+    },
+    "PASSWORD": {
+      "CURRENT_PASSWORD": "Current password",
+      "NEW_PASSWORD": "New password",
+      "MESSAGES": {
+        "PASSWORD_IS_WRONG": "Your current password is wrong.",
+        "PASSWORD_MIN_LENGTH": "Your password should have at least 8 characters.",
+        "PASSWORD_ONE_LETTER": "Your password must contain at least one lower case letter.",
+        "PASSWORD_ONE_NUMBER": "Your password must contain at least one number.",
+        "PASSWORD_NOT_EMAIL": "Your password must not be the same as your email address."
+      }
+    },
+    "COMMUNICATION": {
+      "PHONE_NUMBER": "Phone number",
+      "PREFERRED_COMMUNICATION_LANGUAGE": "Preferred communication language",
+      "WHY_DO_WE_NEED_THIS": "Why do we need this?",
+      "WE_WILL_USE_THIS_LANGUAGE": "We’ll use this language for all of our emails that we send to you.",
+      "MESSAGES": {
+        "INVALID_PHONE": "Invalid phone number"
+      }
+    }
+  },
+  "EXTERNAL_LINKS": {
+    "WEBSITE": {
+      "PRIVACY": "{{domain}}/datenschutz",
+      "BOOK_A_CALL": "{{domain}}/en/contact/",
+      "LEGAL_INFORMATION": "{{domain}}/en/contracts/",
+      "LEGAL_NOTICE": "{{domain}}/en/impressum/"
+    }
+  }
+}

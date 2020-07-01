@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="12px" viewBox="0 0 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>icon/action/swap_horiz_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M3.825,5.16666667 L0.5,8.5 L3.825,11.8333333 L3.825,9.33333333 L9.66666667,9.33333333 L9.66666667,7.66666667 L3.825,7.66666667 L3.825,5.16666667 Z M15.5,3.5 L12.175,0.166666667 L12.175,2.66666667 L6.33333333,2.66666667 L6.33333333,4.33333333 L12.175,4.33333333 L12.175,6.83333333 L15.5,3.5 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="My-****---Overview---Multiple-accounts" transform="translate(-993.000000, -241.000000)">
+            <g id="icon/action/swap_horiz_24px" transform="translate(993.000000, 241.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g fill-rule="nonzero"></g>
+                <g id="↳-Color" mask="url(#mask-2)">
+                    <g transform="translate(-2.000000, -4.000000)" id="↳-Tonal-Palette">
+                        <g>
+                            <g fill="#8992A1" id="Rectangle-13">
+                                <rect x="0" y="0" width="20" height="20"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

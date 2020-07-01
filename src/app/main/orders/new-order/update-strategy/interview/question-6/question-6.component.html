@@ -1,0 +1,42 @@
+<div class="question">
+  <div class="question-item" *ngFor="let question of questionsData; index as i">
+    <div class="question-item__content">
+      <div class="question-item__title">
+        {{question | customTranslate | async}}
+      </div>
+      <div class="question-item__description" *ngIf="question.description">
+        {{question.description | customTranslate | async}}
+      </div>
+    </div>
+    <div class="answer-amount">
+      <app-currency-input
+        [formControl]="question.answerControl"
+        [isInvalid]="question.answerControl.invalid && question.answerControl.dirty">
+      </app-currency-input>
+    </div>
+    <ng-container *ngIf="question.answerControl as control">
+      <div class="errors" *ngIf="control.dirty && control.invalid">
+        <div class="errors-item" *ngIf="control.errors.min || control.errors.max">
+          {{'UPDATE_STRATEGY_PAGE.INTERVIEW.ERRORS.MIN_AND_MAX' | translate : {min: 0, max: 1000000000} }}
+        </div>
+        <div class="errors-item" *ngIf="control.errors.isMoreThanMonthlyIncome">
+          {{'UPDATE_STRATEGY_PAGE.INTERVIEW.ERRORS.MONTHLY_SAVINGS_MUST_BE' | translate}}
+        </div>
+        <div class="errors-item" *ngIf="control.errors.invalidDisposableSaving">
+          {{'UPDATE_STRATEGY_PAGE.INTERVIEW.ERRORS.DISPOSABLE_SAVING' | translate : {balance: control.errors.invalidDisposableSaving.min | currencySignPipe | async} }}
+        </div>
+        <div class="errors-item" *ngIf="control.errors.required">
+          {{'UPDATE_STRATEGY_PAGE.INTERVIEW.ERRORS.REQUIRED' | translate}}
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="submit-btn">
+    <p-button
+      class="button-blue"
+      (onClick)="submitAnswer()"
+      [disabled]="isButtonDisabled$ | async"
+      [label]="'UPDATE_STRATEGY_PAGE.INTERVIEW.CONTINUE'| translate"
+    ></p-button>
+  </div>
+</div>

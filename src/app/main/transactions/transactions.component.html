@@ -1,0 +1,23 @@
+<section class="transaction">
+  <div class="transaction-container container">
+    <div class="h1">
+      {{'TRANSACTIONS_PAGE.TRANSACTIONS' | translate}}
+    </div>
+    <div *ngIf="isTransactionsEmpty$ | async; else transactions" class="no-items">
+      <img class="no-items__icon" src="/assets/img/icon-empty.svg" />
+      <div class="no-items__text">
+        {{'TRANSACTIONS_PAGE.YOU_DO_NOT_HAVE_TRANSACTIONS_YET' | translate}}
+      </div>
+    </div>
+    <ng-template #transactions>
+      <div class="content">
+        <div class="content-list">
+          <app-transactions-list></app-transactions-list>
+        </div>
+        <div class="content-info" *ngIf="isTabletsHorizontal$ | async">
+          <app-transactions-info></app-transactions-info>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</section>

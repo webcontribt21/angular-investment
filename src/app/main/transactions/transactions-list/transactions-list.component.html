@@ -1,0 +1,47 @@
+<div class="transactions-filter" *ngIf="false">
+  Show all
+</div>
+<div class="transactions-content">
+  <div class="data-list transactions-list">
+    <div class="list-header">
+      <div class="title type">
+        {{'TRANSACTIONS_PAGE.TYPE' | translate}}
+      </div>
+      <div class="title amount">
+        {{'COMMON.AMOUNT' | translate}}
+      </div>
+      <div class="title date">
+        {{'COMMON.DATE' | translate}}
+      </div>
+    </div>
+    <ul class="list-body">
+      <li
+          class="list-item list-item_no_hover"
+          [class.disabled]="transaction.outstanding"
+          *ngFor="let transaction of (transactions$ | async)">
+        <div class="list-content">
+          <div class="list-type">{{transaction.type}}</div>
+          <div class="list-amount" [class.positive]="transaction.amount > 0">
+            <span class="amount-sign" *ngIf="transaction.amount > 0">+</span>
+            <span>{{transaction.amount | currencySignPipe | async}}</span>
+          </div>
+          <div class="list-date" *ngIf="transaction.outstanding; else date">
+            {{'TRANSACTIONS_PAGE.OUTSTANDING' | translate}}
+          </div>
+          <ng-template #date>
+            <div class="list-date">{{transaction.createdAt | gmDate: 'dd MMM yyyy'}}</div>
+          </ng-template>
+        </div>
+        <div class="reference" *ngIf="transaction.reference">
+          <span class="reference-head">{{'TRANSACTIONS_PAGE.REFERENCE' | translate}}: </span>
+          <span class="reference-body">{{transaction.reference}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <app-pagination
+      [pagination]="transactionsPagination$ | async"
+      (pageChanged)="onPageChanged($event)">
+  </app-pagination>
+</div>
+

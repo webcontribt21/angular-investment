@@ -1,0 +1,20 @@
+<section class="reference-account">
+  <div class="reference-account-title h1">
+    {{'REFERENCE_ACCOUNT_ORDER_PAGE.NEW_REFERENCE_ACCOUNT_ORDER' | translate}}
+  </div>
+  <div class="reference-account-content order-content">
+    <div class="reference-account-request order-request">
+      <div class="reference-account-request__form" *ngIf="!(isMakeOrder$ | async); else makeOrder">
+        <app-reference-account-form></app-reference-account-form>
+      </div>
+      <ng-template #makeOrder>
+        <div class="reference-account-request__make-order">
+          <app-make-order></app-make-order>
+        </div>
+      </ng-template>
+    </div>
+    <div class="reference-account-summary">
+      <app-reference-account-summary></app-reference-account-summary>
+    </div>
+  </div>
+</section>

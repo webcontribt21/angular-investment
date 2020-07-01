@@ -1,0 +1,39 @@
+<div class="upload-form">
+  <div class="upload-form__title">
+    {{titleText | translate}}
+  </div>
+
+  <div class="upload-form__text">
+    <div *ngFor="let downloadText of downloadTexts">
+      {{downloadText | translate}}
+    </div>
+    <div class="upload-form-progress">
+      <div class="upload-form-progress-item upload-form-progress-item__download">
+        <div class="indicator">
+          <div class="circle filled" [class.active]="!isDownloaded"></div>
+          <div class="line"></div>
+        </div>
+        <a class="upload-form__link" (click)="setDownloaded(true)" [href]="downloadLink$ | async" download target="_blank">{{'ADDRESS_ORDER_PAGE.DOWNLOAD_FORM' | translate}}</a>
+      </div>
+      <div class="upload-form-progress-item upload-form-progress-item__sign">
+        <div class="indicator">
+          <div class="circle"></div>
+          <div class="line"></div>
+        </div>
+        <span>{{ 'ADDRESS_ORDER_PAGE.SIGN_FORM' | translate }}</span>
+      </div>
+      <div class="upload-form-progress-item upload-form-progress-item__sign" *ngIf="noUpload" >
+        <div class="indicator">
+          <div class="circle"></div>
+        </div>
+        <span>{{ 'REFERENCE_ACCOUNT_ORDER_PAGE.SEND_FORM' | translate }}</span>
+      </div>
+      <div class="upload-form-progress-item upload-form-progress-item__upload" [class.active]="isDownloaded" *ngIf="!noUpload">
+        <div class="indicator">
+          <div class="circle filled" [class.active]="isDownloaded"></div>
+        </div>
+        <span><app-upload-button></app-upload-button></span>
+      </div>
+    </div>
+  </div>
+</div>

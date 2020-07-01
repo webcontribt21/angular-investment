@@ -1,0 +1,49 @@
+<div class="select-strategy">
+  <div class="select-strategy__header">
+    <img class="header__icon" src="/assets/img/icon-profit.svg">
+    <div class="header__text">
+      <span class="header__text-prefix">
+        {{'UPDATE_STRATEGY_PAGE.NEW_STRATEGY.RISK_PROFILE' | translate}}
+      </span>
+      <span class="header__text-suffix">{{riskProfile$ | customTranslate | async}}</span>
+    </div>
+  </div>
+  <div class="select-strategy__content">
+    <div class="content__title">
+      {{'UPDATE_STRATEGY_PAGE.NEW_STRATEGY.PLEASE_SELECT_AN_INVESTMENT_STRATEGY' | translate}}
+    </div>
+    <div class="content__message">
+      {{'UPDATE_STRATEGY_PAGE.NEW_STRATEGY.STRATEGY_RECOMMENDATION_MESSAGE' | translate}}
+    </div>
+    <div class="content__invest" *ngIf="(selectedStrategy$ | async) as selectedStrategy">
+      <a href="{{selectedStrategy?.link}}" target="_blank" class="invest__title">
+        <div class="title-prefix">{{'COMMON.APEIRON' | translate | lowercase}}</div>
+        <div class="title-suffix">{{selectedStrategy?.labelSuffix}}</div>
+        <i class="pi pi-external-link"></i>
+        <div class="title-info">
+          <img class="title-info__icon" src="/assets/img/info-icon-circle.svg" alt="info" class="invest__info-icon">
+          <div class="title-info__tooltip">
+            <div class="tooltip-title">
+              <span class="tooltip-title__prefix">{{'COMMON.APEIRON' | translate | lowercase}}</span>
+              <span class="tooltip-title__suffix">{{selectedStrategy?.labelSuffix}}</span>
+              </div>
+            <div class="tooltip-content">
+              {{selectedStrategy?.description}}
+            </div>
+          </div>
+        </div>
+      </a>
+      <div class="invest__risk">
+        <div class="risk-bar custom-slider">
+          <ng5-slider
+              [value]="selectedStrategyValue$ | async"
+              [options]="options"
+              (valueChange)="onSliderChange($event)">
+          </ng5-slider>
+        </div>
+        <div class="risk-less">{{'UPDATE_STRATEGY_PAGE.NEW_STRATEGY.LESS_RISKY' | translate}}</div>
+        <div class="risk-more">{{'UPDATE_STRATEGY_PAGE.NEW_STRATEGY.RISKY' | translate}}</div>
+      </div>
+    </div>
+  </div>
+</div>

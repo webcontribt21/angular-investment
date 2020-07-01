@@ -1,0 +1,18 @@
+<div class="pie-chart__graph">
+  <div [chart]="chart$ | async"></div>
+</div>
+<div class="pie-chart__legend pie-chart__legend_margin" *ngIf="type === PieChartType.Assets">
+  <div class="legend" *ngFor="let group of assetsGrouped">
+    <label class="legend-label">
+      <div class="legend-label__main">
+        <div>
+          <span class="legend-label__symbol" [ngStyle]="{'background-color': group.color}"></span>
+        </div>
+        <span class="legend-label__title">
+          <span class="legend-label__name">{{group.assetClass}}</span>
+        </span>
+      </div>
+      <span class="legend-label__ratio">{{group.ratio | percent: '1.2-2'}}</span>
+    </label>
+  </div>
+</div>
