@@ -1,6 +1,6 @@
-# My****
+# Investment Service
 
-My**** is an [Angular](https://angular.io/) app that is build with the [Angular CLI](https://cli.angular.io/).
+The project is an [Angular](https://angular.io/) app that is build with the [Angular CLI](https://cli.angular.io/).
 
 ## Pre-requisites
 
