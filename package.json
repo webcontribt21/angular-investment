@@ -41,7 +41,7 @@
     "keycloak-angular": "^7.1.0",
     "keycloak-js": "^6.0.1",
     "lodash": "^4.17.15",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ng-intercom": "^8.0.0",
     "ng5-slider": "^1.2.4",
     "ngx-clipboard": "^12.3.0",
